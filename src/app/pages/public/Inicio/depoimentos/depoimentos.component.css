@@ -1,0 +1,28 @@
+.nome {
+  font-size: 110%;
+  font-weight: bold;
+}
+p {
+  text-align: justify;
+}
+#coluna {
+  border-left: 6px solid #c757a1;
+}
+@media (max-width: 767px) {
+  #coluna {
+    border-left: none;
+    border-top: 5px solid #c757a1;
+  }
+}
+#botao {
+  background-color: #c757a1;
+}
+#botao:hover {
+  opacity: 0.9;
+}
+/* div h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #c757a1;
+} */
