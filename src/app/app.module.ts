@@ -17,6 +17,9 @@ import { SlidesComponent } from './pages/public/Inicio/slides/slides.component';
 import { ProcessoSeletivoComponent } from './pages/public/Inicio/processo-seletivo/processo-seletivo.component';
 import { DepoimentosComponent } from './pages/public/Inicio/depoimentos/depoimentos.component';
 import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-todos/depoimentos-todos.component';
+import { AdmComponent } from './pages/admin/Administrador/adm/adm.component';
+import { FormularioComponent } from './pages/subscriber/Inscricao/formulario/formulario.component';
+import { SimuladoComponent } from './pages/subscriber/Simulado/simulado/simulado.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-tod
     SlidesComponent,
     ProcessoSeletivoComponent,
     DepoimentosComponent,
-    DepoimentosTodosComponent
+    DepoimentosTodosComponent,
+    AdmComponent,
+    FormularioComponent,
+    SimuladoComponent
   ],
   imports: [NgbModule, BrowserModule, AppRoutingModule],
   providers: [],
