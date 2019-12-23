@@ -1,0 +1,12 @@
+.formacao{
+  color: #527A25; /*verde escuro*/
+}
+.separa{
+  border-top: 1px #c757a1 solid;
+}
+img{
+  display: block;
+  /*margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;*/
+}
