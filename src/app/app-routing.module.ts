@@ -7,6 +7,7 @@ import { LoginComponent } from "./pages/public/Acesso/login/login.component";
 import { InicioComponent } from "./pages/public/Inicio/inicio/inicio.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-todos/depoimentos-todos.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "inicio", component: InicioComponent },
   { path: "noticias", component: NoticiasComponent },
   { path: "perguntas", component: PerguntasComponent },
-  { path: "sobre", component: SobreComponent }
+  { path: "sobre", component: SobreComponent },
+  { path: "depoimentos", component: DepoimentosTodosComponent },
 ];
 
 @NgModule({

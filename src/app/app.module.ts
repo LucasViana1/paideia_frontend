@@ -16,6 +16,7 @@ import { SobreComponent } from "./pages/public/Sobre/sobre/sobre.component";
 import { SlidesComponent } from './pages/public/Inicio/slides/slides.component';
 import { ProcessoSeletivoComponent } from './pages/public/Inicio/processo-seletivo/processo-seletivo.component';
 import { DepoimentosComponent } from './pages/public/Inicio/depoimentos/depoimentos.component';
+import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-todos/depoimentos-todos.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DepoimentosComponent } from './pages/public/Inicio/depoimentos/depoimen
     SobreComponent,
     SlidesComponent,
     ProcessoSeletivoComponent,
-    DepoimentosComponent
+    DepoimentosComponent,
+    DepoimentosTodosComponent
   ],
   imports: [NgbModule, BrowserModule, AppRoutingModule],
   providers: [],
