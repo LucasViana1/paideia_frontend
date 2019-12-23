@@ -16,6 +16,9 @@ p {
 }
 #botao {
   background-color: #c757a1;
+  border: 1px solid #6e6e6e;
+  color: #ffffff;
+  box-shadow: 4px 4px;
 }
 #botao:hover {
   opacity: 0.9;
