@@ -1,0 +1,15 @@
+p {
+  text-justify: auto;
+}
+.separa {
+  border-top: 4px #86c540 solid;
+  margin-bottom: 13px;
+  margin-top: 5px;
+}
+h6 {
+  color: #c757a1;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
