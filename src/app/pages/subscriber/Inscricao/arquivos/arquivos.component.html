@@ -1,0 +1,4 @@
+<input type="file" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg, .pdf" />
+<button (click)="base64()" class="btn btn-primary">Ver base64</button>
+<img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+
