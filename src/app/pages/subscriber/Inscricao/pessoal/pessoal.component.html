@@ -1,0 +1,103 @@
+<div>
+    <!-- <b-form v-on:submit.prevent="enviarDadosPessoais"> -->
+    <form>
+        <!--dados pessoais-->
+        <div class="col-sm-12 text-center">
+            <h2>DADOS PESSOAIS</h2>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-12 text-center">
+                <div show class="alert alert-danger" role="alert">
+                  <b>ATENÇÃO! </b>O CARTÃO CIDADÃO DEVE ESTAR EM DIA, DO CONTRÁRIO A INSCRIÇÃO SERÁ CANCELADA!
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="labelCampo" for="">Nome:</label>
+                    <!-- <b-form-input v-model="dados.nome_completo" type="text" required placeholder="Nome completo"></b-form-input> -->
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >Data Nascimento:</label>
+                    <!-- <b-form-input v-model="dados.data" type="text" required v-mask="'##/##/####'" placeholder="dd/mm/aaaa"> -->
+                      <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >Cidade Nascimento:</label>
+                    <!-- <b-form-input v-model="dados.cidade" type="text" required placeholder=""></b-form-input> -->
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <!--select para estado-->
+                <div class="form-group">
+                    <label class="labelCampo" for="" >Estado:</label>
+                    <!-- <b-form-select v-model="dados.estado" :options="optionsUF" required></b-form-select> -->
+                   <!-- IMPLEMENTAR O FORM CONTROL NAME NESSE TRECHO -->
+                    <select name="estado" id="estado" >
+                      <option *ngFor="let item of estados">{{item}}</option>
+                    </select>
+
+
+
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >Telefone 1:</label>
+                    <!-- <b-form-input v-model="dados.tel1" type="text" required v-mask="'(##)#####-####'"
+                    placeholder="DDD+número fixo ou celular"></b-form-input> -->
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >Telefone 2:</label>
+                    <!-- <b-form-input v-model="dados.tel2" type="text" required v-mask="'(##)#####-####'"
+                    placeholder="DDD+número fixo ou celular"></b-form-input> -->
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >CPF:</label>
+                    <!-- <b-form-input v-model="dados.cpf" type="text" required v-mask="'###.###.###-##'" placeholder="000.000.000-00"></b-form-input> -->
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >RG:</label>
+                    <!-- <b-form-input v-model="dados.rg" type="text" required v-mask="'##.###.###-##'" placeholder="00.000.000-0"></b-form-input>
+                    <b-form-text>Caso o dígito do seu RG termine em "x", coloque "0" no lugar.</b-form-text> -->
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="labelCampo" for="" >Cartão Cidadão (Louveira):</label>
+                    <!-- <b-form-input v-model="dados.cidadao" type="text" required v-mask="'#############'" placeholder=""></b-form-input>
+                    <b-form-text>Caso o cartão esteja inválido por quaisquer motivos, você deverá entrar em contato direto com o Cartão Cidadão ou seguir até um posto mais próximo.</b-form-text> -->
+                    <input type="text" name="" id="">
+                  </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary mt-2" type="submit">Salvar Dados Pessoais</button>
+        </div>
+      </form>
+  </div>
