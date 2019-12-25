@@ -8,9 +8,13 @@ import { InicioComponent } from "./pages/public/Inicio/inicio/inicio.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-todos/depoimentos-todos.component';
+import { InscricaoComponent } from './pages/subscriber/Inscricao/inscricao/inscricao.component';
+import { PessoalComponent } from './pages/subscriber/Inscricao/pessoal/pessoal.component';
+import { TermosComponent } from './pages/subscriber/Inscricao/termos/termos.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
+  // { path: "**", component: InicioComponent }, // depois criar rota para erro
   { path: "acesso", component: LoginComponent },
   { path: "cadastro", component: CadastroComponent },
   { path: "contato", component: ContatoComponent },
@@ -19,6 +23,10 @@ const routes: Routes = [
   { path: "perguntas", component: PerguntasComponent },
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
+  { path: "inscricao", component: InscricaoComponent, children: [
+    {path: "termos", component: TermosComponent},
+    {path: "pessoal", component: PessoalComponent},
+  ]}, // rota com guardas
 ];
 
 @NgModule({

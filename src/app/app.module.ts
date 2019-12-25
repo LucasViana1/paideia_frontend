@@ -20,7 +20,11 @@ import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-tod
 import { AdmComponent } from './pages/admin/Administrador/adm/adm.component';
 import { FormularioComponent } from './pages/subscriber/Inscricao/formulario/formulario.component';
 import { SimuladoComponent } from './pages/subscriber/Simulado/simulado/simulado.component';
+import { InscricaoComponent } from './pages/subscriber/Inscricao/inscricao/inscricao.component';
 
+import { FormsModule } from '@angular/forms';
+import { PessoalComponent } from './pages/subscriber/Inscricao/pessoal/pessoal.component';
+import { TermosComponent } from './pages/subscriber/Inscricao/termos/termos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +43,12 @@ import { SimuladoComponent } from './pages/subscriber/Simulado/simulado/simulado
     DepoimentosTodosComponent,
     AdmComponent,
     FormularioComponent,
-    SimuladoComponent
+    SimuladoComponent,
+    InscricaoComponent,
+    PessoalComponent,
+    TermosComponent
   ],
-  imports: [NgbModule, BrowserModule, AppRoutingModule],
+  imports: [NgbModule, BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
