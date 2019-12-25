@@ -22,9 +22,13 @@ import { FormularioComponent } from './pages/subscriber/Inscricao/formulario/for
 import { SimuladoComponent } from './pages/subscriber/Simulado/simulado/simulado.component';
 import { InscricaoComponent } from './pages/subscriber/Inscricao/inscricao/inscricao.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { PessoalComponent } from './pages/subscriber/Inscricao/pessoal/pessoal.component';
 import { TermosComponent } from './pages/subscriber/Inscricao/termos/termos.component';
+
+import { TextMaskModule } from 'angular2-text-mask';
+import { ArquivosComponent } from './pages/subscriber/Inscricao/arquivos/arquivos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,9 +50,10 @@ import { TermosComponent } from './pages/subscriber/Inscricao/termos/termos.comp
     SimuladoComponent,
     InscricaoComponent,
     PessoalComponent,
-    TermosComponent
+    TermosComponent,
+    ArquivosComponent
   ],
-  imports: [NgbModule, BrowserModule, AppRoutingModule, FormsModule],
+  imports: [NgbModule, BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, TextMaskModule],
   providers: [],
   bootstrap: [AppComponent]
 })
