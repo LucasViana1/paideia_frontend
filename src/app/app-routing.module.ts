@@ -11,6 +11,7 @@ import { DepoimentosTodosComponent } from './pages/public/Inicio/depoimentos-tod
 import { InscricaoComponent } from './pages/subscriber/Inscricao/inscricao/inscricao.component';
 import { PessoalComponent } from './pages/subscriber/Inscricao/pessoal/pessoal.component';
 import { TermosComponent } from './pages/subscriber/Inscricao/termos/termos.component';
+import { ArquivosComponent } from './pages/subscriber/Inscricao/arquivos/arquivos.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: "inscricao", component: InscricaoComponent, children: [
     {path: "termos", component: TermosComponent},
     {path: "pessoal", component: PessoalComponent},
+    {path: "arquivos", component: ArquivosComponent},
   ]}, // rota com guardas
 ];
 
