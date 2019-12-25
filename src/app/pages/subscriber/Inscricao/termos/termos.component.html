@@ -1,0 +1,85 @@
+<div>
+    <h1>INSCRIÇÃO 2º SEMESTRE 2019</h1>
+
+    <!--fim das inscrições-->
+    <!-- v-if="this.listagem[0].fim == 1" -->
+    <!-- <div class="text-center">
+      <h4>Todas as vagas foram preenchidas, inscrições finalizadas.</h4>
+    </div> -->
+
+    <!--usuario que já fez inscrição e as inscrições ainda não finalizaram para os demais-->
+    <!--<div v-if="this.listagem[0].fim != 1 ">
+      <center>
+        <h4>
+          {{this.nome}}, você já realizou a inscrição para o 2º semestre de 2019, acompanhe em seu e-mail a
+          data para a próxima etapa da matrícula.
+        </h4>
+      </center>
+    </div>-->
+
+    <!--termo de responsabilidade-->
+    <!-- v-if="this.listagem[0].fim == 0" -->
+    <div>
+      <h3 class="text-center">TERMO DE RESPONSABILIDADE - REGRAS DE FREQUÊNCIA E CONDUTA</h3>
+      <b>Ao se inscrever no CURSINHO FOCUS da ASSOCIAÇÃO PAIDEIA, o (a) aluno (a) assume a responsabilidade de cumprir e
+         respeitar as seguintes normas:</b>
+      <div id="termo">
+        <ol>
+          <li *ngFor="let item of normas">
+              <div style="font-weight: initial; text-align: justify;">
+                {{item.norma}}
+              </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="confirma-termos">
+        <input type="checkbox" [(ngModel)]="theCheckbox"  data-md-icheck (change)="toggleVisibility($event)" id="checkbox-confirma-termos"/>
+          <label for="checkbox-confirma-termos" class="ml-2">Li e aceito os termos de responsabilidade.</label>
+      </div>
+
+      <div class="text-center">
+        <!-- disabled v-if="!aceitar" -->
+        <button *ngIf="!marked" class="btn btn-success mt-3" disabled="true">Avançar</button>
+        <!--  @click.prevent="proximo()" v-else -->
+        <button *ngIf="marked" class="btn btn-success mt-3" (click)="next()">Avançar</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- modelo de checkbox -->
+  <!-- <div name="{{ name }}"></div>
+  <label class="container">
+      <input type="checkbox" [(ngModel)]="theCheckbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+          Checkbox is <span *ngIf="marked">checked</span><span *ngIf="!marked">unchecked</span>
+
+        <span class="checkmark"></span>
+      </label>
+
+    <div>And <b>ngModel</b> also works, it's value is <b>{{theCheckbox}}</b></div> -->
+
+
+     <!-- exemplo form simples -->
+    <!-- <div formGroupName="address">
+        <h3>Address</h3>
+
+        <label>
+          Street:
+          <input type="text" formControlName="street">
+        </label>
+        <label>
+          City:
+          <input type="text" formControlName="city">
+        </label>
+
+        <label>
+          State:
+          <input type="text" formControlName="state">
+        </label>
+
+        <label>
+          Zip Code:
+          <input type="text" formControlName="zip">
+        </label>
+      </div> -->

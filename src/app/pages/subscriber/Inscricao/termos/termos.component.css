@@ -1,0 +1,20 @@
+#termo{
+  background-color: #E0E0E0;
+  border-radius: 10px;
+  margin-top: 21px;
+  padding: 8px;
+}
+ol li{
+  font-weight: bold;
+  margin-top: 14px;
+}
+ol{
+  padding-top: 7px;
+  padding-bottom: 14px;
+  /* padding-left: 6px;*/
+  padding-right: 14px;
+}
+.confirma-termos {
+  margin-top: 16px;
+  padding: 8px;
+}
