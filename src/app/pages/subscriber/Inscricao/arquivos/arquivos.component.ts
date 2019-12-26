@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+// import { FormBuilder } from "@angular/forms";
 
 @Component({
-  selector: 'app-arquivos',
-  templateUrl: './arquivos.component.html',
-  styleUrls: ['./arquivos.component.css']
+  selector: "app-arquivos",
+  templateUrl: "./arquivos.component.html",
+  styleUrls: ["./arquivos.component.css"]
 })
 export class ArquivosComponent implements OnInit {
-
   base64textString = [];
   onUploadChange(evt: any) {
     const file = evt.target.files[0];
@@ -17,16 +17,34 @@ export class ArquivosComponent implements OnInit {
     }
   }
   handleReaderLoaded(e) {
-    this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
+    this.base64textString.push(
+      "data:image/png;base64," + btoa(e.target.result)
+    );
   }
   // ver base64, para testes
-  base64(){
+  base64() {
     console.log(this.base64textString);
   }
 
-  constructor() { }
+  constructor() {}
+  // constructor(public fb: FormBuilder) {}
 
-  ngOnInit() {
+  // formArquivos = this.fb.group({
+  //   nome_completo: [""],
+  //   data: [""],
+  //   estado: [""],
+  //   cidade: [""],
+  //   tel1: [""],
+  //   tel2: [""],
+  //   cpf: [""],
+  //   rg: [""],
+  //   cidadao: [""]
+  // });
+
+  onSubmit() {
+    // let form = this.formArquivos.value;
+    // console.log(JSON.stringify(form));
   }
 
+  ngOnInit() {}
 }

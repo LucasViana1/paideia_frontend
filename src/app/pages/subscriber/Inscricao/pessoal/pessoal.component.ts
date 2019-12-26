@@ -20,7 +20,6 @@ export class PessoalComponent implements OnInit {
 
   constructor(public fb: FormBuilder) { }
 
-
   formPessoal = this.fb.group({
     nome_completo: [''],
     data: [''],
