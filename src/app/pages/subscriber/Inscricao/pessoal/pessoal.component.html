@@ -15,7 +15,6 @@
             <div class="col-sm-5">
                 <div class="form-group">
                   <label class="labelCampo" for="">Nome:</label>
-                    <!-- <b-form-input v-model="dados.nome_completo" type="text" required placeholder="Nome completo"></b-form-input> -->
                     <input type="text" formControlName="nome_completo" class="form-control"
                       placeholder="Nome completo" name="nome_completo" id="nome_completo">
                 </div>
@@ -24,7 +23,6 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Data Nascimento:</label>
-                    <!-- <b-form-input v-model="dados.data" type="text" required v-mask="'##/##/####'" placeholder="dd/mm/aaaa"> -->
                       <input type="text" formControlName="data" class="form-control" [textMask]="{mask: data}"
                         placeholder="dd/mm/aaaa" name="data" id="data">
                 </div>
@@ -33,7 +31,6 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Cidade Nascimento:</label>
-                    <!-- <b-form-input v-model="dados.cidade" type="text" required placeholder=""></b-form-input> -->
                     <input type="text" formControlName="cidade" class="form-control"
                       placeholder="Ex: Louveira" name="cidade" id="cidade">
                 </div>
@@ -43,7 +40,6 @@
                 <!--select para estado-->
                 <div class="form-group">
                     <label class="labelCampo" for="" >Estado:</label>
-                    <!-- <b-form-select v-model="dados.estado" :options="optionsUF" required></b-form-select> -->
                     <select formControlName="estado" class="form-control" name="estado" id="estado">
                       <option *ngFor="let item of estados">{{item}}</option>
                     </select>
@@ -53,8 +49,6 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Telefone 1:</label>
-                    <!-- <b-form-input v-model="dados.tel1" type="text" required v-mask="'(##)#####-####'"
-                    placeholder="DDD+número fixo ou celular"></b-form-input> -->
                     <input type="text" formControlName="tel1" class="form-control" [textMask]="{mask: telefone}"
                       placeholder="DDD+número fixo ou celular" name="tel1" id="tel1">
                 </div>
@@ -63,8 +57,6 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Telefone 2:</label>
-                    <!-- <b-form-input v-model="dados.tel2" type="text" required v-mask="'(##)#####-####'"
-                    placeholder="DDD+número fixo ou celular"></b-form-input> -->
                     <input type="text" formControlName="tel2" class="form-control" [textMask]="{mask: telefone}"
                       placeholder="DDD+número fixo ou celular" name="tel2" id="tel2">
                 </div>
@@ -73,7 +65,6 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="labelCampo" for="" >CPF:</label>
-                    <!-- <b-form-input v-model="dados.cpf" type="text" required v-mask="'###.###.###-##'" placeholder="000.000.000-00"></b-form-input> -->
                     <input type="text" formControlName="cpf" class="form-control" [textMask]="{mask: cpf}"
                       placeholder="000.000.000-00" name="cpf" id="cpf">
                 </div>
@@ -82,8 +73,6 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="labelCampo" for="" >RG:</label>
-                    <!-- <b-form-input v-model="dados.rg" type="text" required v-mask="'##.###.###-##'" placeholder="00.000.000-0"></b-form-input>
-                    <b-form-text>Caso o dígito do seu RG termine em "x", coloque "0" no lugar.</b-form-text> -->
                     <input type="text" formControlName="rg" class="form-control" [textMask]="{mask: rg}"
                       placeholder="00.000.000-0" name="rg" id="rg">
                 </div>
@@ -92,8 +81,6 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Cartão Cidadão (Louveira):</label>
-                    <!-- <b-form-input v-model="dados.cidadao" type="text" required v-mask="'#############'" placeholder=""></b-form-input>
-                    <b-form-text>Caso o cartão esteja inválido por quaisquer motivos, você deverá entrar em contato direto com o Cartão Cidadão ou seguir até um posto mais próximo.</b-form-text> -->
                     <input type="text" formControlName="cidadao" class="form-control" [textMask]="{mask: cidadao}"
                       name="cidadao" id="cidadao">
                   </div>
