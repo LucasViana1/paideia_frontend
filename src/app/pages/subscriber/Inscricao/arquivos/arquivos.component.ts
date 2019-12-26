@@ -8,22 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class ArquivosComponent implements OnInit {
 
   base64textString = [];
-
   onUploadChange(evt: any) {
     const file = evt.target.files[0];
-
     if (file) {
       const reader = new FileReader();
-
       reader.onload = this.handleReaderLoaded.bind(this);
       reader.readAsBinaryString(file);
     }
   }
-
   handleReaderLoaded(e) {
     this.base64textString.push('data:image/png;base64,' + btoa(e.target.result));
   }
-
+  // ver base64, para testes
   base64(){
     console.log(this.base64textString);
   }

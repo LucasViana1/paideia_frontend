@@ -1,4 +1,250 @@
-<input type="file" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg, .pdf" />
+<!-- modelo para codificação e decodificação de base 64 -->
+<!-- <input type="file" (change)="onUploadChange($event)" accept=".png, .jpg, .jpeg, .pdf" />
 <button (click)="base64()" class="btn btn-primary">Ver base64</button>
-<img *ngFor="let item of base64textString"  src={{item}} alt="" id="img">
+<img *ngFor="let item of base64textString"  src={{item}} alt="" id="img"> -->
 
+<div>
+  <form>
+    <!--dados pessoais-->
+    <div class="row" align-h="center">
+      <div class="col-sm-12 text-center">
+        <h2>ARQUIVOS (DOCUMENTOS)</h2>
+      </div>
+
+      <div class="col-sm-12 text-center">
+        <div show class="alert alert-warning" role="alert">
+          IMPORTANTE! Verifique a qualidade da imagem que você está enviando e
+          garanta que estarão claras para visualização, para que não haja
+          problemas na verificação de sua documentação.<br />
+          <hr />
+          Os arquivos deverão estar nos seguintes formatos: .jpg e/ou .png.
+        </div>
+      </div>
+
+      <div class="col-sm-12 text-center">
+        <div show class="alert alert-danger" role="alert">
+          ATENÇÃO! Caso não conseguir enviar os arquivos tente comprimi-los
+          através do site
+          <a
+            href="https://www.websiteplanet.com/pt-br/webtools/imagecompressor/"
+            target="_blank"
+            >https://www.websiteplanet.com/pt-br/webtools/imagecompressor/</a
+          ><br />
+          CASO O ERRO CONTINUE ENTRE EM CONTATO URGENTE
+          contato@associacaopaideia.org.br
+        </div>
+      </div>
+
+      <!-- VERIFICAR COMO IMPLANTAR -->
+      <!-- <div class="col-sm-12 text-center">
+      <b-form-group class="">
+      <div class="opcaoSelecao">VOCÊ É MENOR DE IDADE?</div>
+      <b-form-radio v-model="menor" value="sim">Sim</b-form-radio>
+      <b-form-radio v-model="menor" value="nao">Não</b-form-radio>
+      </b-form-group>
+      </div> -->
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="RG:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">RG:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('rgCandidato', 1)" id="rgCandidato" required></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="rgCandidato"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="CPF:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">CPF:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfCandidato', 2)" id="cpfCandidato" required></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="cpfCandidato"
+          />
+        </div>
+      </div>
+
+      <div sm="11">
+        <div class="separa"></div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Histórico Escolar (Ou Declaração de Matrícula):" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for=""
+            >Histórico Escolar (Ou Declaração de Matrícula):</label
+          >
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('historico', 3)" id="historico" required></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="historico"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Cartão cidadão:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">Cartão cidadão:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('cidadao', 9)" id="cidadao" required></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="cidadao"
+          />
+        </div>
+      </div>
+
+      <div sm="11">
+        <div class="separa"></div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Comprovante de endereço:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">Comprovante de endereço:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('endereco', 7)" id="endereco" required></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="endereco"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Atestado médico:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">Atestado médico:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('medico', 6)" id="medico"></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="medico"
+          />
+        </div>
+      </div>
+
+      <div sm="11">
+        <div class="separa"></div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Comprovante 3º período EJA:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">Comprovante 3º período EJA:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('eja', 5)" id="eja"></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="eja"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Foto:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">Foto:</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('foto', 8)" id="foto" required></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="foto"
+          />
+        </div>
+      </div>
+
+      <div sm="11">
+        <div class="separa"></div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Comprovante de bolsa (caso bolsista):" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for=""
+            >Comprovante de bolsa (caso bolsista):</label
+          >
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('bolsa', 4)" id="bolsa"></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="bolsa"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-5">
+        <!-- <b-form-group label="Comprovante de matrícula ou conclusão do ensino médio:" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for=""
+            >Comprovante de matrícula ou conclusão do ensino médio:</label
+          >
+          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('ensinoMedio', 10)" id="ensinoMedio"></b-form-file> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="ensinoMedio"
+          />
+        </div>
+      </div>
+
+      <div sm="11">
+        <div class="separa"></div>
+      </div>
+
+      <div class="col-sm-5" v-if="menor == 'sim'">
+        <!-- <b-form-group label="RG (Responsável):" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">RG (Responsável):</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" required style="color: black;" plain v-on:change="encodeImageFileAsURL('rgResponsavel', 11)" id="rgResponsavel"></b-form-file>
+<b-form-text>Campo obrigatório para menores de idade!</b-form-text> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="rgResponsavel"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-5" v-if="menor == 'sim'">
+        <!-- <b-form-group label="CPF (Responsável):" class="labelCampo" label-for=""> -->
+        <div class="form-group">
+          <label class="labelCampo" for="">CPF (Responsável):</label>
+          <!-- <b-form-file class="mt-3 form-control-sm" required style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfResponsavel', 12)" id="cpfResponsavel"></b-form-file>
+<b-form-text>Campo obrigatório para menores de idade!</b-form-text> -->
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="cpfResponsavel"
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary ml-sm-4">
+        Enviar arquivos
+      </button>
+    </div>
+  </form>
+</div>
