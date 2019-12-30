@@ -39,15 +39,6 @@
         </div>
       </div>
 
-      <!-- VERIFICAR COMO IMPLANTAR -->
-      <!-- <div class="col-sm-12 text-center">
-      <b-form-group class="">
-      <div class="opcaoSelecao">VOCÊ É MENOR DE IDADE?</div>
-      <b-form-radio v-model="menor" value="sim">Sim</b-form-radio>
-      <b-form-radio v-model="menor" value="nao">Não</b-form-radio>
-      </b-form-group>
-      </div> -->
-
       <!-- <div class="row"> -->
       <div class="col-sm-6">
         <!-- <b-form-group label="RG:" class="labelCampo" label-for=""> -->
@@ -59,6 +50,7 @@
             class="mt-3 form-control-sm form-control-file"
             style="color: black;"
             id="rgCandidato"
+            onchange="convertBase64('rgCandidato')"
           />
         </div>
       </div>
@@ -85,7 +77,7 @@
         <!-- <b-form-group label="Histórico Escolar (Ou Declaração de Matrícula):" class="labelCampo" label-for=""> -->
         <div class="form-group">
           <label class="labelCampo" for=""
-            >Histórico Escolar (Ou Declaração de Matrícula):</label
+            >Histórico escolar, declaração de matrícula, comprovante de matrícula ou conclusão do ensino médio (escolher apenas um):</label
           >
           <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('historico', 3)" id="historico" required></b-form-file> -->
           <input
@@ -130,56 +122,6 @@
       </div>
 
       <div class="col-sm-6">
-        <!-- <b-form-group label="Atestado médico:" class="labelCampo" label-for=""> -->
-        <div class="form-group">
-          <label class="labelCampo" for="">Atestado médico:</label>
-          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('medico', 6)" id="medico"></b-form-file> -->
-          <input
-            type="file"
-            class="mt-3 form-control-sm form-control-file"
-            style="color: black;"
-            id="medico"
-          />
-        </div>
-      </div>
-
-      <div class="col-sm-12">
-        <div class="separa"></div>
-      </div>
-
-      <div class="col-sm-6">
-        <!-- <b-form-group label="Comprovante 3º período EJA:" class="labelCampo" label-for=""> -->
-        <div class="form-group">
-          <label class="labelCampo" for="">Comprovante 3º período EJA:</label>
-          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('eja', 5)" id="eja"></b-form-file> -->
-          <input
-            type="file"
-            class="mt-3 form-control-sm form-control-file"
-            style="color: black;"
-            id="eja"
-          />
-        </div>
-      </div>
-
-      <div class="col-sm-6">
-        <!-- <b-form-group label="Foto:" class="labelCampo" label-for=""> -->
-        <div class="form-group">
-          <label class="labelCampo" for="">Foto:</label>
-          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('foto', 8)" id="foto" required></b-form-file> -->
-          <input
-            type="file"
-            class="mt-3 form-control-sm form-control-file"
-            style="color: black;"
-            id="foto"
-          />
-        </div>
-      </div>
-
-      <div class="col-sm-12">
-        <div class="separa"></div>
-      </div>
-
-      <div class="col-sm-6">
         <!-- <b-form-group label="Comprovante de bolsa (caso bolsista):" class="labelCampo" label-for=""> -->
         <div class="form-group">
           <label class="labelCampo" for=""
@@ -195,13 +137,11 @@
         </div>
       </div>
 
-      <div class="col-sm-6">
-        <!-- <b-form-group label="Comprovante de matrícula ou conclusão do ensino médio:" class="labelCampo" label-for=""> -->
+      <!-- <div class="col-sm-6">
         <div class="form-group">
           <label class="labelCampo" for=""
             >Comprovante de matrícula ou conclusão do ensino médio:</label
           >
-          <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('ensinoMedio', 10)" id="ensinoMedio"></b-form-file> -->
           <input
             type="file"
             class="mt-3 form-control-sm form-control-file"
@@ -209,41 +149,12 @@
             id="ensinoMedio"
           />
         </div>
-      </div>
+      </div> -->
 
       <div class="col-sm-12">
         <div class="separa"></div>
       </div>
 
-      <div class="col-sm-6" v-if="menor == 'sim'">
-        <!-- <b-form-group label="RG (Responsável):" class="labelCampo" label-for=""> -->
-        <div class="form-group">
-          <label class="labelCampo" for="">RG (Responsável):</label>
-          <!-- <b-form-file class="mt-3 form-control-sm" required style="color: black;" plain v-on:change="encodeImageFileAsURL('rgResponsavel', 11)" id="rgResponsavel"></b-form-file>
-<b-form-text>Campo obrigatório para menores de idade!</b-form-text> -->
-          <input
-            type="file"
-            class="mt-3 form-control-sm form-control-file"
-            style="color: black;"
-            id="rgResponsavel"
-          />
-        </div>
-      </div>
-
-      <div class="col-sm-6" v-if="menor == 'sim'">
-        <!-- <b-form-group label="CPF (Responsável):" class="labelCampo" label-for=""> -->
-        <div class="form-group">
-          <label class="labelCampo" for="">CPF (Responsável):</label>
-          <!-- <b-form-file class="mt-3 form-control-sm" required style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfResponsavel', 12)" id="cpfResponsavel"></b-form-file>
-<b-form-text>Campo obrigatório para menores de idade!</b-form-text> -->
-          <input
-            type="file"
-            class="mt-3 form-control-sm form-control-file"
-            style="color: black;"
-            id="cpfResponsavel"
-          />
-        </div>
-      </div>
     </div>
     <br />
     <div class="text-center">
@@ -253,3 +164,32 @@
     </div>
   </form>
 </div>
+
+<script>
+//  function convertBase64(element) {
+//    console.log('certo')
+//     // var filesSelected = document.getElementById(element).files;
+//     // if (filesSelected.length > 0) {
+//     //   var fileToLoad = filesSelected[0];
+//     //   var fileReader = new FileReader();
+
+//     //   fileReader.onload = function(fileLoadedEvent) {
+//     //     var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+//     //     switch (element) {
+//     //       case 'rgCandidato':
+//     //         // window.localStorage.setItem("rgCandidato", srcData);
+//     //         this.rgBase64 = srcData;
+//     //         console.log(srcData);
+//     //         break;
+
+//     //       default:
+//     //         console.log('Falha ao converter arquivo!');
+//     //         break;
+//     //     }
+//     //   };
+//     //   fileReader.readAsDataURL(fileToLoad);
+//     // }
+//   }
+
+</script>
