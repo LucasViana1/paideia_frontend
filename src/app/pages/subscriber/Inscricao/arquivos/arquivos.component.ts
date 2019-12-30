@@ -6,15 +6,8 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./arquivos.component.html",
   styleUrls: ["./arquivos.component.css"]
 })
+// FORÇAR PREENCHIMENTO DE CAMPOS OBRIGATORIOS
 export class ArquivosComponent implements OnInit {
-
-  // public rgBase64: string;
-  // cpfBase64: string;
-  // historicoBase64: string;
-  // cidadaoBase64: string;
-  // enderecoBase64: string;
-  // bolsaBase64: string;
-
   constructor() {}
   // constructor(public fb: FormBuilder) {}
 
@@ -34,7 +27,6 @@ export class ArquivosComponent implements OnInit {
     // let form = this.formArquivos.value;
     // console.log(JSON.stringify(form));
   }
-
 
   ngOnInit() {}
 }
