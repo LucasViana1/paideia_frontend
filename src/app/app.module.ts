@@ -29,6 +29,9 @@ import { TermosComponent } from './pages/subscriber/Inscricao/termos/termos.comp
 
 import { TextMaskModule } from 'angular2-text-mask';
 import { ArquivosComponent } from './pages/subscriber/Inscricao/arquivos/arquivos.component';
+import { DetalhesComponent } from './pages/admin/detalhes/detalhes.component';
+import { CompletoComponent } from './pages/admin/completo/completo.component';
+import { InscritosComponent } from './pages/admin/inscritos/inscritos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,10 @@ import { ArquivosComponent } from './pages/subscriber/Inscricao/arquivos/arquivo
     InscricaoComponent,
     PessoalComponent,
     TermosComponent,
-    ArquivosComponent
+    ArquivosComponent,
+    DetalhesComponent,
+    CompletoComponent,
+    InscritosComponent
   ],
   imports: [NgbModule, BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, TextMaskModule],
   providers: [],
