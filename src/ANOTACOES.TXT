@@ -1,6 +1,25 @@
 Alterações no banco:
 desconsiderar tabela 'valores'
 
+atualizar arquivos pdf de informações e edital
 
+telas:
+login
+cadastro
+detalhes (inscrito)
+completo (inscrito)
 
+integrações:
+pessoal
+arquivos
+socioeconomico? (VERIFICAR COM ANA)
+login
+recuperação de senha
+cadastro
 
+email:
+realizar testes do envio e templates das mensagens automaticas (cadastro, recuperação de senha, finalização de inscrição)
+enviar email com template feito pela Ana, a todos os candidatos de 2019
+
+extras:
+reconhecer informações de inscritos anteriores
