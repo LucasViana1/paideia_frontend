@@ -1,0 +1,6 @@
+Alterações no banco:
+desconsiderar tabela 'valores'
+
+
+
+
