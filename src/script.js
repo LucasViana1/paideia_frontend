@@ -43,18 +43,3 @@ function convertBase64(element) {
     fileReader.readAsDataURL(fileToLoad);
   }
 }
-
-function a() {
-  console.log("rg: ");
-  console.log(rgBase64);
-  console.log("cpf: ");
-  console.log(cpfBase64);
-  console.log("historico: ");
-  console.log(historicoBase64);
-  console.log("cidadao: ");
-  console.log(cidadaoBase64);
-  console.log("endereco: ");
-  console.log(enderecoBase64);
-  console.log("bolsa: ");
-  console.log(bolsaBase64);
-}
