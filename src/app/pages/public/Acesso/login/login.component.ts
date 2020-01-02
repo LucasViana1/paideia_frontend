@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+  constructor(public fb: FormBuilder) {}
 
-  constructor() { }
+  formLogin = this.fb.group({
+    email: [""],
+    senha: [""]
+  });
 
-  ngOnInit() {
+  onSubmit() {
+    let form = this.formLogin.value;
+    alert(JSON.stringify(form));
   }
 
+  ngOnInit() {}
 }
