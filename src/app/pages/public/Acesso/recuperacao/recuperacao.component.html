@@ -1,0 +1,34 @@
+<div>
+  <h1>RECUPERAÇÃO DE SENHA</h1>
+  <div class="row flex-center">
+    <div class="col-sm-6 text-center">
+      <form [formGroup]="formRecupera" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="labelCampo" for="rec_email"
+            >Para recuperar sua senha digite o e-mail registrado.</label
+          >
+          <input
+            type="text"
+            class="rotulo form-control"
+            placeholder="Digite seu email"
+            name="rec_email"
+            id="rec_email"
+            formControlName="rec_email"
+          />
+        </div>
+
+        <div class="text-center">
+          <button type="submit" v-show="!enviado" class="btn btn-primary mt-2">
+            Enviar
+          </button>
+        </div>
+        <br />
+
+        <div class="alert alert-success" dismissible :show="enviado">
+          E-mail enviado. Caso o mesmo não apareça em sua caixa de entrada,
+          verifique o endereço digitado e tente novamente.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
