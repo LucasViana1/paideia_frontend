@@ -1,0 +1,55 @@
+<div>
+  <form [formGroup]="formSocio" (ngSubmit)="onSubmit()">
+    <!--socioeconomico-->
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2>SOCIOECONÔMICO</h2>
+      </div>
+
+      <div class="col-sm-4" sm="4">
+        <div class="form-group">
+          <label class="labelCampo" for=""
+            >Quantas pessoas moram com você? (incluindo filhos, irmãos, parentes
+            e amigos):</label
+          >
+          <!-- <b-form-radio v-model="dados.qtd_pessoas" name="" value="Moro sozinho">
+               Moro sozinho.</b-form-radio>
+            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Dois a três">
+                Dois a três.</b-form-radio>
+            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Quatro a sete">
+                Quatro a sete.</b-form-radio>
+            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Oito a dez">
+                Oito a dez.</b-form-radio>
+            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Mais de dez">
+                Mais de dez.</b-form-radio> -->
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions1"
+              id="inlineRadio1"
+              value="opcao1"
+              formControlName="teste"
+            />
+            <label class="form-check-label" for="inlineRadio1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions1"
+              id="inlineRadio2"
+              value="opcao2"
+              formControlName="teste"
+            />
+            <label class="form-check-label" for="inlineRadio2">2</label>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>
