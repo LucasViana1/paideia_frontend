@@ -32,6 +32,8 @@ import { ArquivosComponent } from './pages/subscriber/Inscricao/arquivos/arquivo
 import { DetalhesComponent } from './pages/admin/detalhes/detalhes.component';
 import { CompletoComponent } from './pages/admin/completo/completo.component';
 import { InscritosComponent } from './pages/admin/inscritos/inscritos.component';
+import { RecuperacaoComponent } from './pages/public/Acesso/recuperacao/recuperacao.component';
+import { SocioeconomicoComponent } from './pages/subscriber/Inscricao/socioeconomico/socioeconomico.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,9 @@ import { InscritosComponent } from './pages/admin/inscritos/inscritos.component'
     ArquivosComponent,
     DetalhesComponent,
     CompletoComponent,
-    InscritosComponent
+    InscritosComponent,
+    RecuperacaoComponent,
+    SocioeconomicoComponent
   ],
   imports: [NgbModule, BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, TextMaskModule],
   providers: [],

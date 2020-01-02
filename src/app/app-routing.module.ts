@@ -1,3 +1,5 @@
+import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioeconomico/socioeconomico.component";
+import { RecuperacaoComponent } from "./pages/public/Acesso/recuperacao/recuperacao.component";
 import { InscritosComponent } from "./pages/admin/inscritos/inscritos.component";
 import { CompletoComponent } from "./pages/admin/completo/completo.component";
 import { DetalhesComponent } from "./pages/admin/detalhes/detalhes.component";
@@ -21,7 +23,8 @@ const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
   // { path: "**", component: InicioComponent }, // depois criar rota para erro
   { path: "acesso", component: LoginComponent },
-  { path: "cadastro", component: CadastroComponent },
+  { path: "recuperacao", component: RecuperacaoComponent },
+  { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
   { path: "contato", component: ContatoComponent },
   { path: "inicio", component: InicioComponent },
   { path: "noticias", component: NoticiasComponent },
@@ -34,7 +37,8 @@ const routes: Routes = [
     children: [
       { path: "termos", component: TermosComponent },
       { path: "pessoal", component: PessoalComponent },
-      { path: "arquivos", component: ArquivosComponent }
+      { path: "arquivos", component: ArquivosComponent },
+      { path: "socioeconomico", component: SocioeconomicoComponent }
     ]
   }, // rota com guardas
   {
