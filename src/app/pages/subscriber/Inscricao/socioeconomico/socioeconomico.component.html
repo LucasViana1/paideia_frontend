@@ -6,50 +6,1149 @@
         <h2>SOCIOECONÔMICO</h2>
       </div>
 
-      <div class="col-sm-4" sm="4">
+      <div class="col-sm-4">
         <div class="form-group">
-          <label class="labelCampo" for=""
-            >Quantas pessoas moram com você? (incluindo filhos, irmãos, parentes
-            e amigos):</label
-          >
-          <!-- <b-form-radio v-model="dados.qtd_pessoas" name="" value="Moro sozinho">
-               Moro sozinho.</b-form-radio>
-            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Dois a três">
-                Dois a três.</b-form-radio>
-            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Quatro a sete">
-                Quatro a sete.</b-form-radio>
-            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Oito a dez">
-                Oito a dez.</b-form-radio>
-            <b-form-radio v-model="dados.qtd_pessoas" name="" value="Mais de dez">
-                Mais de dez.</b-form-radio> -->
+          <label class="labelCampo">1) Qual o seu gênero?</label>
 
-          <div class="form-check form-check-inline">
+          <div class="form-check">
             <input
               class="form-check-input"
               type="radio"
-              name="inlineRadioOptions1"
-              id="inlineRadio1"
-              value="opcao1"
-              formControlName="teste"
+              id="sexo1"
+              name="sexo"
+              value="Masculino"
+              formControlName="sexo"
             />
-            <label class="form-check-label" for="inlineRadio1">1</label>
+            <label class="form-check-label" for="sexo1">Masculino</label>
           </div>
-          <div class="form-check form-check-inline">
+
+          <div class="form-check">
             <input
               class="form-check-input"
               type="radio"
-              name="inlineRadioOptions1"
-              id="inlineRadio2"
-              value="opcao2"
-              formControlName="teste"
+              id="sexo2"
+              name="sexo"
+              value="Feminino"
+              formControlName="sexo"
             />
-            <label class="form-check-label" for="inlineRadio2">2</label>
+            <label class="form-check-label" for="sexo2">Feminino</label>
+          </div>
+
+          <!-- ADD OPÇÃO PARA INDEFINIDO, BINARIO OU NÃO QR INFORMAR -->
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >2) Há quanto tempo você mora em Louveira?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tempo1"
+              name="mora_tempo"
+              value="Desde que nasci"
+              formControlName="mora_tempo"
+            />
+            <label class="form-check-label" for="mora_tempo1"
+              >a) Desde que nasci.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tempo2"
+              name="mora_tempo"
+              value="Entre 1 e 2 anos"
+              formControlName="mora_tempo"
+            />
+            <label class="form-check-label" for="mora_tempo2"
+              >b) Entre 1 e 2 anos.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tempo3"
+              name="mora_tempo"
+              value="Entre 2 e 3 anos"
+              formControlName="mora_tempo"
+            />
+            <label class="form-check-label" for="mora_tempo3"
+              >c) Entre 2 e 3 anos.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tempo4"
+              name="mora_tempo"
+              value="Mais de 3 anos"
+              formControlName="mora_tempo"
+            />
+            <label class="form-check-label" for="mora_tempo4"
+              >d) Mais de 3 anos.</label
+            >
           </div>
         </div>
       </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >3) Em que localidade da cidade a sua residência se encontra?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              id="local1"
+              type="radio"
+              name="local"
+              value="Bairro na região periférica da cidade"
+              formControlName="local"
+            />
+            <label class="form-check-label" for="local1"
+              >a) Bairro na região periférica da cidade.</label
+            >
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              id="local2"
+              type="radio"
+              name="local"
+              value="Bairro na região central"
+              formControlName="local"
+            />
+            <label class="form-check-label" for="local2"
+              >b) Bairro na região central.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              id="local3"
+              type="radio"
+              name="local"
+              value="Região central da cidade ou centro expandido"
+              formControlName="local"
+            />
+            <label class="form-check-label" for="local3"
+              >c) Região central da cidade ou centro expandido.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              id="local4"
+              type="radio"
+              name="local"
+              value="Condomínio"
+              formControlName="local"
+            />
+            <label class="form-check-label" for="local4">d) Condomínio.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              id="local5"
+              type="radio"
+              name="local"
+              value="Zona Rural (Fazenda, Sítio, Chácara)"
+              formControlName="local"
+            />
+            <label class="form-check-label" for="local5"
+              >e) Zona Rural (Fazenda, Sítio, Chácara).</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo">4) Quem mora com você?</label>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas1"
+              name="mora_pessoas"
+              value="Moro sozinho (a)"
+              formControlName="mora_pessoas"
+            />
+            <label class="form-check-label" for="mora_pessoas1"
+              >a)Moro sozinho (a)</label
+            >
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Quantas pessoas moram na sua casa? (Contando com pais, irmãos ou
+            outros parentes que moram em uma mesma casa).</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas_qtd1"
+              name="mora_pessoas_qtd"
+              value="Duas pessoas"
+              formControlName="mora_pessoas_qtd"
+            />
+            <label class="form-check-label" for="mora_pessoas_qtd1"
+              >a) Duas pessoas.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas_qtd2"
+              name="mora_pessoas_qtd"
+              value="Três pessoas"
+              formControlName="mora_pessoas_qtd"
+            />
+            <label class="form-check-label" for="mora_pessoas_qtd2"
+              >b) Três pessoas.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas_qtd3"
+              name="mora_pessoas_qtd"
+              value="Quatro pessoas"
+              formControlName="mora_pessoas_qtd"
+            />
+            <label class="form-check-label" for="mora_pessoas_qtd3"
+              >c) Quatro pessoas.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas_qtd4"
+              name="mora_pessoas_qtd"
+              value="Cinco pessoas"
+              formControlName="mora_pessoas_qtd"
+            />
+            <label class="form-check-label" for="mora_pessoas_qtd4"
+              >d) Cinco pessoas.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas_qtd5"
+              name="mora_pessoas_qtd"
+              value="Seis pessoas"
+              formControlName="mora_pessoas_qtd"
+            />
+            <label class="form-check-label" for="mora_pessoas_qtd5"
+              >e) Seis pessoas.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_pessoas_qtd6"
+              name="mora_pessoas_qtd"
+              value="Moro sozinho (a)"
+              formControlName="mora_pessoas_qtd"
+            />
+            <label class="form-check-label" for="mora_pessoas_qtd6"
+              >f) Moro sozinho (a).</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo">) A casa onde você mora é?</label>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tipo1"
+              name="mora_tipo"
+              value="Própria"
+              formControlName="mora_tipo"
+            />
+            <label class="form-check-label" for="mora_tipo1">a) Própria.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tipo2"
+              name="mora_tipo"
+              value="Alugada"
+              formControlName="mora_tipo"
+            />
+            <label class="form-check-label" for="mora_tipo2">b) Alugada.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mora_tipo3"
+              name="mora_tipo"
+              value="Cedida"
+              formControlName="mora_tipo"
+            />
+            <label class="form-check-label" for="mora_tipo3">c) Cedida.</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Você exerce alguma atividade remunerada?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_candidato1"
+              name="trab_candidato"
+              value="Sim, em tempo parcial (até 20 horas semanais)"
+              formControlName="trab_candidato"
+            />
+            <label class="form-check-label" for="trab_candidato1"
+              >a) Sim, em tempo parcial (até 20 horas semanais).</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_candidato2"
+              name="trab_candidato"
+              value="Sim, em tempo integral (até 30 horas semanais)"
+              formControlName="trab_candidato"
+            />
+            <label class="form-check-label" for="trab_candidato2"
+              >b) Sim, em tempo integral (até 30 horas semanais).</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_candidato3"
+              name="trab_candidato"
+              value="Sim, mas se trata de trabalho eventual"
+              formControlName="trab_candidato"
+            />
+            <label class="form-check-label" for="trab_candidato3"
+              >c) Sim, mas se trata de trabalho eventual.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_candidato4"
+              name="trab_candidato"
+              value="Estou desempregado (a)"
+              formControlName="trab_candidato"
+            />
+            <label class="form-check-label" for="trab_candidato4"
+              >d) Estou desempregado (a).</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Quais das alternativas expressa melhor a condição de trabalho de
+            seus pais?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_pais1"
+              name="trab_pais"
+              value="Trabalham regularmente"
+              formControlName="trab_pais"
+            />
+            <label class="form-check-label" for="trab_pais1"
+              >a) Trabalham regularmente.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_pais2"
+              name="trab_pais"
+              value="Estão desempregados"
+              formControlName="trab_pais"
+            />
+            <label class="form-check-label" for="trab_pais2"
+              >b) Estão desempregados.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_pais3"
+              name="trab_pais"
+              value="Vivem de renda"
+              formControlName="trab_pais"
+            />
+            <label class="form-check-label" for="trab_pais3"
+              >c) Vivem de renda.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_pais4"
+              name="trab_pais"
+              value="São falecidos e deixaram pensão"
+              formControlName="trab_pais"
+            />
+            <label class="form-check-label" for="trab_pais4"
+              >d) São falecidos e deixaram pensão.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_pais5"
+              name="trab_pais"
+              value="Outra situação"
+              formControlName="trab_pais"
+            />
+            <label class="form-check-label" for="trab_pais5"
+              >e) Outra situação.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Como você realizou os seus estudos de Ensino Fundamental ou
+            equivalente (EJA)?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="fundamental1"
+              name="fundamental"
+              value="Escola pública municipal ou estadual"
+              formControlName="fundamental"
+            />
+            <label class="form-check-label" for="fundamental1"
+              >a) Escola pública municipal ou estadual.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="fundamental2"
+              name="fundamental"
+              value="Escola da rede privada de ensino (escola particular)"
+              formControlName="fundamental"
+            />
+            <label class="form-check-label" for="fundamental2"
+              >b) Escola da rede privada de ensino (escola particular).</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="fundamental3"
+              name="fundamental"
+              value="Escola do Serviço Social da Industria (SESI)"
+              formControlName="fundamental"
+            />
+            <label class="form-check-label" for="fundamental3"
+              >c) Escola do Serviço Social da Industria (SESI).</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="fundamental4"
+              name="fundamental"
+              value="Outros"
+              formControlName="fundamental"
+            />
+            <label class="form-check-label" for="fundamental4"
+              >d) Outros.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Como você realizou os seus estudos de Ensino Médio ou equivalente
+            (EJA)?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="medio1"
+              name="medio"
+              value="Escola pública municipal ou estadual"
+              formControlName="medio"
+            />
+            <label class="form-check-label" for="medio1"
+              >a) Escola pública municipal ou estadual.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="medio2"
+              name="medio"
+              value="Escola da rede privada de ensino (escola particular)"
+              formControlName="medio"
+            />
+            <label class="form-check-label" for="medio2"
+              >b) Escola da rede privada de ensino (escola particular).</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="medio3"
+              name="medio"
+              value="Escola do Serviço Social da Industria (SESI)"
+              formControlName="medio"
+            />
+            <label class="form-check-label" for="medio3"
+              >c) Escola do Serviço Social da Industria (SESI).</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="medio4"
+              name="medio"
+              value="Outros"
+              formControlName="medio"
+            />
+            <label class="form-check-label" for="medio4">d) Outros.</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Você tem hábito de ler jornais e revistas?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler1"
+              name="ler"
+              value="Diariamente"
+              formControlName="ler"
+            />
+            <label class="form-check-label" for="ler1">a) Diariamente.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler2"
+              name="ler"
+              value="Semanalmente"
+              formControlName="ler"
+            />
+            <label class="form-check-label" for="ler2">b) Semanalmente.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler3"
+              name="ler"
+              value="Ocasionalmente"
+              formControlName="ler"
+            />
+            <label class="form-check-label" for="ler3"
+              >c) Ocasionalmente.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Você tem hábito de ler jornais e revistas?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler_qtd1"
+              name="ler_qtd"
+              value="Nenhum"
+              formControlName="ler_qtd"
+            />
+            <label class="form-check-label" for="ler_qtd1">a) Nenhum.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler_qtd2"
+              name="ler_qtd"
+              value="De 1 a 2 livros"
+              formControlName="ler_qtd"
+            />
+            <label class="form-check-label" for="ler_qtd2"
+              >b) De 1 a 2 livros.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler_qtd3"
+              name="ler_qtd"
+              value="De 3 a 5 livros"
+              formControlName="ler_qtd"
+            />
+            <label class="form-check-label" for="ler_qtd3"
+              >c) De 3 a 5 livros.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="ler_qtd4"
+              name="ler_qtd"
+              value="Mais de 5 livros"
+              formControlName="ler_qtd"
+            />
+            <label class="form-check-label" for="ler_qtd4"
+              >d) Mais de 5 livros.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECKBOX!-->
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+          >) Com quais atividades citadas abaixo você ocupa mais o seu tempo?</label
+          >
+      
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="televisao_atividade"
+              name="televisao_atividade"
+              formControlName="televisao_atividade"
+            />
+            <label class="form-check-label" for="televisao_atividade">a) Televisão</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="musica_atividade"
+              name="musica_atividade"
+              formControlName="musica_atividade"
+            />
+            <label class="form-check-label" for="musica_atividade">b) Música.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="cinema_atividade"
+              name="cinema_atividade"
+              formControlName="cinema_atividade"
+            />
+            <label class="form-check-label" for="cinema_atividade">c) Cinema.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="leitura_atividade"
+              name="leitura_atividade"
+              formControlName="leitura_atividade"
+            />
+            <label class="form-check-label" for="leitura_atividade">d) Leitura.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="internet_atividade"
+              name="internet_atividade"
+              formControlName="internet_atividade"
+            />
+            <label class="form-check-label" for="internet_atividade">e) Internet.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="esporte_atividade"
+              name="esporte_atividade"
+              formControlName="esporte_atividade"
+            />
+            <label class="form-check-label" for="esporte_atividade">f) Esporte.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="nenhuma_atividade"
+              name="nenhuma_atividade"
+              formControlName="nenhuma_atividade"
+            />
+            <label class="form-check-label" for="nenhuma_atividade">g) Nenhuma das atividades.</label>
+          </div>
+      
+        </div>
+        </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Qual é o meio que você mais utiliza para se manter
+            informado?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="informado1"
+              name="informado"
+              value="Jornal impresso"
+              formControlName="informado"
+            />
+            <label class="form-check-label" for="informado1"
+              >a) Jornal impresso.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="informado2"
+              name="informado"
+              value="Televisão"
+              formControlName="informado"
+            />
+            <label class="form-check-label" for="informado2"
+              >b) Televisão.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="informado3"
+              name="informado"
+              value="Internet"
+              formControlName="informado"
+            />
+            <label class="form-check-label" for="informado3">c) Internet</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="informado4"
+              name="informado"
+              value="Rádio"
+              formControlName="informado"
+            />
+            <label class="form-check-label" for="informado4">d) Rádio</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="informado5"
+              name="informado"
+              value="Nenhum dos meios citados"
+              formControlName="informado"
+            />
+            <label class="form-check-label" for="informado5"
+              >e) Nenhum dos meios citados.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Na sua residência você dispões de internet?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="internet1"
+              name="internet"
+              value="Sim e utilizo mais o meu computador para acessar sites"
+              formControlName="internet"
+            />
+            <label class="form-check-label" for="internet1"
+              >a) Sim e utilizo mais o meu computador para acessar sites.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="internet2"
+              name="internet"
+              value="Sim e utilizo mais o meu celular para acessar sites"
+              formControlName="internet"
+            />
+            <label class="form-check-label" for="internet2"
+              >b) Sim e utilizo mais o meu celular para acessar sites.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="internet3"
+              name="internet"
+              value="Sim e utilizo mais o meu tablet para acessar sites"
+              formControlName="internet"
+            />
+            <label class="form-check-label" for="internet3"
+              >c) Sim e utilizo mais o meu tablet para acessar sites.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="internet4"
+              name="internet"
+              value="Eu não tenho acesso a internet em minha residência"
+              formControlName="internet"
+            />
+            <label class="form-check-label" for="internet4"
+              >d) Eu não tenho acesso a internet em minha residência.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Você já prestou vestibular ou Enem?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="fez_vestibular1"
+              name="fez_vestibular"
+              value="Sim"
+              formControlName="fez_vestibular"
+            />
+            <label class="form-check-label" for="fez_vestibular1"
+              >a) Sim.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="fez_vestibular2"
+              name="fez_vestibular"
+              value="Não"
+              formControlName="fez_vestibular"
+            />
+            <label class="form-check-label" for="fez_vestibular2">b) Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Como você avalia ter estudado e trabalhado durante os seus
+            estudos?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_estudo1"
+              name="trab_estudo"
+              value="Atrapalhou os meus estudos"
+              formControlName="trab_estudo"
+            />
+            <label class="form-check-label" for="trab_estudo1"
+              >a) Atrapalhou os meus estudos.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_estudo2"
+              name="trab_estudo"
+              value="Possibilitou os meus estudos"
+              formControlName="trab_estudo"
+            />
+            <label class="form-check-label" for="trab_estudo2"
+              >b) Possibilitou os meus estudos.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_estudo3"
+              name="trab_estudo"
+              value="Possibilitou o meu crescimento pessoal"
+              formControlName="trab_estudo"
+            />
+            <label class="form-check-label" for="trab_estudo3"
+              >c) Possibilitou o meu crescimento pessoal.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_estudo4"
+              name="trab_estudo"
+              value="Não atrapalhou os meus estudos"
+              formControlName="trab_estudo"
+            />
+            <label class="form-check-label" for="trab_estudo4"
+              >d) Não atrapalhou os meus estudos.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="trab_estudo5"
+              name="trab_estudo"
+              value="Não trabalho"
+              formControlName="trab_estudo"
+            />
+            <label class="form-check-label" for="trab_estudo5"
+              >e) Não trabalho.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+            >) Qual o principal motivo que faria você voltar a estudar ou
+            continuar estudando?</label
+          >
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="motivo_estudar1"
+              name="motivo_estudar"
+              value="Conseguir um emprego"
+              formControlName="motivo_estudar"
+            />
+            <label class="form-check-label" for="motivo_estudar1"
+              >a) Conseguir um emprego.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="motivo_estudar2"
+              name="motivo_estudar"
+              value="Progredir no emprego atual"
+              formControlName="motivo_estudar"
+            />
+            <label class="form-check-label" for="motivo_estudar2"
+              >b) Progredir no emprego atual.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="motivo_estudar3"
+              name="motivo_estudar"
+              value="Conseguir um emprego melhor"
+              formControlName="motivo_estudar"
+            />
+            <label class="form-check-label" for="motivo_estudar3"
+              >c) Conseguir um emprego melhor.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="motivo_estudar4"
+              name="motivo_estudar"
+              value="Adquirir mais conhecimento e ficar atualizado"
+              formControlName="motivo_estudar"
+            />
+            <label class="form-check-label" for="motivo_estudar4"
+              >d) Adquirir mais conhecimento e ficar atualizado.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="motivo_estudar5"
+              name="motivo_estudar"
+              value="Atender às expectativas de meus familiares sobre meus estudos"
+              formControlName="motivo_estudar"
+            />
+            <label class="form-check-label" for="motivo_estudar5"
+              >e) Atender às expectativas de meus familiares sobre meus estudos.</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="motivo_estudar6"
+              name="motivo_estudar"
+              value="Nenhum dos motivos acima"
+              formControlName="motivo_estudar"
+            />
+            <label class="form-check-label" for="motivo_estudar6"
+              >f) Nenhum dos motivos acima.</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label class="labelCampo"
+          >) Como você faz para se deslocar pela cidade?</label
+          >
+      
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="transporte1"
+              name="transporte"
+              value="Uso o transporte público (ônibus)"
+              formControlName="transporte"
+            />
+            <label class="form-check-label" for="transporte1">a) Uso o transporte público (ônibus).</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="transporte2"
+              name="transporte"
+              value="Uso veículo próprio (motocicleta, automóvel, bicicleta)"
+              formControlName="transporte"
+            />
+            <label class="form-check-label" for="transporte2">b) Uso veículo próprio (motocicleta, automóvel, bicicleta).</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="transporte3"
+              name="transporte"
+              value="Desloco-me a pé"
+              formControlName="transporte"
+            />
+            <label class="form-check-label" for="transporte3">c) Desloco-me a pé.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="transporte4"
+              name="transporte"
+              value="Faço uso combinado de dois ou mais meios de transportes"
+              formControlName="transporte"
+            />
+            <label class="form-check-label" for="transporte4">d) Faço uso combinado de dois ou mais meios de transportes.</label>
+          </div>
+      
+        </div>
+        </div>
+
       <div class="text-center">
         <button class="btn btn-primary" type="submit">Enviar</button>
       </div>
     </div>
+    <!-- fecha row -->
   </form>
+  {{ formSocio.value | json }}
 </div>
