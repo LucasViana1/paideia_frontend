@@ -1,1 +1,130 @@
-<p>cadastro works!</p>
+<div>
+  <h1>CADASTRO AO SISTEMA</h1>
+
+  <!--Periodo de pré-inscrição (alterar texto para pós inscrição):-->
+  <!-- <div v-if="!ver">
+    <p class="text-center">
+      <b
+        >O período de inscrições iniciarão no dia 19/08/2019 a partir das 10:00
+        horas.</b
+      >
+    </p>
+    <p class="text-center">
+      <b
+        >Antes de se inscrever, leia o edital
+        <a href="https://backend.associacaopaideia.org.br/edital">AQUI</a></b
+      >
+    </p>
+  </div> -->
+
+  <!--Periodo de inscrição:-->
+  <div class="text-center" v-if="ver">
+    O cadastro ao sistema deve ser realizado para prosseguir com a inscrição.
+    <br />
+    Após realizar o cadastro, você receberá um e-mail com o código de
+    confirmação, e após validar o código no site, poderá acessar sua conta para
+    fazer a inscrição.<br />
+    <br />
+    <b>ATENÇÃO! Esse cadastro não garante sua vaga ao projeto!</b>
+    <br />
+    <div class="row flex-center">
+      <div class="col-sm-6 text-center">
+        <div show class="alert alert-danger" role="alert">
+          Cadastro válido somente durante o periodo de inscrição!
+        </div>
+        <br />
+        <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="labelCampo" for="nome">Nome:</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              class="form-control"
+              placeholder="Digite seu nome"
+              formControlName="nome"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="labelCampo" for="sobrenome"
+              >Sobrenome (completo):</label
+            >
+            <input
+              type="text"
+              name="sobrenome"
+              id="sobrenome"
+              class="form-control"
+              placeholder="Digite seu sobrenome"
+              formControlName="sobrenome"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="labelCampo" for="email"
+              >E-mail (pessoal e de uso diário):</label
+            >
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control"
+              placeholder="Digite seu e-mail"
+              formControlName="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="labelCampo" for="Senha">Senha:</label>
+            <input
+              type="text"
+              name="senha"
+              id="senha"
+              class="form-control"
+              placeholder="Digite sua senha"
+              formControlName="senha"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="labelCampo" for="confirmaSenha"
+              >Confirme sua senha:</label
+            >
+            <input
+              type="text"
+              name="confirmaSenha"
+              id="confirmaSenha"
+              class="form-control"
+              placeholder="Digite sua senha novamente"
+              formControlName="confirmaSenha"
+            />
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+          </div>
+
+          <!-- <div
+            class="alert alert-danger"
+            role="alert"
+            dismissible
+            :show="senhaDiferente"
+            class="mt-2"
+          >
+            A senha está divergente!
+          </div>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            dismissible
+            :show="cadastroDuplicado != ''"
+            class="mt-2"
+          >
+            E-mail já está cadastrado! Recupere sua senha clicando
+            <a href="/recuperacao">AQUI</a>
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
