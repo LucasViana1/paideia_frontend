@@ -13,3 +13,8 @@ h2 {
   margin-bottom: 18px;
   color: #c757a1;
 }
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
