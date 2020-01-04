@@ -36,6 +36,7 @@ import { RecuperacaoComponent } from "./pages/public/Acesso/recuperacao/recupera
 import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioeconomico/socioeconomico.component";
 
 import { HttpClientModule } from "@angular/common/http";
+import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { HttpClientModule } from "@angular/common/http";
     CompletoComponent,
     InscritosComponent,
     RecuperacaoComponent,
-    SocioeconomicoComponent
+    SocioeconomicoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     NgbModule,

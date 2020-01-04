@@ -14,7 +14,6 @@ function convertBase64(element) {
 
     fileReader.onload = function(fileLoadedEvent) {
       var srcData = fileLoadedEvent.target.result; // <--- data: base64
-
       switch (element) {
         case "rgCandidato":
           rgBase64 = srcData;

@@ -18,10 +18,10 @@ import { InscricaoComponent } from "./pages/subscriber/Inscricao/inscricao/inscr
 import { PessoalComponent } from "./pages/subscriber/Inscricao/pessoal/pessoal.component";
 import { TermosComponent } from "./pages/subscriber/Inscricao/termos/termos.component";
 import { ArquivosComponent } from "./pages/subscriber/Inscricao/arquivos/arquivos.component";
+import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
-  // { path: "**", component: InicioComponent }, // depois criar rota para erro
   { path: "acesso", component: LoginComponent },
   { path: "recuperacao", component: RecuperacaoComponent },
   { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
@@ -49,7 +49,8 @@ const routes: Routes = [
       { path: "detalhes", component: DetalhesComponent },
       { path: "completo", component: CompletoComponent }
     ]
-  } // rota com guardas
+  }, // rota com guardas
+  { path: "**", component: PageNotFoundComponent }, // depois criar rota para erro
 ];
 
 @NgModule({
