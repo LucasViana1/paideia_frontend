@@ -17,6 +17,8 @@ function convertBase64(element) {
       switch (element) {
         case "rgCandidato":
           rgBase64 = srcData;
+          // document.getElementById('rgCandidatoHidden').value = rgBase64;
+          document.getElementById('rgCandidatoHidden').innerHTML = rgBase64;
           break;
         case "cpfCandidato":
           cpfBase64 = srcData;
@@ -41,4 +43,35 @@ function convertBase64(element) {
     };
     fileReader.readAsDataURL(fileToLoad);
   }
+}
+
+function enviarArquivos(){
+  console.log('idUSer:')
+  console.log(window.localStorage.getItem('id'))
+  console.log('rgBase64:')
+  console.log(rgBase64)
+  fetch('http://localhost:3000' + '/insereDadosArquivos', {
+    method: "POST",
+    body: JSON.stringify({
+      idUser: window.localStorage.getItem('id'),
+      rgCandidato: rgBase64,
+      cpfCandidato: '',
+      historico: '',
+      bolsa: '',
+      eja: '',
+      medico: '',
+      endereco: '',
+      foto: '',
+      cidadao: '',
+      ensinoMedio: '',
+      rgResponsavel: '',
+      cpfResponsavel: '',
+    })
+  }).then(res =>{
+    console.log('res')
+    console.log(res)
+  }).catch(err =>{
+    console.log('err')
+    console.log(err)
+  });
 }

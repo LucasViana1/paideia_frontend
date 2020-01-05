@@ -11,6 +11,7 @@ export class SocioeconomicoComponent implements OnInit {
 
   formSocio = this.fb.group({
     sexo: [""],
+    idade: [""],
     mora_tempo: [""],
     local: [""],
     mora_pessoas_perentesco: [""], // talvez remover

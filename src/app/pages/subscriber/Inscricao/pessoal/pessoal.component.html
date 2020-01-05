@@ -12,11 +12,18 @@
                   <b>ATENÇÃO! </b>O CARTÃO CIDADÃO DEVE ESTAR EM DIA, DO CONTRÁRIO A INSCRIÇÃO SERÁ CANCELADA!
                 </div>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-3">
                 <div class="form-group">
                   <label class="labelCampo" for="">Nome:</label>
-                    <input type="text" formControlName="nome_completo" class="form-control"
-                      placeholder="Nome completo" name="nome_completo" id="nome_completo">
+                    <input type="text" formControlName="nome" class="form-control"
+                      placeholder="Primeiro nome" name="nome" id="nome">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="labelCampo" for="">Sobrenome:</label>
+                    <input type="text" formControlName="sobrenome" class="form-control"
+                      placeholder="Sobrenome completo" name="sobrenome" id="sobrenome">
                 </div>
             </div>
 
@@ -27,24 +34,23 @@
                         placeholder="dd/mm/aaaa" name="data" id="data">
                 </div>
             </div>
-
+<!--
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Cidade Nascimento:</label>
                     <input type="text" formControlName="cidade" class="form-control"
                       placeholder="Ex: Louveira" name="cidade" id="cidade">
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col-sm-2">
-                <!--select para estado-->
+            <!-- <div class="col-sm-2">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Estado:</label>
                     <select formControlName="estado" class="form-control" name="estado" id="estado">
                       <option *ngFor="let item of estados">{{item}}</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-sm-3">
                 <div class="form-group">
@@ -54,15 +60,15 @@
                 </div>
             </div>
 
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Telefone 2:</label>
                     <input type="text" formControlName="tel2" class="form-control" [textMask]="{mask: telefone}"
                       placeholder="DDD+número fixo ou celular" name="tel2" id="tel2">
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >CPF:</label>
                     <input type="text" formControlName="cpf" class="form-control" [textMask]="{mask: cpf}"
@@ -70,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >RG:</label>
                     <input type="text" formControlName="rg" class="form-control" [textMask]="{mask: rg}"
@@ -78,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <label class="labelCampo" for="" >Cartão Cidadão (Louveira):</label>
                     <input type="text" formControlName="cidadao" class="form-control" [textMask]="{mask: cidadao}"
@@ -86,11 +92,11 @@
                   </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label class="labelCampo" for="" >Curso desejado:</label>
-                <!-- <input type="text" formControlName="cidadao" class="form-control"
-                  name="cidadao" id="cidadao"> -->
+                <input type="text" formControlName="curso_desejado" class="form-control"
+                  placeholder="Medicina, Direito, ..." name="curso_desejado" id="curso_desejado">
               </div>
           </div>
         </div>

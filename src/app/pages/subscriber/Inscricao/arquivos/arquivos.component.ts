@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-// import { FormBuilder } from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "app-arquivos",
@@ -8,23 +8,18 @@ import { Component, OnInit } from "@angular/core";
 })
 // FORÇAR PREENCHIMENTO DE CAMPOS OBRIGATORIOS
 export class ArquivosComponent implements OnInit {
-  constructor() {}
-  // constructor(public fb: FormBuilder) {}
+  // constructor() {}
+  constructor(public fb: FormBuilder) {}
 
-  // formArquivos = this.fb.group({
-  //   nome_completo: [""],
-  //   data: [""],
-  //   estado: [""],
-  //   cidade: [""],
-  //   tel1: [""],
-  //   tel2: [""],
-  //   cpf: [""],
-  //   rg: [""],
-  //   cidadao: [""]
-  // });
-
+  formArquivos = this.fb.group({
+    rgCandidato: [""],
+  });
+  rgCandidatoo:any;
   onSubmit() {
-    // let form = this.formArquivos.value;
+    // this.rgCandidatoo = document.getElementById('rgCandidatoHidden')
+    let form = this.formArquivos.value;
+    console.log(form)
+    console.log(this.rgCandidatoo)
     // console.log(JSON.stringify(form));
   }
 

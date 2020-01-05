@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
+import {SubscriptionAPIService} from '../../../../services/subscription-api.service';
 
 @Component({
   selector: 'app-pessoal',
@@ -14,22 +15,24 @@ export class PessoalComponent implements OnInit {
   public cpf = [/[0-9]/, /\d/, /\d/, '.', /\d/,/\d/,/\d/, '.', /\d/, /\d/, /\d/, '-',/\d/,/\d/];
   public rg = [/[0-9]/, /\d/, '.', /\d/,/\d/,/\d/, '.', /\d/, /\d/, /\d/, '-',/\d/];
   public cidadao = [/[0-9]/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/];
-  estados = [
-   'Selecione','SP','AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SE','TO'
-  ]
+  // estados = [
+  //  'Selecione','SP','AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SE','TO'
+  // ]
 
-  constructor(public fb: FormBuilder) { }
+  constructor(public fb: FormBuilder, private service: SubscriptionAPIService) { }
 
   formPessoal = this.fb.group({
-    nome_completo: [''],
+    nome: [''],
+    sobrenome: [''],
     data: [''],
-    estado: [''],
-    cidade: [''],
+    // estado: [''],
+    // cidade: [''],
     tel1: [''],
-    tel2: [''],
+    // tel2: [''],
     cpf: [''],
     rg: [''],
     cidadao: [''],
+    curso_desejado: [''], // ADD CAMPO NO BACK
   })
 
   onSubmit() {
@@ -42,18 +45,18 @@ export class PessoalComponent implements OnInit {
     if(form.data === ''){
       feedbackError += 'Campo data não foi preenchido!  \n';
     }
-    if(form.estado === '' || form.estado === 'Selecione'){
-      feedbackError += 'Campo estado não foi preenchido!  \n';
-    }
-    if(form.cidade === ''){
-      feedbackError += 'Campo cidade não foi preenchido!  \n';
-    }
+    // if(form.estado === '' || form.estado === 'Selecione'){
+    //   feedbackError += 'Campo estado não foi preenchido!  \n';
+    // }
+    // if(form.cidade === ''){
+    //   feedbackError += 'Campo cidade não foi preenchido!  \n';
+    // }
     if(form.tel1 === ''){
-      feedbackError += 'Campo telefone 1 não foi preenchido!  \n';
+      feedbackError += 'Campo telefone não foi preenchido!  \n';
     }
-    if(form.tel2 === ''){
-      feedbackError += 'Campo telefone 2 não foi preenchido!  \n';
-    }
+    // if(form.tel2 === ''){
+    //   feedbackError += 'Campo telefone 2 não foi preenchido!  \n';
+    // }
     if(form.cpf === ''){
       feedbackError += 'Campo CPF não foi preenchido!  \n';
     }
@@ -65,7 +68,10 @@ export class PessoalComponent implements OnInit {
     }
     if(feedbackError !== ''){
       alert(feedbackError);
+    }else{
+      this.service.inserePessoal(form);
     }
+
     // ALTERAR PARA POST A API
     // alert(JSON.stringify(form))
     // IMPLEMENTAR NAVEGAÇÃO AO PROXIMO FORMULARIO

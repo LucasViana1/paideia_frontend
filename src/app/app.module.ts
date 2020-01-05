@@ -37,6 +37,7 @@ import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioecono
 
 import { HttpClientModule } from "@angular/common/http";
 import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
+import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-n
     InscritosComponent,
     RecuperacaoComponent,
     SocioeconomicoComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ValidaComponent
   ],
   imports: [
     NgbModule,

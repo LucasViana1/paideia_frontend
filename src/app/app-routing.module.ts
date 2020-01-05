@@ -19,11 +19,13 @@ import { PessoalComponent } from "./pages/subscriber/Inscricao/pessoal/pessoal.c
 import { TermosComponent } from "./pages/subscriber/Inscricao/termos/termos.component";
 import { ArquivosComponent } from "./pages/subscriber/Inscricao/arquivos/arquivos.component";
 import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
+import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
   { path: "acesso", component: LoginComponent },
   { path: "recuperacao", component: RecuperacaoComponent },
+  { path: "valida", component: ValidaComponent }, // rota com guards
   { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
   { path: "contato", component: ContatoComponent },
   { path: "inicio", component: InicioComponent },

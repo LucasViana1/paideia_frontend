@@ -24,7 +24,7 @@
         </div>
         <br />
 
-        <div class="alert alert-success" dismissible :show="enviado">
+        <div class="alert alert-success" *ngIf="showMessage">
           E-mail enviado. Caso o mesmo não apareça em sua caixa de entrada,
           verifique o endereço digitado e tente novamente.
         </div>

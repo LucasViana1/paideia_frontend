@@ -1,0 +1,30 @@
+<div>
+  <h1>VALIDAR E-MAIL</h1>
+  <div class="text-center">
+      Informe o código de autenticação enviado ao seu e-mail no momento em que realizou o cadastro.
+  </div>
+  <br>
+  <div class="row" align-h="center">
+      <div class="col-sm-6 m-auto">
+          <form [formGroup]="formValida" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label class="labelCampo" for="">Código de acesso:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Digite o código enviado por e-mail"
+              name="codigo"
+              id="codigo"
+              formControlName="codigo"
+            />
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Validar</button>
+          </div>
+
+          </form>
+        </div>
+    </div>
+</div>

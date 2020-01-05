@@ -8,7 +8,7 @@
 <img *ngFor="let item of base64textString" src="{{ item }}" alt="" id="img" /> -->
 
 <div>
-  <form>
+  <form [formGroup]="formArquivos" (ngSubmit)="onSubmit()">
     <!--dados pessoais-->
     <div class="row">
       <div class="col-sm-12 text-center">
@@ -52,6 +52,12 @@
             id="rgCandidato"
             onchange="convertBase64('rgCandidato')"
           />
+
+          <!-- <input
+            type="text"
+            id="rgCandidatoHidden"
+            formControlName="rgCandidato"
+          /> -->
         </div>
       </div>
 
@@ -168,6 +174,10 @@
       </button>
     </div>
   </form>
+  <div
+    id="rgCandidatoHidden"
+    [(ngModel)]="rgCandidatoo"
+  ></div>
 </div>
 
 <script>

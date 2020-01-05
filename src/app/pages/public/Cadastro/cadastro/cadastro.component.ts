@@ -8,16 +8,9 @@ import {UsersAPIService} from '../../../../services/users-api.service';
   styleUrls: ["./cadastro.component.css"]
 })
 export class CadastroComponent implements OnInit {
-  postData:any;
-
 
   constructor(public fb: FormBuilder, private service: UsersAPIService) {
-    this.postData = {
-      nome: "teste nome3",
-      sobrenome: "teste nosobrenomeme3",
-      email: "teste email3",
-      senha: "teste senha3"
-    };
+
   }
 
   formCadastro = this.fb.group({
@@ -29,9 +22,31 @@ export class CadastroComponent implements OnInit {
   });
 
   onSubmit() {
-    this.service.cadastraUser(this.postData);
-    // let form = this.formCadastro.value;
-    // alert(JSON.stringify(form));
+    const form = this.formCadastro.value;
+    let feedbackError = '';
+    if(form.senha !== form.confirmaSenha){
+      alert('A senha está divergente!');
+    }
+    else{
+      // validação
+      if(form.nome === ''){
+        feedbackError += 'Campo nome não foi preenchido! \n';
+      }
+      if(form.sobrenome === ''){
+        feedbackError += 'Campo Sobrenome não foi preenchido!  \n';
+      }
+      if(form.email === ''){
+        feedbackError += 'Campo e-mail não foi preenchido!  \n';
+      }
+      if(form.senha === ''){
+        feedbackError += 'Campo senha não foi preenchido!  \n';
+      }
+      if(feedbackError !== ''){
+        alert(feedbackError);
+      } else{
+        this.service.cadastraUser(form);
+      }
+    }
   }
 
   ngOnInit() {}

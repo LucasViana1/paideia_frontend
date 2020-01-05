@@ -45,28 +45,28 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/inscricao" routerLinkActive="active"
-          >Inscrições 1º semestre 2020</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/acesso" routerLinkActive="active"
-          >Acesse sua conta</a
-        >
-      </li>
-      <li class="nav-item">
         <a class="nav-link" routerLink="/cadastro" routerLinkActive="active"
           >Cadastro</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="adm === null">
+        <a class="nav-link" routerLink="/inscricao" routerLinkActive="active"
+          >Inscrições 1º semestre 2020</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="adm === 1">
         <a class="nav-link" routerLink="/adm" routerLinkActive="active"
           >Administrador</a
         >
         <!-- apenas adm -->
       </li>
-      <!-- IMPLEMENTAR DROPDOWN POSTERIORMENTE AO LOGIN -->
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item" *ngIf="nome === null">
+        <a class="nav-link" routerLink="/acesso" routerLinkActive="active"
+          >Acesse sua conta</a
+        >
+      </li>
+
+      <li class="nav-item dropdown" *ngIf="nome !== null">
         <a
           class="nav-link dropdown-toggle"
           href="#"
@@ -76,14 +76,12 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Acesse sua conta
+          Olá, {{nome}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ação</a>
-          <a class="dropdown-item" href="#">Outra ação</a>
-          <a class="dropdown-item" href="#">Algo mais aqui</a>
+          <button class="dropdown-item" (click)="logout()">Sair</button>
         </div>
-      </li> -->
+      </li>
     </ul>
   </div>
 </nav>
