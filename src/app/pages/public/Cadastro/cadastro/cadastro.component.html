@@ -18,24 +18,26 @@
   </div> -->
 
   <!--Periodo de inscrição:-->
-  <div class="text-center" v-if="ver">
-    O cadastro ao sistema deve ser realizado para prosseguir com a inscrição.
-    <br />
-    Após realizar o cadastro, você receberá um e-mail com o código de
-    confirmação, e após validar o código no site, poderá acessar sua conta para
-    fazer a inscrição.<br />
-    <br />
-    <b>ATENÇÃO! Esse cadastro não garante sua vaga ao projeto!</b>
-    <br />
-    <div class="row flex-center">
-      <div class="col-sm-6 text-center">
-        <div show class="alert alert-danger" role="alert">
-          Cadastro válido somente durante o periodo de inscrição!
-        </div>
-        <br />
-        <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label class="labelCampo" for="nome">Nome:</label>
+  <div class="" v-if="ver">
+    <div class="text-center">
+      O cadastro ao sistema deve ser realizado para prosseguir com a inscrição.
+      <br />
+      Após realizar o cadastro, você receberá um e-mail com o código de
+      confirmação, e após validar o código no site, poderá acessar sua conta para
+      fazer a inscrição.<br />
+      <br />
+      <b>ATENÇÃO! Esse cadastro não garante sua vaga ao projeto!</b>
+      <br />
+    </div>
+      <div class="row flex-center">
+        <div class="col-sm-8">
+          <div show class="alert alert-danger mt-3 text-center" role="alert">
+            Cadastro válido somente durante o periodo de inscrição!
+          </div>
+          <br />
+        <form class="row" [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+          <div class="form-group col-sm-6">
+            <label class="labelCampo" for="nome" >Nome:</label>
             <input
               type="text"
               name="nome"
@@ -43,10 +45,11 @@
               class="form-control"
               placeholder="Digite seu nome"
               formControlName="nome"
+              required
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <label class="labelCampo" for="sobrenome"
               >Sobrenome (completo):</label
             >
@@ -57,10 +60,11 @@
               class="form-control"
               placeholder="Digite seu sobrenome"
               formControlName="sobrenome"
+              required
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <label class="labelCampo" for="email"
               >E-mail (pessoal e de uso diário):</label
             >
@@ -71,10 +75,11 @@
               class="form-control"
               placeholder="Digite seu e-mail"
               formControlName="email"
+              required
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <label class="labelCampo" for="Senha">Senha:</label>
             <input
               type="password"
@@ -83,10 +88,11 @@
               class="form-control"
               placeholder="Digite sua senha"
               formControlName="senha"
+              required
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-sm-6">
             <label class="labelCampo" for="confirmaSenha"
               >Confirme sua senha:</label
             >
@@ -97,10 +103,11 @@
               class="form-control"
               placeholder="Digite sua senha novamente"
               formControlName="confirmaSenha"
+              required
             />
           </div>
 
-          <div class="text-center">
+          <div class="text-center col-sm-12">
             <button class="btn btn-primary" type="submit">Cadastrar</button>
           </div>
 
