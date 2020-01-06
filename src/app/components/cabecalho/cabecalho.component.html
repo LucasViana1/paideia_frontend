@@ -44,29 +44,30 @@
           >Perguntas Frequentes</a
         >
       </li>
-      <li class="nav-item">
+      <!-- ATIVAR NAS INSCRIÇÕES -->
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLink="/cadastro" routerLinkActive="active"
           >Cadastro</a
         >
-      </li>
-      <li class="nav-item" *ngIf="adm === null">
-        <a class="nav-link" routerLink="/inscricao" routerLinkActive="active"
+      </li> -->
+      <li class="nav-item" *ngIf="nivel !== null">
+        <a class="nav-link" routerLink="/inscricao/termos" routerLinkActive="active"
           >Inscrições 1º semestre 2020</a
         >
       </li>
       <li class="nav-item" *ngIf="adm === 1">
-        <a class="nav-link" routerLink="/adm" routerLinkActive="active"
+        <a class="nav-link" routerLink="/adm/inscritos" routerLinkActive="active"
           >Administrador</a
         >
         <!-- apenas adm -->
       </li>
-      <li class="nav-item" *ngIf="nome === null">
+      <li class="nav-item" *ngIf="nivel === null">
         <a class="nav-link" routerLink="/acesso" routerLinkActive="active"
           >Acesse sua conta</a
         >
       </li>
 
-      <li class="nav-item dropdown" *ngIf="nome !== null">
+      <li class="nav-item dropdown" *ngIf="nivel !== null">
         <a
           class="nav-link dropdown-toggle"
           href="#"

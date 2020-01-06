@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class CabecalhoComponent implements OnInit {
   adm:number;
   nome:string;
+  nivel:string = window.localStorage.getItem('nivel');
 
   constructor(private router: Router) {
     console.log(this.nome);
@@ -19,8 +20,8 @@ export class CabecalhoComponent implements OnInit {
     window.localStorage.removeItem('id')
     window.localStorage.removeItem('email')
     this.router.navigate(['/inicio']);
-    window.scrollTo(0, 0);
     location.reload();
+    // window.scrollTo(0, 0);
   }
 
   ngOnInit() {
