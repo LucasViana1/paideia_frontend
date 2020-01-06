@@ -9,7 +9,8 @@ import {Router} from '@angular/router';
 })
 export class InscritosComponent implements OnInit {
   nome:string;
-  inscritos: Array<any>;
+  // inscritos: Array<any>;
+  inscritos:any;
 
   constructor(private service: AdmAPIService, private router: Router) { }
 
