@@ -3,18 +3,18 @@ label {
   font-weight: initial;
   font-size: 105%;
 }
-legend {
-  color: $verdeEscuro;
+.labelCampo {
+  color: #527A25;
   font-weight: bold;
 }
 .opcaoSelecao {
-  color: $verdeDark;
+  color: rgb(51, 88, 9);
   font-weight: initial;
   margin-bottom: 8px;
   font-size: 105%;
 }
 .campo-obrigatorio {
-  color: $verdeEscuro;
+  color: #527A25;
   font-weight: bold;
   font-size: 90%;
 }

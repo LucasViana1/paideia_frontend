@@ -50,7 +50,7 @@
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label class="labelCampo">) Qual a sua idade?</label>
+          <label class="labelCampo">2) Qual a sua idade?</label>
 
           <div class="form-check">
             <input
@@ -103,7 +103,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >2) Há quanto tempo você mora em Louveira?</label
+            >3) Há quanto tempo você mora em Louveira?</label
           >
 
           <div class="form-check">
@@ -164,7 +164,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >3) Em que localidade da cidade a sua residência se encontra?</label
+            >4) Em que localidade da cidade a sua residência se encontra?</label
           >
 
           <div class="form-check">
@@ -257,22 +257,69 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >)	Quem mora com você?</label
+            >5)	Quem mora com você?</label
           >
 
-          <!-- <div class="form-check">
+          <div class="form-check">
             <input
               class="form-check-input"
-              type="radio"
-              id="mora_pessoas_qtd1"
-              name="mora_pessoas_qtd"
-              value="Duas pessoas"
-              formControlName="mora_pessoas_qtd"
+              type="checkbox"
+              id="mora_pessoas_perentesco_sozinho"
+              name="mora_pessoas_perentesco_sozinho"
+              formControlName="mora_pessoas_perentesco_sozinho"
             />
-            <label class="form-check-label" for="mora_pessoas_qtd1"
-              >a) Duas pessoas.</label
-            >
-          </div> -->
+            <label class="form-check-label" for="mora_pessoas_perentesco_sozinho">a) Moro sozinho (a).</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="mora_pessoas_perentesco_pai"
+              name="mora_pessoas_perentesco_pai"
+              formControlName="mora_pessoas_perentesco_pai"
+            />
+            <label class="form-check-label" for="mora_pessoas_perentesco_pai">b) Pai/Padrasto.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="mora_pessoas_perentesco_mae"
+              name="mora_pessoas_perentesco_mae"
+              formControlName="mora_pessoas_perentesco_mae"
+            />
+            <label class="form-check-label" for="mora_pessoas_perentesco_mae">c) Mãe/Madrasta.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="mora_pessoas_perentesco_esposo"
+              name="mora_pessoas_perentesco_esposo"
+              formControlName="mora_pessoas_perentesco_esposo"
+            />
+            <label class="form-check-label" for="mora_pessoas_perentesco_esposo">d)	Esposo (a)/ Companheiro (a).</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="mora_pessoas_perentesco_avo"
+              name="mora_pessoas_perentesco_avo"
+              formControlName="mora_pessoas_perentesco_avo"
+            />
+            <label class="form-check-label" for="mora_pessoas_perentesco_avo">e) Avós/outros parentes.</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="mora_pessoas_perentesco_amigo"
+              name="mora_pessoas_perentesco_amigo"
+              formControlName="mora_pessoas_perentesco_amigo"
+            />
+            <label class="form-check-label" for="mora_pessoas_perentesco_amigo">f) Amigos ou colegas.</label>
+          </div>
 
         </div>
       </div>
@@ -280,7 +327,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Quantas pessoas moram na sua casa? (Contando com pais, irmãos ou
+            >6) Quantas pessoas moram na sua casa? (Contando com pais, irmãos ou
             outros parentes que moram em uma mesma casa).</label
           >
 
@@ -367,7 +414,7 @@
 
       <div class="col-sm-4">
         <div class="form-group">
-          <label class="labelCampo">) A casa onde você mora é?</label>
+          <label class="labelCampo">7) A casa onde você mora é?</label>
 
           <div class="form-check">
             <input
@@ -408,7 +455,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Você exerce alguma atividade remunerada?</label
+            >8) Você exerce alguma atividade remunerada?</label
           >
 
           <div class="form-check">
@@ -469,7 +516,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Quais das alternativas expressa melhor a condição de trabalho de
+            >9) Quais das alternativas expressa melhor a condição de trabalho de
             seus pais?</label
           >
 
@@ -544,7 +591,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Como você realizou os seus estudos de Ensino Fundamental ou
+            >10) Como você realizou os seus estudos de Ensino Fundamental ou
             equivalente (EJA)?</label
           >
 
@@ -606,7 +653,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Como você realizou os seus estudos de Ensino Médio ou equivalente
+            >11) Como você realizou os seus estudos de Ensino Médio ou equivalente
             (EJA)?</label
           >
 
@@ -666,7 +713,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Você tem hábito de ler jornais e revistas?</label
+            >12) Você tem hábito de ler jornais e revistas?</label
           >
 
           <div class="form-check">
@@ -710,7 +757,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Você tem hábito de ler jornais e revistas?</label
+            >13) Excluindo os livros escolares, quantos livros você lê por ano?</label
           >
 
           <div class="form-check">
@@ -770,7 +817,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-          >) Com quais atividades citadas abaixo você ocupa mais o seu tempo?</label
+          >14) Com quais atividades citadas abaixo você ocupa mais o seu tempo?</label
           >
 
           <div class="form-check">
@@ -850,7 +897,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Qual é o meio que você mais utiliza para se manter
+            >15) Qual é o meio que você mais utiliza para se manter
             informado?</label
           >
 
@@ -921,7 +968,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Na sua residência você dispões de internet?</label
+            >16) Na sua residência você dispões de internet?</label
           >
 
           <div class="form-check">
@@ -982,7 +1029,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Você já prestou vestibular ou Enem?</label
+            >17) Você já prestou vestibular ou Enem?</label
           >
 
           <div class="form-check">
@@ -1007,7 +1054,7 @@
               value="Não"
               formControlName="fez_vestibular"
             />
-            <label class="form-check-label" for="fez_vestibular2">b) Não</label>
+            <label class="form-check-label" for="fez_vestibular2">b) Não.</label>
           </div>
         </div>
       </div>
@@ -1015,7 +1062,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Como você avalia ter estudado e trabalhado durante os seus
+            >18) Como você avalia ter estudado e trabalhado durante os seus
             estudos?</label
           >
 
@@ -1090,7 +1137,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-            >) Qual o principal motivo que faria você voltar a estudar ou
+            >19) Qual o principal motivo que faria você voltar a estudar ou
             continuar estudando?</label
           >
 
@@ -1178,7 +1225,7 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label class="labelCampo"
-          >) Como você faz para se deslocar pela cidade?</label
+          >20) Como você faz para se deslocar pela cidade?</label
           >
 
           <div class="form-check">
@@ -1229,11 +1276,10 @@
         </div>
         </div>
 
-      <div class="text-center">
+      <div class="col-sm-12 text-center">
         <button class="btn btn-primary" type="submit">Enviar</button>
       </div>
     </div>
     <!-- fecha row -->
   </form>
-  {{ formSocio.value | json }}
 </div>
