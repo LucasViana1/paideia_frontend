@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
+import {Router} from '@angular/router'
 import {SubscriptionAPIService} from '../../../../services/subscription-api.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class PessoalComponent implements OnInit {
   //  'Selecione','SP','AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SE','TO'
   // ]
 
-  constructor(public fb: FormBuilder, private service: SubscriptionAPIService) { }
+  constructor(public fb: FormBuilder, private service: SubscriptionAPIService, private router: Router) { }
 
   formPessoal = this.fb.group({
     nome: [''],
@@ -66,10 +67,14 @@ export class PessoalComponent implements OnInit {
     if(form.cidadao === ''){
       feedbackError += 'Campo cartão cidadão não foi preenchido!  \n';
     }
+    if(form.curso_desejado === ''){
+      feedbackError += 'Campo curso desejado não foi preenchido!  \n';
+    }
     if(feedbackError !== ''){
       alert(feedbackError);
     }else{
       this.service.inserePessoal(form);
+      this.router.navigate(['/inscricao/arquivos'])
     }
 
     // ALTERAR PARA POST A API
@@ -78,6 +83,10 @@ export class PessoalComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(window.localStorage.getItem('nome') === null){
+      window.scrollTo(0, 0);
+      this.router.navigate(['/inicio']);
+    }
   }
 
 }
