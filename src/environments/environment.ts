@@ -3,8 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  urlBase: 'http://localhost:3000',
+  // production: false,
+  // urlBase: 'http://localhost:3000',
+  production: true,
+  urlBase: 'https://backend.associacaopaideia.org.br/',
 };
 
 /*

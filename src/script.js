@@ -6,6 +6,9 @@ var cidadaoBase64 = "";
 var enderecoBase64 = "";
 var bolsaBase64 = "";
 
+// import {environment} from './environments/environment';
+
+
 function convertBase64(element) {
   var filesSelected = document.getElementById(element).files;
   if (filesSelected.length > 0) {
@@ -17,23 +20,27 @@ function convertBase64(element) {
       switch (element) {
         case "rgCandidato":
           rgBase64 = srcData;
-          // document.getElementById('rgCandidatoHidden').value = rgBase64;
-          document.getElementById('rgCandidatoHidden').innerHTML = rgBase64;
+          document.getElementById('rgCandidatoHidden').value = srcData;
           break;
         case "cpfCandidato":
           cpfBase64 = srcData;
+          document.getElementById('cpfCandidatoHidden').value = srcData;
           break;
         case "historico":
           historicoBase64 = srcData;
+          document.getElementById('historicoHidden').value = srcData;
           break;
         case "cidadao":
           cidadaoBase64 = srcData;
+          document.getElementById('cidadaoHidden').value = srcData;
           break;
         case "endereco":
           enderecoBase64 = srcData;
+          document.getElementById('enderecoHidden').value = srcData;
           break;
         case "bolsa":
           bolsaBase64 = srcData;
+          document.getElementById('bolsaHidden').value = srcData;
           break;
 
         default:
@@ -45,6 +52,7 @@ function convertBase64(element) {
   }
 }
 
+// descontinuado
 function enviarArquivos(){
   console.log('idUSer:')
   console.log(window.localStorage.getItem('id'))

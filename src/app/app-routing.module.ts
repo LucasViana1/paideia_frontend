@@ -20,6 +20,7 @@ import { TermosComponent } from "./pages/subscriber/Inscricao/termos/termos.comp
 import { ArquivosComponent } from "./pages/subscriber/Inscricao/arquivos/arquivos.component";
 import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
 import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
+import { ConcluiInscricaoComponent } from './pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -40,7 +41,8 @@ const routes: Routes = [
       { path: "termos", component: TermosComponent },
       { path: "pessoal", component: PessoalComponent },
       { path: "arquivos", component: ArquivosComponent },
-      { path: "socioeconomico", component: SocioeconomicoComponent }
+      { path: "socioeconomico", component: SocioeconomicoComponent },
+      { path: "conclui", component: ConcluiInscricaoComponent }
     ]
   }, // rota com guardas
   {
@@ -48,7 +50,7 @@ const routes: Routes = [
     component: AdmComponent,
     children: [
       { path: "inscritos", component: InscritosComponent },
-      { path: "detalhes", component: DetalhesComponent },
+      { path: "detalhes/:id", component: DetalhesComponent },
       { path: "completo", component: CompletoComponent }
     ]
   }, // rota com guardas
