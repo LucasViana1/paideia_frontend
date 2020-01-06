@@ -66,16 +66,18 @@ export class UsersAPIService {
             this.router.navigate(['/valida']);
             window.scrollTo(0, 0);
           }
-          else if((res[0].ativo == 1 && res[0].inscrito_atual == 1) || res[0].adm == 1){
+          else if((res[0].ativo == 1) || res[0].adm == 1){
+            // POSTERIORMENTE PERMITIR QUE APENAS INSCRITOS ACESSEM
+          // else if((res[0].ativo == 1 && res[0].inscrito_atual == 1) || res[0].adm == 1){
             //guardar na sessao nome e nivel de acesso
+            this.router.navigate(['/inicio']);
             console.log('acesso ok')
             window.localStorage.setItem('id', res[0].id)
             window.localStorage.setItem('nome', res[0].nome)
             window.localStorage.setItem('nivel', res[0].adm)
             window.localStorage.setItem('email', res[0].email)
-            this.router.navigate(['/inicio']);
-            window.scrollTo(0, 0);
             location.reload();
+            // window.scrollTo(0, 0);
           }
         },
         err => {
