@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import {UsersAPIService} from '../../../../services/users-api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: "app-login",
@@ -8,7 +9,7 @@ import {UsersAPIService} from '../../../../services/users-api.service';
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  constructor(public fb: FormBuilder, private service: UsersAPIService) {}
+  constructor(public fb: FormBuilder, private service: UsersAPIService, private router: Router) {}
 
   formLogin = this.fb.group({
     email: [""],
@@ -32,5 +33,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(window.localStorage.getItem('nivel') !== null){
+      this.router.navigate(['/inicio']);
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import {UsersAPIService} from '../../../../services/users-api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-valida',
@@ -9,7 +10,7 @@ import {UsersAPIService} from '../../../../services/users-api.service';
 })
 export class ValidaComponent implements OnInit {
 
-  constructor(public fb: FormBuilder, private service: UsersAPIService) { }
+  constructor(public fb: FormBuilder, private service: UsersAPIService, private router: Router) { }
 
   formValida = this.fb.group({
     codigo: [""],
@@ -30,6 +31,9 @@ export class ValidaComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(window.localStorage.getItem('nivel') !== null){
+      this.router.navigate(['/inicio']);
+    }
   }
 
 }
