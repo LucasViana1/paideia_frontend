@@ -1,1 +1,74 @@
-<p>detalhes works!</p>
+<div>
+  <h1>{{listagem.dados[0].nome_completo}}</h1>
+  <br>
+  <div class="row">
+      <div class="col-sm-6">
+          <ul style="list-style-type: none;">
+              <li><b>E-mail:</b> {{listagem.dados[0].email}}</li>
+              <li><b>Data Nascimento:</b> {{listagem.dados[0].data_nasc}}</li>
+              <li><b>Telefone:</b> {{listagem.dados[0].tel1}}</li>
+              <li><b>CPF:</b> {{listagem.dados[0].cpf}}</li>
+              <li><b>RG:</b> {{listagem.dados[0].rg}}</li>
+              <li><b>Cartão Cidadão:</b> {{listagem.dados[0].cidadao}}</li>
+              <li><b>Curso Desejado:</b> {{listagem.dados[0].curso_desejado}}</li>
+              <!--IMPLEMENTAR AÇÃO DO BOTÃO ABAIXO-->
+              <!-- <li>
+                  <a href="#/gabaritosimples" class="btn btn-info mt-3 ml-4">GABARITO</a>
+              </li>
+              <li>
+                  <a :href="link" class="btn btn-primary mt-3 ml-4">DADOS COMPLETOS</a>
+              </li>
+              <li>
+                  <b-button v-on:click="cancelaInscrito()" variant="danger" class="mt-3 ml-4">CANCELAR</b-button>
+              </li> -->
+              <br>
+              <!-- <li>
+                  <b-button v-on:click="pdfOuImg()" variant="dark" class="mt-3 ml-4">{{this.pdfImg}}</b-button>
+              </li> -->
+          </ul>
+        </div>
+
+      <!--AJUSTAR MARGIN NESSE TRECHO-->
+      <!--<b-col sm="3" class="desktop-img-col" v-for="(foto,index) in listagem.dados" :key="index">
+          <b-img v-if="foto.tipo == 'FOTO'" :src="foto.arquivo" fluid class="desktop-img"></b-img>
+      </b-col>-->
+      <div class="col-sm-6" style="display: flex; align-items: center; justify-content: center;">
+        <a href="#/gabaritosimples" class="btn btn-success mt-3 ml-4 disabled">GABARITO</a>
+        <a :href="link" class="btn btn-primary mt-3 ml-4 disabled">DADOS COMPLETOS</a>
+      </div>
+    </div>
+
+    <div class="text-center m-auto" style="display: flex; align-items: center; justify-content: center; ">
+      <div class="text-center col-sm-8" style="border: 1px solid gray; border-radius: 10px; padding: 8px;">
+        <button (click)="verImg('RG')" class="ml-4 btn btn-outline-dark">RG</button>
+        <button (click)="verImg('CPF')" class="ml-4 btn btn-outline-dark">CPF</button>
+        <button (click)="verImg('ENDERECO')" class="ml-4 btn btn-outline-dark">Endereço</button>
+        <button (click)="verImg('CIDADAO')" class="ml-4 btn btn-outline-dark" >Cidadão</button>
+        <button (click)="verImg('HISTORICO')" class="ml-4 btn btn-outline-dark">Histórico</button>
+        <button (click)="verImg('BOLSA')" class="ml-4 btn btn-outline-dark">Bolsa</button>
+
+        <div class="text-center mt-2">
+          <div *ngFor="let item of listagem.dados" class="text-center">
+            <img src="{{item.arquivo}}" id="{{item.tipo}}" alt="{{item.tipo}}" title="{{item.tipo}}" width="500px" height="650px"
+            style="display: none;" class="img img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- <div class="card" no-body class="mt-3">
+    <div class="card-header">
+      <div class="" v-for="(imagem,index) in listagem.dados" :key="index">
+
+          li no-body :title="imagem.tipo" v-if="imagem.tipo != 'FOTO'">
+          <li class="nav-item">
+             <div class="text-center">
+                  <b-img v-if="pdfImg == 'IMAGEM'" :src="imagem.arquivo" fluid></b-img>
+                  <object v-if="pdfImg == 'PDF'" class="arquivo" :data="imagem.arquivo"></object>
+              </div>
+              teste
+            </li>
+          </ul>
+      </div>
+    </div> -->
+</div>

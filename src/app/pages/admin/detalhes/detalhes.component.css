@@ -1,0 +1,30 @@
+.container_arquivo{
+  height: 500px;
+}
+.arquivo{
+  margin-top: 20px;
+  height: 300px;
+  width: 600px;
+}
+li b{
+  font-size: 110%;
+}
+.desktop-img-col{
+  margin: 0 10px 15px 0;
+}
+.desktop-img{
+  height: 230px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 770px) {
+  .desktop-img-col{
+      display: none;
+  }
+  .mobile-img{
+      display: block;
+  }
+}
