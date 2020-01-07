@@ -1,27 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Router } from '@angular/router';
-import { environment } from '../../environments/environment'; // dev
+import { Router } from "@angular/router";
+import { environment } from "../../environments/environment"; // dev
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class SubscriptionAPIService {
+  constructor(private http: HttpClient, private router: Router) {}
 
-  constructor(private http: HttpClient, private router: Router) { }
-
-  inserePessoal(postData:any){
+  inserePessoal(postData: any) {
     this.http
       .post(`${environment.urlBase}/insereDadosPessoais`, {
         // idUser: window.localStorage.getItem('id'),
         // codigo: postData.codigo,
-        idUser: window.localStorage.getItem('id'),
+        idUser: window.localStorage.getItem("id"),
         nome_completo: `${postData.nome} ${postData.sobrenome}`,
         data_nasc: postData.data,
-        cidade_nasc: '',
-        estado_nasc: '',
+        cidade_nasc: "",
+        estado_nasc: "",
         tel1: postData.tel1,
-        tel2: '',
+        tel2: "",
         cpf: postData.cpf,
         rg: postData.rg,
         cidadao: postData.cidadao,
@@ -29,62 +28,59 @@ export class SubscriptionAPIService {
       })
       .subscribe(
         res => {
-          console.log('pessoal res: ')
-          console.log(res)
-
+          // console.log('pessoal res: ')
+          // console.log(res)
         },
         err => {
-          console.log('pessoal err: ')
-          console.log(err)
-
+          // console.log('pessoal err: ')
+          // console.log(err)
         }
       );
   }
-  insereArquivos(postData:any){
+  insereArquivos(postData: any) {
     let tamanhoExcedeu = false;
     this.http
       .post(`${environment.urlBase}/insereDadosArquivos`, {
-        idUser: window.localStorage.getItem('id'),
+        idUser: window.localStorage.getItem("id"),
         rgCandidato: postData.rgCandidato,
         cpfCandidato: postData.cpfCandidato,
         historico: postData.historico,
         bolsa: postData.bolsa,
-        eja: '',
-        medico: '',
+        eja: "",
+        medico: "",
         endereco: postData.endereco,
-        foto: '',
+        foto: "",
         cidadao: postData.cidadao,
-        ensinoMedio: '',
-        rgResponsavel: '',
-        cpfResponsavel: '',
+        ensinoMedio: "",
+        rgResponsavel: "",
+        cpfResponsavel: ""
       })
       .subscribe(
         res => {
-          console.log('arquivos res: ')
-          console.log(res)
-
+          // console.log("arquivos res: ");
+          // console.log(res);
         },
         err => {
-          console.log('arquivos err: ')
-          console.log(err)
+          // console.log("arquivos err: ");
+          // console.log(err);
           // alert('Algum arquivo excedeu o limite de tamanho! Favor ajustar o tamanho do arquivo e enviar novamente.')
           // // LOGICA PARA IMPEDIR QUE O CANDIDATO AVANCE PARA A PROXIMA ETAPA
           // this.router.navigate(['/inscricao/arquivos'])
-        },
+        }
       );
-      // se o tamanho dos arquivos não excedeu
-      // if(!tamanhoExcedeu){
-      //   console.log('NAVIGATE: arquivos ok')
-      // }
+    // se o tamanho dos arquivos não excedeu
+    // if(!tamanhoExcedeu){
+    //   console.log('NAVIGATE: arquivos ok')
+    // }
   }
-  insereSocioeconomico(postData:any){
-    console.log('socioeconomico postData')
-    console.log(postData)
+  insereSocioeconomico(postData: any) {
+    // console.log("socioeconomico postData");
+    // console.log(postData);
     this.http
       .post(`${environment.urlBase}/insereDadosSocioeconomicos`, {
         // idUser: window.localStorage.getItem('id'),
         // codigo: postData.codigo,
-        idUser: window.localStorage.getItem('id'),
+        idUser: window.localStorage.getItem("id"),
         sexo: postData.sexo,
         idade: postData.idade,
         mora_tempo: postData.mora_tempo,
@@ -112,23 +108,22 @@ export class SubscriptionAPIService {
         esporte_atividade: postData.esporte_atividade,
         nenhuma_atividade: postData.nenhuma_atividade,
         // checkbox
-        mora_pessoas_perentesco_sozinho: postData.mora_pessoas_perentesco_sozinho,
+        mora_pessoas_perentesco_sozinho:
+          postData.mora_pessoas_perentesco_sozinho,
         mora_pessoas_perentesco_pai: postData.mora_pessoas_perentesco_pai,
         mora_pessoas_perentesco_mae: postData.mora_pessoas_perentesco_mae,
         mora_pessoas_perentesco_esposo: postData.mora_pessoas_perentesco_esposo,
         mora_pessoas_perentesco_avo: postData.mora_pessoas_perentesco_avo,
-        mora_pessoas_perentesco_amigo: postData.mora_pessoas_perentesco_amigo,
+        mora_pessoas_perentesco_amigo: postData.mora_pessoas_perentesco_amigo
       })
       .subscribe(
         res => {
-          console.log('socioeconomico res: ')
-          console.log(res)
-
+          // console.log("socioeconomico res: ");
+          // console.log(res);
         },
         err => {
-          console.log('socioeconomico err: ')
-          console.log(err)
-
+          // console.log("socioeconomico err: ");
+          // console.log(err);
         }
       );
   }

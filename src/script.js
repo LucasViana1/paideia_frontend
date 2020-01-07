@@ -8,7 +8,6 @@ var bolsaBase64 = "";
 
 // import {environment} from './environments/environment';
 
-
 function convertBase64(element) {
   var filesSelected = document.getElementById(element).files;
   if (filesSelected.length > 0) {
@@ -20,31 +19,31 @@ function convertBase64(element) {
       switch (element) {
         case "rgCandidato":
           rgBase64 = srcData;
-          document.getElementById('rgCandidatoHidden').value = srcData;
+          document.getElementById("rgCandidatoHidden").value = srcData;
           break;
         case "cpfCandidato":
           cpfBase64 = srcData;
-          document.getElementById('cpfCandidatoHidden').value = srcData;
+          document.getElementById("cpfCandidatoHidden").value = srcData;
           break;
         case "historico":
           historicoBase64 = srcData;
-          document.getElementById('historicoHidden').value = srcData;
+          document.getElementById("historicoHidden").value = srcData;
           break;
         case "cidadao":
           cidadaoBase64 = srcData;
-          document.getElementById('cidadaoHidden').value = srcData;
+          document.getElementById("cidadaoHidden").value = srcData;
           break;
         case "endereco":
           enderecoBase64 = srcData;
-          document.getElementById('enderecoHidden').value = srcData;
+          document.getElementById("enderecoHidden").value = srcData;
           break;
         case "bolsa":
           bolsaBase64 = srcData;
-          document.getElementById('bolsaHidden').value = srcData;
+          document.getElementById("bolsaHidden").value = srcData;
           break;
 
         default:
-          console.log("Falha ao converter arquivo!");
+          // console.log("Falha ao converter arquivo!");
           break;
       }
     };
@@ -53,33 +52,35 @@ function convertBase64(element) {
 }
 
 // descontinuado
-function enviarArquivos(){
-  console.log('idUSer:')
-  console.log(window.localStorage.getItem('id'))
-  console.log('rgBase64:')
-  console.log(rgBase64)
-  fetch('http://localhost:3000' + '/insereDadosArquivos', {
+function enviarArquivos() {
+  // console.log('idUSer:')
+  // console.log(window.localStorage.getItem('id'))
+  // console.log('rgBase64:')
+  // console.log(rgBase64)
+  fetch("http://localhost:3000" + "/insereDadosArquivos", {
     method: "POST",
     body: JSON.stringify({
-      idUser: window.localStorage.getItem('id'),
+      idUser: window.localStorage.getItem("id"),
       rgCandidato: rgBase64,
-      cpfCandidato: '',
-      historico: '',
-      bolsa: '',
-      eja: '',
-      medico: '',
-      endereco: '',
-      foto: '',
-      cidadao: '',
-      ensinoMedio: '',
-      rgResponsavel: '',
-      cpfResponsavel: '',
+      cpfCandidato: "",
+      historico: "",
+      bolsa: "",
+      eja: "",
+      medico: "",
+      endereco: "",
+      foto: "",
+      cidadao: "",
+      ensinoMedio: "",
+      rgResponsavel: "",
+      cpfResponsavel: ""
     })
-  }).then(res =>{
-    console.log('res')
-    console.log(res)
-  }).catch(err =>{
-    console.log('err')
-    console.log(err)
-  });
+  })
+    .then(res => {
+      // console.log("res");
+      // console.log(res);
+    })
+    .catch(err => {
+      // console.log("err");
+      // console.log(err);
+    });
 }
