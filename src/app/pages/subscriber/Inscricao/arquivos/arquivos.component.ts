@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 export class ArquivosComponent implements OnInit {
   // constructor() {}
   constructor(public fb: FormBuilder, private service: SubscriptionAPIService, private router: Router) {}
-
+  tamMaximo:number = 1759374;
   // talvez remover
   formArquivos = this.fb.group({
     rgCandidato: [""],
@@ -55,16 +55,41 @@ export class ArquivosComponent implements OnInit {
     if(feedbackError !== ''){
       alert(feedbackError);
     } else{
-      this.service.insereArquivos({
-        rgCandidato: this.rgCandidato,
-        cpfCandidato: this.cpfCandidato,
-        historico: this.historico,
-        endereco: this.endereco,
-        cidadao: this.cidadao,
-        bolsa: this.bolsa,
-      });
-      this.router.navigate(['/inscricao/socioeconomico']);
-      window.scrollTo(0, 0);
+      let feedbackErrorLimit = '';
+      if(this.rgCandidato.length > this.tamMaximo){
+        feedbackErrorLimit += 'Campo RG excedeu o limite aceito! \n'
+      }
+      if(this.cpfCandidato.length > this.tamMaximo){
+        feedbackErrorLimit += 'Campo CPF excedeu o limite aceito! \n'
+      }
+      if(this.historico.length > this.tamMaximo){
+        feedbackErrorLimit += 'Campo histórico escolar, declaração de matrícula, comprovante de matrícula ou conclusão do ensino médio excedeu o limite aceito! \n'
+      }
+      if(this.endereco.length > this.tamMaximo){
+        feedbackErrorLimit += 'Campo comprovante de endereço excedeu o limite aceito! \n'
+      }
+      if(this.cidadao.length > this.tamMaximo){
+        feedbackErrorLimit += 'Campo cartão cidadão excedeu o limite aceito! \n'
+      }
+      if(this.bolsa.length > this.tamMaximo){
+        feedbackErrorLimit += 'Campo bolsa excedeu o limite aceito! \n'
+      }
+      if(feedbackErrorLimit !== ''){
+        alert(feedbackErrorLimit);
+      } else{
+        this.service.insereArquivos({
+          rgCandidato: this.rgCandidato,
+          cpfCandidato: this.cpfCandidato,
+          historico: this.historico,
+          endereco: this.endereco,
+          cidadao: this.cidadao,
+          bolsa: this.bolsa,
+        });
+        this.router.navigate(['/inscricao/socioeconomico']);
+        window.scrollTo(0, 0);
+      }
+      // alert('Arquivos enviados para análise. Caso algum exceda o tamanho limite, voce será redireciado novamente ao'+
+      //   'formulário de envio de arquivos.');
     }
 
   }

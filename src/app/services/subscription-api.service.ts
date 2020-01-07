@@ -67,9 +67,9 @@ export class SubscriptionAPIService {
         err => {
           console.log('arquivos err: ')
           console.log(err)
-          alert('Algum arquivo excedeu o limite de tamanho! Favor ajustar o tamanho do arquivo e enviar novamente.')
-          // LOGICA PARA IMPEDIR QUE O CANDIDATO AVANCE PARA A PROXIMA ETAPA
-          this.router.navigate(['/inscricao/arquivos'])
+          // alert('Algum arquivo excedeu o limite de tamanho! Favor ajustar o tamanho do arquivo e enviar novamente.')
+          // // LOGICA PARA IMPEDIR QUE O CANDIDATO AVANCE PARA A PROXIMA ETAPA
+          // this.router.navigate(['/inscricao/arquivos'])
         },
       );
       // se o tamanho dos arquivos não excedeu
