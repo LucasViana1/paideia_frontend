@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AdmAPIService } from "../../../services/adm-api.service";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+import { ThrowStmt } from "@angular/compiler";
 
 @Component({
   selector: "app-detalhes",
@@ -10,7 +11,7 @@ import { Router } from "@angular/router";
 })
 export class DetalhesComponent implements OnInit {
   listagem: any;
-  rgView: boolean = false;
+  rgView: boolean = true;
   cpfView: boolean = false;
   cidadaoView: boolean = false;
   enderecoView: boolean = false;
@@ -47,48 +48,60 @@ export class DetalhesComponent implements OnInit {
     switch (tipo) {
       case "RG":
         this.ocultaTodasImg();
-        (<HTMLSelectElement>document.getElementById("RG")).style.display =
-          "initial";
+        // (<HTMLSelectElement>document.getElementById("RG")).style.display =
+        //   "initial";
+        this.rgView = true;
         break;
       case "CPF":
         this.ocultaTodasImg();
-        (<HTMLSelectElement>document.getElementById("CPF")).style.display =
-          "initial";
+        // (<HTMLSelectElement>document.getElementById("CPF")).style.display =
+        //   "initial";
+        this.cpfView = true;
         break;
       case "ENDERECO":
         this.ocultaTodasImg();
-        (<HTMLSelectElement>document.getElementById("ENDERECO")).style.display =
-          "initial";
+        // (<HTMLSelectElement>document.getElementById("ENDERECO")).style.display =
+        //   "initial";
+        this.enderecoView = true;
         break;
       case "HISTORICO":
         this.ocultaTodasImg();
-        (<HTMLSelectElement>(
-          document.getElementById("HISTORICO")
-        )).style.display = "initial";
+        // (<HTMLSelectElement>(
+        //   document.getElementById("HISTORICO")
+        // )).style.display = "initial";
+        this.historicoView = true;
         break;
       case "CIDADAO":
         this.ocultaTodasImg();
-        (<HTMLSelectElement>document.getElementById("CIDADAO")).style.display =
-          "initial";
+        // (<HTMLSelectElement>document.getElementById("CIDADAO")).style.display =
+        //   "initial";
+        this.cidadaoView = true;
         break;
       case "BOLSA":
         this.ocultaTodasImg();
-        (<HTMLSelectElement>document.getElementById("BOLSA")).style.display =
-          "initial";
+        // (<HTMLSelectElement>document.getElementById("BOLSA")).style.display =
+        //   "initial";
+        this.cidadaoView = true;
         break;
     }
   }
 
   ocultaTodasImg() {
-    (<HTMLSelectElement>document.getElementById("RG")).style.display = "none";
-    (<HTMLSelectElement>document.getElementById("CPF")).style.display = "none";
-    (<HTMLSelectElement>document.getElementById("ENDERECO")).style.display =
-      "none";
-    (<HTMLSelectElement>document.getElementById("HISTORICO")).style.display =
-      "none";
-    (<HTMLSelectElement>document.getElementById("CIDADAO")).style.display =
-      "none";
-    (<HTMLSelectElement>document.getElementById("BOLSA")).style.display =
-      "none";
+    this.rgView = false;
+    this.cpfView = false;
+    this.cidadaoView = false;
+    this.enderecoView = false;
+    this.historicoView = false;
+    this.bolsaView = false;
+    // (<HTMLSelectElement>document.getElementById("RG")).style.display = "none";
+    // (<HTMLSelectElement>document.getElementById("CPF")).style.display = "none";
+    // (<HTMLSelectElement>document.getElementById("ENDERECO")).style.display =
+    //   "none";
+    // (<HTMLSelectElement>document.getElementById("HISTORICO")).style.display =
+    //   "none";
+    // (<HTMLSelectElement>document.getElementById("CIDADAO")).style.display =
+    //   "none";
+    // (<HTMLSelectElement>document.getElementById("BOLSA")).style.display =
+    //   "none";
   }
 }

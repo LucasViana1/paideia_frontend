@@ -6,7 +6,7 @@ export const environment = {
   // production: false,
   // urlBase: 'http://localhost:3000',
   production: true,
-  urlBase: 'https://backend.associacaopaideia.org.br',
+  urlBase: "https://backend.associacaopaideia.org.br"
 };
 
 /*
