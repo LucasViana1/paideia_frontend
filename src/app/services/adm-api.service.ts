@@ -1,20 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Router } from '@angular/router';
-import { environment } from '../../environments/environment'; // dev
+import { Router } from "@angular/router";
+import { environment } from "../../environments/environment"; // dev
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AdmAPIService {
+  constructor(private http: HttpClient, private router: Router) {}
 
-  constructor(private http: HttpClient, private router: Router) { }
-
-  listaInscritos(){
+  listaInscritos() {
     return this.http.get<any[]>(`${environment.urlBase}/inscritos`);
   }
-  detalhesInscritos(id:any){
+  detalhesInscritos(id: any) {
     return this.http.get<any[]>(`${environment.urlBase}/detalhes/${id}`);
   }
-
+  completoInscritos(id: any) {
+    return this.http.get<any[]>(`${environment.urlBase}/completo/${id}`);
+  }
 }

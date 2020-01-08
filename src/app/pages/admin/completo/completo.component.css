@@ -1,0 +1,10 @@
+.cabecalho {
+  font-size: 120%;
+  background-color: #dd9bc7;
+}
+.pergunta {
+  font-weight: bold;
+}
+.sub_cabecalho {
+  color: rgb(95, 94, 94);
+}

@@ -51,7 +51,7 @@ const routes: Routes = [
     children: [
       { path: "inscritos", component: InscritosComponent },
       { path: "detalhes/:id", component: DetalhesComponent },
-      { path: "completo", component: CompletoComponent }
+      { path: "completo/:id", component: CompletoComponent }
     ]
   }, // rota com guardas
   { path: "**", component: PageNotFoundComponent }, // depois criar rota para erro

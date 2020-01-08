@@ -1,1 +1,373 @@
-<p>completo works!</p>
+<div>
+  <h1>DADOS COMPLETOS</h1>
+  
+ <!--dados pessoais-->
+  <table class="text-center table table-responsive-sm table-sm table-bordered table-striped">
+      <thead>
+          <tr>
+              <th class="cabecalho">DADOS PESSOAIS</th>
+              <th class="cabecalho">INFORMAÇÃO INSCRITO</th>
+          </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+              <td class="pergunta">Nome Completo</td>
+              <td>{{listagem.dados[0].nome_completo}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">Data Nascimento</td>
+              <td>{{listagem.dados[0].data_nasc}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">Cidade Nascimento</td>
+              <td>{{listagem.dados[0].cidade_nasc}} - {{listagem.dados[0].estado_nasc}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">Telefone 1</td>
+              <td>{{listagem.dados[0].tel1}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">Telefone 2</td>
+              <td>{{listagem.dados[0].tel2}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">CPF</td>
+              <td>{{listagem.dados[0].cpf}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">RG</td>
+              <td>{{listagem.dados[0].rg}}</td>       
+          </tr>
+          <tr>
+              <td class="pergunta">Cartão Cidadão</td>
+              <td>{{listagem.dados[0].cidadao}}</td>       
+          </tr>
+      </tbody>
+  </table>
+
+  <!--socioeconomico-->
+  <table class="text-center table table-responsive-sm table-sm table-bordered table-striped">
+      <thead>
+          <tr>
+              <th class="cabecalho">Nº</th>
+              <th class="cabecalho">SOCIOECONÔMICO</th>
+              <th class="cabecalho">RESPOSTAS</th>
+          </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+              <td class="pergunta">18</td>
+              <td class="pergunta">Quantas pessoas moram com você? (incluindo filhos, irmãos, parentes e amigos)</td>
+              <td>{{listagem.dados[0].qtd_pessoas}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">19</td>
+              <td class="pergunta">Quantos (as) filhos (as) você tem?</td>
+              <td>{{listagem.dados[0].qtd_filhos}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">20</td>
+              <td class="pergunta">A casa onde você mora é?</td>
+              <td>{{listagem.dados[0].casa}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">21</td>
+              <td class="pergunta">Sua casa está localizada em?</td>
+              <td>{{listagem.dados[0].local_casa}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">22</td>
+              <td class="pergunta">Como você se deslocaria até o Focus Cursinho?</td>
+              <td>{{listagem.dados[0].transporte}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">23</td>
+              <td class="pergunta">Qual é o nível de escolaridade do seu pai?</td>
+              <td>{{listagem.dados[0].escol_pai}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">24</td>
+              <td class="pergunta">Qual é o nível de escolaridade da sua mãe?</td>
+              <td>{{listagem.dados[0].escol_mae}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">25</td>
+              <td class="pergunta">Em que seu pai trabalha ou trabalhou, na maior parte da vida?</td>
+              <td>{{listagem.dados[0].trab_pai}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">26</td>
+              <td class="pergunta">Em que sua mãe trabalha ou trabalhou, na maior parte da vida?</td>
+              <td>{{listagem.dados[0].trab_mae}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">27</td>
+              <td class="pergunta">Em que você trabalha atualmente?</td>
+              <td>{{listagem.dados[0].trab_candidato}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">28</td>
+              <td class="pergunta">Quantas pessoas contribuem para a obtenção dessa renda familiar?</td>
+              <td>{{listagem.dados[0].pessoas_renda}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">29</td>
+              <td class="pergunta">Somando a sua renda com a renda das pessoas que moram com você, quanto é,aproximadamente, a renda familiar mensal?</td>
+              <td>{{listagem.dados[0].renda_total}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta align-middle">30</td>
+              <td class="pergunta align-middle">Quais e quantos dos itens ao lado há em sua casa?</td>
+              <td>
+                  <table class="col-12">
+                      <th class="sub_cabecalho">Item</th>
+                      <th class="sub_cabecalho">Quantidade</th>
+                      <tr>
+                          <td>a) TV:</td>
+                          <td>{{listagem.dados[0].tv}}</td>
+                      </tr>  
+                      <tr>
+                          <td>b) Computador/Notebook:</td>
+                          <td>{{listagem.dados[0].pc}}</td>
+                      </tr>  
+                      <tr>
+                          <td>c) Geladeira:</td>
+                          <td>{{listagem.dados[0].geladeira}}</td>
+                      </tr>
+                      <!--<tr>
+                          <td>d) Acesso a Internet:</td>
+                          <td>{{listagem.dados[0].}}</td>
+                      </tr>-->
+                      <tr>
+                          <td>d) Videocassete e/ou DVD:</td>
+                          <td>{{listagem.dados[0].dvd}}</td>
+                      </tr>
+                      <tr>
+                          <td>e) Automóvel:</td>
+                          <td>{{listagem.dados[0].automovel}}</td>
+                      </tr>
+                      <tr>
+                          <td>f) Telefone Fixo:</td>
+                          <td>{{listagem.dados[0].tel_fixo}}</td>
+                      </tr>
+                      <tr>
+                          <td>g) TV por Assinatura:</td>
+                          <td>{{listagem.dados[0].tv_ass}}</td>
+                      </tr>
+                      <tr>
+                          <td>h) Rádio:</td>
+                          <td>{{listagem.dados[0].radio}}</td>
+                      </tr>
+                      <tr>
+                          <td>i) Máquina de lavar roupa:</td>
+                          <td>{{listagem.dados[0].lava_roupa}}</td>
+                      </tr>
+                      <tr>
+                          <td>j) Celular:</td>
+                          <td>{{listagem.dados[0].celular}}</td>
+                      </tr>
+                      <tr>
+                          <td>k) Máquina Lavar Louça:</td>
+                          <td>{{listagem.dados[0].lava_louca}}</td>
+                      </tr>  
+                  </table>    
+              </td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">31</td>
+              <td class="pergunta">Você trabalha ou já trabalhou?</td>
+              <td>{{listagem.dados[0].trab_atual}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta align-middle">32</td>
+              <td class="pergunta align-middle">Indique o grau de importância de cada um dos motivos ao lado na sua decisão de trabalhar:</td>
+              <td>
+                  <table >
+                      <th class="sub_cabecalho">Motivo</th>
+                      <th class="sub_cabecalho">Grau</th>
+                      <tr>
+                          <td>a) Ajudar nas despesas com a casa:</td>
+                          <td>{{listagem.dados[0].trab_despesas}}</td>
+                      </tr>  
+                      <tr>
+                          <td>b) Adquirir experiência:</td>
+                          <td>{{listagem.dados[0].trab_experi}}</td>
+                      </tr>  
+                      <tr>
+                          <td>c) Custear/ pagar meus estudos:</td>
+                          <td>{{listagem.dados[0].trab_despesas}}</td>
+                      </tr> 
+                      <tr>
+                          <td>d) Sustentar minha família (esposo/a, filhos/as etc.):</td>
+                          <td>{{listagem.dados[0].trab_sustento}}</td>
+                      </tr> 
+                      <tr>
+                          <td>e) Ser independente (ganhar meu próprio dinheiro):</td>
+                          <td>{{listagem.dados[0].trab_independente}}</td>
+                      </tr> 
+                  </table>    
+              </td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">33</td>
+              <td class="pergunta">Quantas horas semanais você trabalha?</td>
+              <td>{{listagem.dados[0].trab_horas}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">34</td>
+              <td class="pergunta">Como você avalia ter estudado e trabalhado durante seus estudos?</td>
+              <td>{{listagem.dados[0].estuda_e_trab}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">35</td>
+              <td class="pergunta">Qual principal motivo faria você voltar a estudar ou continuar estudando?</td>
+              <td>{{listagem.dados[0].motivo_estudar}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">36</td>
+              <td class="pergunta">Você cursa ou já cursou a Educação de Jovens e Adultos – EJA?</td>
+              <td>{{listagem.dados[0].eja}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">37</td>
+              <td class="pergunta">Como é ou era o curso de EJA que você frequenta ou frequentou?</td>
+              <td>{{listagem.dados[0].eja_tipo}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">38</td>
+              <td class="pergunta">Possui internet na sua casa?</td>
+              <td>{{listagem.dados[0].tem_internet}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">39</td>
+              <td class="pergunta">Como acessa a internet?</td>
+              <td>{{listagem.dados[0].acesso_internet}}</td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta">40</td>
+              <td class="pergunta">Cursos que realiza ou já realizou</td>
+              <td>
+                  <div v-if="listagem.dados[0].curso_lingua == 1">Curso de língua estrangeira.</div>   
+                  <div v-if="listagem.dados[0].curso_info == 1">Curso de computação ou Informática.</div>   
+                  <div v-if="listagem.dados[0].curso_prepara == 1">Curso preparatório para o vestibular (cursinho).</div>   
+                  <div v-if="listagem.dados[0].curso_tecnico == 1">Curso técnico.</div>   
+                  <div v-if="listagem.dados[0].curso_outro == 1">Outros. </div>   
+              </td>       
+          </tr>
+
+          <tr>
+              <td class="pergunta align-middle">42</td>
+              <td class="pergunta align-middle">Faça uma avaliação da escola em que você realiza ou realizou o Ensino Médio.</td>
+              <td>
+                  <table >
+                      <th class="sub_cabecalho">Atividades</th>
+                      <th class="sub_cabecalho">Frequência</th>
+                      <tr>
+                          <td>a) Trabalho de grupo:</td>
+                          <td>{{listagem.dados[0].aval_grupo}}</td>
+                      </tr>  
+                      <tr>
+                          <td>b) Práticas de esporte:</td>
+                          <td>{{listagem.dados[0].aval_esporte}}</td>
+                      </tr> 
+                      <tr>
+                          <td>c) A biblioteca da escola:</td>
+                          <td>{{listagem.dados[0].aval_biblioteca}}</td>
+                      </tr> 
+                      <tr>
+                          <td>d) A localização da escola:</td>
+                          <td>{{listagem.dados[0].aval_local}}</td>
+                      </tr> 
+                      <tr>
+                          <td>e) O respeito à diversidade:</td>
+                          <td>{{listagem.dados[0].aval_respeito}}</td>
+                      </tr> 
+                      <tr>
+                          <td>f) As condições dos laboratórios:</td>
+                          <td>{{listagem.dados[0].aval_laboratorio}}</td>
+                      </tr> 
+                      <tr>
+                          <td>g) As condições das salas de aula:</td>
+                          <td>{{listagem.dados[0].aval_sala}}</td>
+                      </tr> 
+                      <tr>
+                          <td>h) O ensino de língua estrangeira:</td>
+                          <td>{{listagem.dados[0].aval_lingua}}</td>
+                      </tr> 
+                      <tr>
+                          <td>i) O interesse dos (as) estudantes:</td>
+                          <td>{{listagem.dados[0].aval_interesse}}</td>
+                      </tr> 
+                      <tr>
+                          <td>j) A atenção às questões ambientais:</td>
+                          <td>{{listagem.dados[0].aval_ambiental}}</td>
+                      </tr> 
+                      <tr>
+                          <td>k) A organização dos horários de aulas:</td>
+                          <td>{{listagem.dados[0].aval_horario}}</td>
+                      </tr> 
+                      <tr>
+                          <td>l) Segurança (iluminação, policiamento, etc.):</td>
+                          <td>{{listagem.dados[0].aval_segurancao}}</td>
+                      </tr> 
+                      <tr>
+                          <td>m) Acesso a computadores e outros recursos de Informática:</td>
+                          <td>{{listagem.dados[0].aval_informatica}}</td>
+                      </tr> 
+                      <tr>
+                          <td>n) A atenção e o respeito dos (as) funcionários(as) e dos(as) professores(as):</td>
+                          <td>{{listagem.dados[0].aval_atencao}}</td>
+                      </tr> 
+                      <tr>
+                          <td>o) O conhecimento que os (as) professores (as) têm das matérias e a maneira de transmiti-lo:</td>
+                          <td>{{listagem.dados[0].aval_conhecimento_prof}}</td>
+                      </tr> 
+                      <tr>
+                          <td>p) A dedicação dos (as) professores (as) para preparar aulas e atender aos (às) estudantes:</td>
+                          <td>{{listagem.dados[0].aval_dedica_prof}}</td>
+                      </tr> 
+                      <tr>
+                          <td>q) As iniciativas da escola para realizar excursões, passeios culturais, estudos do meio ambiente:</td>
+                          <td>{{listagem.dados[0].aval_passeios}}</td>
+                      </tr> 
+                      <tr>
+                          <td>r) A acessibilidade física e os recursos e os materiais para estudantes com deficiência (rampas, corrimãos, lupas etc.):</td>
+                          <td>{{listagem.dados[0].aval_acessibilidade}}</td>
+                      </tr> 
+                      
+                  </table> 
+              </td>       
+          </tr>
+      </tbody>
+  </table>
+
+ 
+</div>
+
+
+
+{{ listagem.dados | json }}
