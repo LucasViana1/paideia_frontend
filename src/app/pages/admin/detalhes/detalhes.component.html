@@ -112,10 +112,15 @@
                 src="{{ item.arquivo }}"
                 alt="{{ item.tipo }}"
                 title="{{ item.tipo }}"
+                id="{{ item.tipo }}"
                 width="500px"
                 height="650px"
                 class="img img-fluid"
               />
+              <!-- <object
+                class="arquivo"
+                data="validationSanitizer({{ item.arquivo }})"
+              ></object> -->
             </div>
             <div *ngSwitchCase="'CIDADAO'">
               <img
