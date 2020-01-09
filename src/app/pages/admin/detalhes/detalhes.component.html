@@ -79,74 +79,96 @@
       <button (click)="verImg('BOLSA')" class="ml-4 btn btn-outline-dark">
         Bolsa
       </button>
+      <!-- <button (click)="showPdf()" class="ml-4 btn btn-outline-dark">
+        TESTE
+      </button>
+      <button (click)="showPdf('ENDERECO')" class="ml-4 btn btn-outline-dark">
+        BAIXARR
+      </button> -->
 
       <div class="text-center mt-2">
         <!-- <img src="{{listagem.dados[0].arquivo}}" width="500px" height="650px" class="img img-fluid"> -->
         <div *ngFor="let item of listagem.dados" class="text-center">
           <div [ngSwitch]="item.tipo">
             <div *ngSwitchCase="'RG'">
-              <img
-                *ngIf="rgView"
-                src="{{ item.arquivo }}"
-                alt="{{ item.tipo }}"
-                title="{{ item.tipo }}"
-                width="500px"
-                height="650px"
-                class="img img-fluid"
-              />
+              <div *ngIf="rgView">
+                <img
+                  src="{{ item.arquivo }}"
+                  alt="{{ item.tipo }}"
+                  title="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button (click)="showPdf('RG')" class="ml-4 btn btn-outline-danger">
+                  BAIXAR PDF APENAS!
+                </button>
+              </div>
             </div>
             <div *ngSwitchCase="'CPF'">
-              <img
-                *ngIf="cpfView"
-                src="{{ item.arquivo }}"
-                alt="{{ item.tipo }}"
-                title="{{ item.tipo }}"
-                width="500px"
-                height="650px"
-                class="img img-fluid"
-              />
+              <div *ngIf="cpfView">
+                <img
+                  src="{{ item.arquivo }}"
+                  alt="{{ item.tipo }}"
+                  title="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button (click)="showPdf('CPF')" class="ml-4 btn btn-outline-danger">
+                  BAIXAR PDF APENAS!
+                </button>
+              </div>
             </div>
             <div *ngSwitchCase="'ENDERECO'">
-              <img
-                *ngIf="enderecoView"
-                src="{{ item.arquivo }}"
-                alt="{{ item.tipo }}"
-                title="{{ item.tipo }}"
-                id="{{ item.tipo }}"
-                width="500px"
-                height="650px"
-                class="img img-fluid"
-              />
-              <!-- <object
-                class="arquivo"
-                data="validationSanitizer({{ item.arquivo }})"
-              ></object> -->
+              <div *ngIf="enderecoView">
+                <img
+                  src="{{ item.arquivo }}"
+                  alt="{{ item.tipo }}"
+                  title="{{ item.tipo }}"
+                  id="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button (click)="showPdf('ENDERECO')" class="ml-4 btn btn-outline-danger">
+                  BAIXAR PDF APENAS!
+                </button>
+              </div>
             </div>
             <div *ngSwitchCase="'CIDADAO'">
-              <img
-                *ngIf="cidadaoView"
-                src="{{ item.arquivo }}"
-                alt="{{ item.tipo }}"
-                title="{{ item.tipo }}"
-                width="500px"
-                height="650px"
-                class="img img-fluid"
-              />
+              <div *ngIf="cidadaoView">
+                <img
+                  src="{{ item.arquivo }}"
+                  alt="{{ item.tipo }}"
+                  title="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button (click)="showPdf('CIDADAO')" class="ml-4 btn btn-outline-danger">
+                  BAIXAR PDF APENAS!
+                </button>
+              </div>
             </div>
             <div *ngSwitchCase="'HISTORICO'">
-              <img
-                *ngIf="historicoView"
-                src="{{ item.arquivo }}"
-                alt="{{ item.tipo }}"
-                title="{{ item.tipo }}"
-                width="500px"
-                height="650px"
-                class="img img-fluid"
-              />
+              <div *ngIf="historicoView">
+                <img
+                  src="{{ item.arquivo }}"
+                  alt="{{ item.tipo }}"
+                  title="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button (click)="showPdf('HISTORICO')" class="ml-4 btn btn-outline-danger">
+                  BAIXAR PDF APENAS!
+                </button>
+              </div>
             </div>
             <div *ngSwitchCase="'BOLSA'">
-              <img
-                *ngIf="bolsaView && item.tipo === 'BOLSA'"
+              <div *ngIf="bolsaView">
+                <img
                 src="{{ item.arquivo }}"
                 alt="{{ item.tipo }}"
                 title="{{ item.tipo }}"
@@ -154,6 +176,10 @@
                 height="650px"
                 class="img img-fluid"
               />
+              <button (click)="showPdf('BOLSA')" class="ml-4 btn btn-outline-danger">
+                BAIXAR PDF APENAS!
+              </button>
+              </div>
             </div>
           </div>
         </div>
