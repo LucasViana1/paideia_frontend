@@ -1,3 +1,4 @@
+import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simulado-cadastro.component';
 import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioeconomico/socioeconomico.component";
 import { RecuperacaoComponent } from "./pages/public/Acesso/recuperacao/recuperacao.component";
 import { InscritosComponent } from "./pages/admin/inscritos/inscritos.component";
@@ -51,7 +52,8 @@ const routes: Routes = [
     children: [
       { path: "inscritos", component: InscritosComponent },
       { path: "detalhes/:id", component: DetalhesComponent },
-      { path: "completo/:id", component: CompletoComponent }
+      { path: "completo/:id", component: CompletoComponent },
+      { path: "simulado-cadastro", component: SimuladoCadastroComponent }
     ]
   }, // rota com guardas
   { path: "**", component: PageNotFoundComponent }, // depois criar rota para erro

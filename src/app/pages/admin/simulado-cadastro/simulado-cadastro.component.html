@@ -1,0 +1,110 @@
+<div>
+  <h1>Cadastro Simulado</h1>
+
+  <form>
+    <div class="">Questão {{ listagem.dados[0].qtdPerguntas + 1 }}</div>
+    <b-form-select
+      v-model="dados.materia"
+      :options="optionsMateria"
+      required
+    ></b-form-select>
+    <div>Possui imagem? Se sim coloque o link no campo abaixo:</div>
+    <b-form-input
+      v-model="dados.linkImg"
+      type="text"
+      placeholder="link da imagem"
+    ></b-form-input>
+    <b-form-group label="Enunciado">
+      <b-form-textarea
+        v-model="dados.enunciado"
+        type="text"
+        rows="10"
+        required
+        placeholder="Escreva a pergunta aqui."
+      ></b-form-textarea>
+    </b-form-group>
+    <table class="table">
+      <tr>
+        <th scope="row" class="align-middle">a)</th>
+        <td>
+          <b-form-textarea
+            v-model="dados.resp_a"
+            type="text"
+            rows="3"
+            required
+            placeholder="Escreva a resposta A aqui."
+          ></b-form-textarea>
+        </td>
+        <td class="align-middle">
+          <b-form-radio v-model="dados.correta" value="a">Correta</b-form-radio>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row" class="align-middle">b)</th>
+        <td>
+          <b-form-textarea
+            v-model="dados.resp_b"
+            type="text"
+            rows="3"
+            required
+            placeholder="Escreva a resposta B aqui."
+          ></b-form-textarea>
+        </td>
+        <td class="align-middle">
+          <b-form-radio v-model="dados.correta" value="b">Correta</b-form-radio>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row" class="align-middle">c)</th>
+        <td>
+          <b-form-textarea
+            v-model="dados.resp_c"
+            type="text"
+            rows="3"
+            required
+            placeholder="Escreva a resposta C aqui."
+          ></b-form-textarea>
+        </td>
+        <td class="align-middle">
+          <b-form-radio v-model="dados.correta" value="c">Correta</b-form-radio>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row" class="align-middle">d)</th>
+        <td>
+          <b-form-textarea
+            v-model="dados.resp_d"
+            type="text"
+            rows="3"
+            required
+            placeholder="Escreva a resposta D aqui."
+          ></b-form-textarea>
+        </td>
+        <td class="align-middle">
+          <b-form-radio v-model="dados.correta" value="d">Correta</b-form-radio>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row" class="align-middle">e)</th>
+        <td>
+          <b-form-textarea
+            v-model="dados.resp_e"
+            type="text"
+            rows="3"
+            required
+            placeholder="Escreva a resposta E aqui."
+          ></b-form-textarea>
+        </td>
+        <td class="align-middle">
+          <b-form-radio v-model="dados.correta" value="e">Correta</b-form-radio>
+        </td>
+      </tr>
+    </table>
+
+    <b-button class="mt-2" type="submit" variant="primary">Salvar</b-button>
+  </form>
+</div>
