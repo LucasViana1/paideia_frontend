@@ -1,28 +1,55 @@
 <div>
   <h1>Cadastro Simulado</h1>
 
-  <form>
+  <form [formGroup]="formSimuladoCadastro" (ngSubmit)="onSubmit()">
     <div class="">Questão {{ listagem.dados[0].qtdPerguntas + 1 }}</div>
-    <b-form-select
+    <!-- IMPLEMENTAR DEPOIS ABAIXO -->
+    <!-- <b-form-select
       v-model="dados.materia"
       :options="optionsMateria"
       required
-    ></b-form-select>
-    <div>Possui imagem? Se sim coloque o link no campo abaixo:</div>
-    <b-form-input
+    ></b-form-select> -->
+
+    <!-- <b-form-input
       v-model="dados.linkImg"
       type="text"
       placeholder="link da imagem"
-    ></b-form-input>
-    <b-form-group label="Enunciado">
+    ></b-form-input> -->
+
+    <div class="form-group">
+      <label for=""
+        >Possui imagem? Se sim coloque o link no campo abaixo:</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        name="linkImg"
+        id="linkImg"
+        formControlName="linkImg"
+        placeholder="link da imagem"
+      />
+    </div>
+
+    <!-- <b-form-group label="Enunciado">
       <b-form-textarea
         v-model="dados.enunciado"
         type="text"
         rows="10"
-        required
         placeholder="Escreva a pergunta aqui."
       ></b-form-textarea>
-    </b-form-group>
+    </b-form-group> -->
+
+    <div class="form-group">
+      <label for="">Enunciado</label>
+      <textarea
+        class="form-control"
+        id=""
+        rows="10"
+        placeholder="Escreva a pergunta aqui."
+        formControlName="enunciado"
+      ></textarea>
+    </div>
+
     <table class="table">
       <tr>
         <th scope="row" class="align-middle">a)</th>
@@ -105,6 +132,6 @@
       </tr>
     </table>
 
-    <b-button class="mt-2" type="submit" variant="primary">Salvar</b-button>
+    <button class="mt-2 btn btn-primary" type="submit">Salvar</button>
   </form>
 </div>
