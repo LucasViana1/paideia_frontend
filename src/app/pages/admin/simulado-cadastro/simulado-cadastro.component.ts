@@ -17,7 +17,13 @@ export class SimuladoCadastroComponent implements OnInit {
 
   formSimuladoCadastro = this.fb.group({
     linkImg: [""],
-    enunciado: [""]
+    enunciado: [""],
+    resp_a: [""],
+    resp_b: [""],
+    resp_c: [""],
+    resp_d: [""],
+    resp_e: [""],
+    correta: [""]
   });
 
   onSubmit() {

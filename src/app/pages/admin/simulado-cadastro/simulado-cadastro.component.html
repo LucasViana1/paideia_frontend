@@ -40,10 +40,10 @@
     </b-form-group> -->
 
     <div class="form-group">
-      <label for="">Enunciado</label>
+      <label for="enunciado">Enunciado</label>
       <textarea
         class="form-control"
-        id=""
+        id="enunciado"
         rows="10"
         placeholder="Escreva a pergunta aqui."
         formControlName="enunciado"
@@ -54,19 +54,34 @@
       <tr>
         <th scope="row" class="align-middle">a)</th>
         <td>
-          <b-form-textarea
-            v-model="dados.resp_a"
-            type="text"
-            rows="3"
-            required
-            placeholder="Escreva a resposta A aqui."
-          ></b-form-textarea>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="resp_a"
+              rows="3"
+              placeholder="Escreva a resposta A aqui."
+              formControlName="resp_a"
+            ></textarea>
+          </div>
         </td>
+        <!-- CONTINUAR A PARTIR DAQ: COPIAR ESSA TD ADAPTANDO PARA AS DEMAIS -->
         <td class="align-middle">
-          <b-form-radio v-model="dados.correta" value="a">Correta</b-form-radio>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="correta"
+              id="a"
+              value="a"
+              formControlName="correta"
+            />
+            <label class="form-check-label" for="a">
+              Correta
+            </label>
+          </div>
         </td>
       </tr>
-
+      <!--
       <tr>
         <th scope="row" class="align-middle">b)</th>
         <td>
@@ -129,7 +144,7 @@
         <td class="align-middle">
           <b-form-radio v-model="dados.correta" value="e">Correta</b-form-radio>
         </td>
-      </tr>
+      </tr> -->
     </table>
 
     <button class="mt-2 btn btn-primary" type="submit">Salvar</button>
