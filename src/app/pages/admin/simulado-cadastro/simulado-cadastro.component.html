@@ -9,12 +9,17 @@
       :options="optionsMateria"
       required
     ></b-form-select> -->
-
-    <!-- <b-form-input
-      v-model="dados.linkImg"
-      type="text"
-      placeholder="link da imagem"
-    ></b-form-input> -->
+    <div class="form-group">
+      <label class="labelCampo" for="">Matéria:</label>
+      <select
+        formControlName="materia"
+        class="form-control"
+        name="materia"
+        id="materia"
+      >
+        <option *ngFor="let item of materias">{{ item }}</option>
+      </select>
+    </div>
 
     <div class="form-group">
       <label for=""
@@ -29,15 +34,6 @@
         placeholder="link da imagem"
       />
     </div>
-
-    <!-- <b-form-group label="Enunciado">
-      <b-form-textarea
-        v-model="dados.enunciado"
-        type="text"
-        rows="10"
-        placeholder="Escreva a pergunta aqui."
-      ></b-form-textarea>
-    </b-form-group> -->
 
     <div class="form-group">
       <label for="enunciado">Enunciado</label>
@@ -64,7 +60,6 @@
             ></textarea>
           </div>
         </td>
-        <!-- CONTINUAR A PARTIR DAQ: COPIAR ESSA TD ADAPTANDO PARA AS DEMAIS -->
         <td class="align-middle">
           <div class="form-check">
             <input
@@ -81,70 +76,126 @@
           </div>
         </td>
       </tr>
-      <!--
+
       <tr>
         <th scope="row" class="align-middle">b)</th>
         <td>
-          <b-form-textarea
-            v-model="dados.resp_b"
-            type="text"
-            rows="3"
-            required
-            placeholder="Escreva a resposta B aqui."
-          ></b-form-textarea>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="resp_b"
+              rows="3"
+              placeholder="Escreva a resposta B aqui."
+              formControlName="resp_b"
+            ></textarea>
+          </div>
         </td>
         <td class="align-middle">
-          <b-form-radio v-model="dados.correta" value="b">Correta</b-form-radio>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="correta"
+              id="b"
+              value="b"
+              formControlName="correta"
+            />
+            <label class="form-check-label" for="b">
+              Correta
+            </label>
+          </div>
         </td>
       </tr>
 
       <tr>
         <th scope="row" class="align-middle">c)</th>
         <td>
-          <b-form-textarea
-            v-model="dados.resp_c"
-            type="text"
-            rows="3"
-            required
-            placeholder="Escreva a resposta C aqui."
-          ></b-form-textarea>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="resp_c"
+              rows="3"
+              placeholder="Escreva a resposta C aqui."
+              formControlName="resp_c"
+            ></textarea>
+          </div>
         </td>
         <td class="align-middle">
-          <b-form-radio v-model="dados.correta" value="c">Correta</b-form-radio>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="correta"
+              id="c"
+              value="c"
+              formControlName="correta"
+            />
+            <label class="form-check-label" for="c">
+              Correta
+            </label>
+          </div>
         </td>
       </tr>
 
       <tr>
         <th scope="row" class="align-middle">d)</th>
         <td>
-          <b-form-textarea
-            v-model="dados.resp_d"
-            type="text"
-            rows="3"
-            required
-            placeholder="Escreva a resposta D aqui."
-          ></b-form-textarea>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="resp_d"
+              rows="3"
+              placeholder="Escreva a resposta D aqui."
+              formControlName="resp_d"
+            ></textarea>
+          </div>
         </td>
         <td class="align-middle">
-          <b-form-radio v-model="dados.correta" value="d">Correta</b-form-radio>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="correta"
+              id="d"
+              value="d"
+              formControlName="correta"
+            />
+            <label class="form-check-label" for="d">
+              Correta
+            </label>
+          </div>
         </td>
       </tr>
 
       <tr>
         <th scope="row" class="align-middle">e)</th>
         <td>
-          <b-form-textarea
-            v-model="dados.resp_e"
-            type="text"
-            rows="3"
-            required
-            placeholder="Escreva a resposta E aqui."
-          ></b-form-textarea>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="resp_e"
+              rows="3"
+              placeholder="Escreva a resposta E aqui."
+              formControlName="resp_e"
+            ></textarea>
+          </div>
         </td>
         <td class="align-middle">
-          <b-form-radio v-model="dados.correta" value="e">Correta</b-form-radio>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="correta"
+              id="e"
+              value="e"
+              formControlName="correta"
+            />
+            <label class="form-check-label" for="e">
+              Correta
+            </label>
+          </div>
         </td>
-      </tr> -->
+      </tr>
     </table>
 
     <button class="mt-2 btn btn-primary" type="submit">Salvar</button>
