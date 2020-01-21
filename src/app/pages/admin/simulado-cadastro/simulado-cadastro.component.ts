@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-// import {UsersAPIService} from '../../../../services/users-api.service';
-// INSERIR API PARA SIMULADOS
+import { SimuladoAPIService } from "./../../../services/simulado-api.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -10,6 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./simulado-cadastro.component.css"]
 })
 export class SimuladoCadastroComponent implements OnInit {
+  listagem: any;
   materias = [
     "Selecione",
     "Física",
@@ -27,7 +27,8 @@ export class SimuladoCadastroComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    /*private service: UsersAPIService,*/ private router: Router
+    private service: SimuladoAPIService,
+    private router: Router
   ) {}
 
   formSimuladoCadastro = this.fb.group({
@@ -80,5 +81,13 @@ export class SimuladoCadastroComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCadastraSimulado();
+  }
+
+  getCadastraSimulado() {
+    this.service.getCadastraSimulado().subscribe(dados => {
+      this.listagem = dados;
+    });
+  }
 }
