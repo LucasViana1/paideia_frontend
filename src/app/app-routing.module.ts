@@ -1,4 +1,4 @@
-import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simulado-cadastro.component';
+import { SimuladoCadastroComponent } from "./pages/admin/simulado-cadastro/simulado-cadastro.component";
 import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioeconomico/socioeconomico.component";
 import { RecuperacaoComponent } from "./pages/public/Acesso/recuperacao/recuperacao.component";
 import { InscritosComponent } from "./pages/admin/inscritos/inscritos.component";
@@ -19,9 +19,10 @@ import { InscricaoComponent } from "./pages/subscriber/Inscricao/inscricao/inscr
 import { PessoalComponent } from "./pages/subscriber/Inscricao/pessoal/pessoal.component";
 import { TermosComponent } from "./pages/subscriber/Inscricao/termos/termos.component";
 import { ArquivosComponent } from "./pages/subscriber/Inscricao/arquivos/arquivos.component";
-import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
-import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
-import { ConcluiInscricaoComponent } from './pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component';
+import { PageNotFoundComponent } from "./pages/public/Erro/page-not-found/page-not-found.component";
+import { ValidaComponent } from "./pages/public/Acesso/valida/valida.component";
+import { ConcluiInscricaoComponent } from "./pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component";
+import { SimuladoComponent } from "./pages/subscriber/Simulado/simulado/simulado.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: "perguntas", component: PerguntasComponent },
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
+  { path: "simulado", component: SimuladoComponent }, // simulado aluno
   {
     path: "inscricao",
     component: InscricaoComponent,
@@ -56,7 +58,7 @@ const routes: Routes = [
       { path: "simulado-cadastro", component: SimuladoCadastroComponent }
     ]
   }, // rota com guardas
-  { path: "**", component: PageNotFoundComponent }, // depois criar rota para erro
+  { path: "**", component: PageNotFoundComponent } // depois criar rota para erro
 ];
 
 @NgModule({
