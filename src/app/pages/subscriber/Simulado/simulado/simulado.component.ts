@@ -9,6 +9,10 @@ import { SimuladoAPIService } from "../../../../services/simulado-api.service";
   styleUrls: ["./simulado.component.css"]
 })
 export class SimuladoComponent implements OnInit {
+  listagem: any;
+  idUser: any = 118; // PEGAR DO LOCALSTORAGE
+  numModelo: any;
+
   constructor(
     public fb: FormBuilder,
     private service: SimuladoAPIService,
@@ -37,5 +41,25 @@ export class SimuladoComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getSimulado(this.idUser);
+    this.getNumModelo();
+  }
+
+  getSimulado(id: any) {
+    this.service.getSimulado(id).subscribe(dados => {
+      this.listagem = dados;
+    });
+  }
+  getNumModelo() {
+    this.service.getNumModelo().subscribe(dados => {
+      this.numModelo = dados;
+    });
+  }
 }
+/*
+ROTEIRO GENERICO:
+getModelo para passar como parametro para a primeira pergunta (na tela inicial de normas)
+getGabarito para contar o progresso do aluno e impedir que volte alternativas (atraves de um contador)
+pelo contador do getGabarito ir exibindo cada pergunta na requisição dos simulados
+*/

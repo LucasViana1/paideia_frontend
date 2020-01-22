@@ -13,21 +13,29 @@ export class SimuladoAPIService {
     return this.http.get<any[]>(`${environment.urlBase}/cadastraSimulado`);
   }
 
-  cadastraUser(postData: any) {
-    this.http
-      .post(`${environment.urlBase}/cadastraUser`, {
-        nome: postData.nome,
-        sobrenome: postData.sobrenome,
-        email: postData.email,
-        senha: postData.senha
-      })
-      .subscribe(
-        res => {
-          console.log(res);
-        },
-        err => {
-          console.log(err);
-        }
-      );
+  getSimulado(id: any) {
+    return this.http.get<any[]>(`${environment.urlBase}/simulado/${id}`);
   }
+  getNumModelo() {
+    return this.http.get<any[]>(`${environment.urlBase}/modelo`);
+  }
+
+  // MODELO
+  // cadastraUser(postData: any) {
+  //   this.http
+  //     .post(`${environment.urlBase}/cadastraUser`, {
+  //       nome: postData.nome,
+  //       sobrenome: postData.sobrenome,
+  //       email: postData.email,
+  //       senha: postData.senha
+  //     })
+  //     .subscribe(
+  //       res => {
+  //         console.log(res);
+  //       },
+  //       err => {
+  //         console.log(err);
+  //       }
+  //     );
+  // }
 }
