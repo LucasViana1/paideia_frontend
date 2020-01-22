@@ -10,10 +10,24 @@ export class SimuladoAPIService {
   constructor(private http: HttpClient, private router: Router) {}
 
   getCadastraSimulado() {
-    // console.log("req a api de simulado");
-    // console.log(
-    //   this.http.get<any[]>(`${environment.urlBase}/cadastraSimulado`)
-    // );
     return this.http.get<any[]>(`${environment.urlBase}/cadastraSimulado`);
+  }
+
+  cadastraUser(postData: any) {
+    this.http
+      .post(`${environment.urlBase}/cadastraUser`, {
+        nome: postData.nome,
+        sobrenome: postData.sobrenome,
+        email: postData.email,
+        senha: postData.senha
+      })
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
 }

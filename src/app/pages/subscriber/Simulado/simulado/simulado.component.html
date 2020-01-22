@@ -110,7 +110,7 @@
     </div>
   </div>
 
-  < v-if="bloco">
+  <div v-if="bloco">
     <div class="text-center">
       <div>Você iniciou o simulado as {{ this.iniTempo }}</div>
       <div class="mt-1">
@@ -131,7 +131,7 @@
             >
           </th>
           <td class="col-10 bordas">
-            <b-card no-body class="">
+            <!-- <b-card no-body class="">
               <b-tabs>
                 <b-tab no-body :title="listagem.dados[0].materia">
                   <div class="p-2">
@@ -140,7 +140,7 @@
                   </div>
                 </b-tab>
               </b-tabs>
-            </b-card>
+            </b-card> -->
           </td>
         </tr>
       </thead>
@@ -156,7 +156,7 @@
                 v-model="dados.correta"
                 value="a"
               ></b-form-radio>
-          </div>
+            </div>
           </td>
           <td class="col-10">
             <b-card class="sem_borda" size="sm">
