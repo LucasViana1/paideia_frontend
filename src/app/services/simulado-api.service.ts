@@ -13,11 +13,32 @@ export class SimuladoAPIService {
     return this.http.get<any[]>(`${environment.urlBase}/cadastraSimulado`);
   }
 
+  // a primeira linha do retorno ja é a proxima questão do candidato
   getSimulado(id: any) {
     return this.http.get<any[]>(`${environment.urlBase}/simulado/${id}`);
   }
   getNumModelo() {
     return this.http.get<any[]>(`${environment.urlBase}/modelo`);
+  }
+  // envia uma pergunta respondida
+  postSimulado(postData: any) {
+    console.log("postData");
+    console.log(postData);
+    this.http
+      .post(`${environment.urlBase}/simulado`, {
+        idUser: postData.idUser,
+        modelo: postData.modelo,
+        pergunta: postData.pergunta,
+        selecionado: postData.selecionado
+      })
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
 
   // MODELO

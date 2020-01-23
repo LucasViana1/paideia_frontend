@@ -20,24 +20,33 @@ export class SimuladoComponent implements OnInit {
   ) {}
 
   formSimulado = this.fb.group({
-    nome: [""],
-    sobrenome: [""],
-    curso_desejado: [""]
+    selecionado: [""]
   });
 
   onSubmit() {
     let form = this.formSimulado.value;
     let feedbackError = "";
 
-    if (form.nome_completo === "") {
-      feedbackError += "Campo nome não foi preenchido! \n";
+    if (form.selecionado === "" || form.selecionado === null) {
+      feedbackError += "Selecione ao menos uma alternativa! \n";
     }
     if (feedbackError !== "") {
       alert(feedbackError);
     } else {
-      console.log(form);
-      // this.service.inserePessoal(form);
-      // this.router.navigate(['/inscricao/arquivos'])
+      console.log(118);
+      console.log(this.listagem.dados[0].modelo);
+      console.log(this.listagem.dados[0].pergunta);
+      console.log(form.selecionado);
+      this.service.postSimulado({
+        idUser: 118, // PEGAR DO LOCALSTORAGE
+        modelo: this.listagem.dados[0].modelo,
+        pergunta: this.listagem.dados[0].pergunta,
+        selecionado: form.selecionado
+      });
+      // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
+      // this.getSimulado(this.idUser);
+      window.location.reload();
+      window.scrollTo(0, 0);
     }
   }
 
