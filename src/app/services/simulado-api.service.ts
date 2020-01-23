@@ -26,10 +26,11 @@ export class SimuladoAPIService {
   getNumModelo() {
     return this.http.get<any[]>(`${environment.urlBase}/modelo`);
   }
+  getHoraInicioFim(id: any) {
+    return this.http.get<any[]>(`${environment.urlBase}/alunosimulado/${id}`);
+  }
   // envia uma pergunta respondida
   postSimulado(postData: any) {
-    console.log("postData");
-    console.log(postData);
     this.http
       .post(`${environment.urlBase}/simulado`, {
         idUser: postData.idUser,
@@ -46,23 +47,23 @@ export class SimuladoAPIService {
         }
       );
   }
-
-  // MODELO
-  // cadastraUser(postData: any) {
-  //   this.http
-  //     .post(`${environment.urlBase}/cadastraUser`, {
-  //       nome: postData.nome,
-  //       sobrenome: postData.sobrenome,
-  //       email: postData.email,
-  //       senha: postData.senha
-  //     })
-  //     .subscribe(
-  //       res => {
-  //         console.log(res);
-  //       },
-  //       err => {
-  //         console.log(err);
-  //       }
-  //     );
-  // }
+  // salva hora de inicio e fim previsto do simulado
+  postHoraInicioFim(postData: any) {
+    console.log("postData");
+    console.log(postData);
+    this.http
+      .post(`${environment.urlBase}/alunosimulado`, {
+        idUser: postData.idUser,
+        horaInicio: postData.horaInicio,
+        horaFimMax: postData.horaFimMax
+      })
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  }
 }

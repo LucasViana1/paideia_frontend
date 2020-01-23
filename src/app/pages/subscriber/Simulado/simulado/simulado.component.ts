@@ -10,9 +10,12 @@ import { SimuladoAPIService } from "../../../../services/simulado-api.service";
 })
 export class SimuladoComponent implements OnInit {
   listagem: any;
-  idUser: any = 118; // PEGAR DO LOCALSTORAGE
+  idUser: number = Number(window.localStorage.getItem("id"));
   numModelo: any;
-  inicio: boolean = true; // oculta/exibe tela de inicio de simulado
+  inicio: boolean; // oculta/exibe tela de inicio de simulado
+  iniTempo: string;
+  fimTempo: string;
+  tempo: any; // resp da hora fim/inicio
 
   constructor(
     public fb: FormBuilder,
@@ -25,9 +28,16 @@ export class SimuladoComponent implements OnInit {
   });
 
   iniciarSimulado() {
-    this.getSimuladoq1(this.numModelo);
+    this.getSimuladoq1(this.numModelo); // seta modelo da prova
     window.scrollTo(0, 0);
-    this.inicio = false;
+    this.inicio = false; // oculta normas no inicio e exibe tela de perguntas/alternativas
+    this.getHoraInicioFim();
+
+    this.service.postHoraInicioFim({
+      idUser: this.idUser,
+      horaInicio: this.iniTempo,
+      horaFimMax: this.fimTempo
+    });
   }
 
   onSubmit() {
@@ -42,13 +52,12 @@ export class SimuladoComponent implements OnInit {
     if (feedbackError !== "") {
       alert(feedbackError);
     } else {
-      console.log(118);
-      console.log(this.listagem.dados[0].modelo);
-      console.log(this.listagem.dados[0].pergunta);
-      console.log(form.selecionado);
+      // console.log(118);
+      // console.log(this.listagem.dados[0].modelo);
+      // console.log(this.listagem.dados[0].pergunta);
+      // console.log(form.selecionado);
       this.service.postSimulado({
-        idUser: window.localStorage.getItem("id"),
-        // idUser: 118, // PEGAR DO LOCALSTORAGE
+        idUser: this.idUser,
         modelo: this.listagem.dados[0].modelo,
         pergunta: this.listagem.dados[0].pergunta,
         selecionado: form.selecionado
@@ -61,15 +70,15 @@ export class SimuladoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getNumModelo(); // apenas valido na primeira chamada, nas demais o nº do modelo fica desatualizada
-    this.getSimulado(this.idUser);
-
-    // LOGICA PARA CASO O ALUNO JA TENHA INICIADO A PROVA E SAIU ANTERIORMENTE
-
     if (window.localStorage.getItem("nome") === null) {
       window.scrollTo(0, 0);
       this.router.navigate(["/inicio"]);
     }
+    // this.inicio = true;
+
+    this.getNumModelo(); // apenas valido na primeira chamada, nas demais o nº do modelo fica desatualizada
+    this.getSimulado(this.idUser);
+    this.getHora(this.idUser);
   }
 
   getSimuladoq1(numModelo: any) {
@@ -80,12 +89,49 @@ export class SimuladoComponent implements OnInit {
   getSimulado(id: any) {
     this.service.getSimulado(id).subscribe(dados => {
       this.listagem = dados;
+      console.log("this.listagem");
+      console.log(this.listagem.dados[0]);
+      // LOGICA PARA CASO O ALUNO JA TENHA INICIADO A PROVA E SAIU ANTERIORMENTE
+      if (typeof this.listagem.dados[0] === undefined) {
+        this.inicio = false;
+      } else {
+        this.inicio = true;
+      }
     });
   }
   getNumModelo() {
     this.service.getNumModelo().subscribe(dados => {
       this.numModelo = dados;
     });
+  }
+  getHora(id: any) {
+    this.service.getHoraInicioFim(id).subscribe(data => {
+      this.tempo = data;
+      this.iniTempo = this.tempo.dados[0].horaInicio;
+      this.fimTempo = this.tempo.dados[0].horaFimMax;
+      console.log("this.tempo.dados[0].horaInicio");
+      console.log(this.iniTempo);
+      console.log("this.tempo.dados[0].horaFimMax");
+      console.log(this.fimTempo);
+      // this.tempo = response.data;
+      // this.iniTempo = this.tempo.dados[0].horaInicio;
+      // this.fimTempo = this.tempo.dados[0].horaFimMax;
+
+      // console.log("this.tempo.dados[0].horaInicio");
+      // console.log(this.tempo.dados[0].horaInicio);
+      // console.log("this.tempo.dados[0].horaFimMax");
+      // console.log(this.tempo.dados[0].horaFimMax);
+    });
+  }
+  // pega data inicial e final do aluno
+  getHoraInicioFim() {
+    let data = new Date();
+    this.iniTempo =
+      data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+    this.fimTempo =
+      data.getHours() + 2 + ":" + data.getMinutes() + ":" + data.getSeconds();
+    console.log(this.iniTempo);
+    console.log(this.fimTempo);
   }
 }
 /*
