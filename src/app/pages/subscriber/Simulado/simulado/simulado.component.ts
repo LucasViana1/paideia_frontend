@@ -12,6 +12,7 @@ export class SimuladoComponent implements OnInit {
   listagem: any;
   idUser: any = 118; // PEGAR DO LOCALSTORAGE
   numModelo: any;
+  inicio: boolean = true; // oculta/exibe tela de inicio de simulado
 
   constructor(
     public fb: FormBuilder,
@@ -23,7 +24,15 @@ export class SimuladoComponent implements OnInit {
     selecionado: [""]
   });
 
+  iniciarSimulado() {
+    this.getSimuladoq1(this.numModelo);
+    window.scrollTo(0, 0);
+    this.inicio = false;
+  }
+
   onSubmit() {
+    // LOGICA PARA MARCAR TEMPO DE INICIO/FIM DA PROVA
+
     let form = this.formSimulado.value;
     let feedbackError = "";
 
@@ -38,7 +47,8 @@ export class SimuladoComponent implements OnInit {
       console.log(this.listagem.dados[0].pergunta);
       console.log(form.selecionado);
       this.service.postSimulado({
-        idUser: 118, // PEGAR DO LOCALSTORAGE
+        idUser: window.localStorage.getItem("id"),
+        // idUser: 118, // PEGAR DO LOCALSTORAGE
         modelo: this.listagem.dados[0].modelo,
         pergunta: this.listagem.dados[0].pergunta,
         selecionado: form.selecionado
@@ -51,10 +61,22 @@ export class SimuladoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getNumModelo(); // apenas valido na primeira chamada, nas demais o nº do modelo fica desatualizada
     this.getSimulado(this.idUser);
-    this.getNumModelo();
+
+    // LOGICA PARA CASO O ALUNO JA TENHA INICIADO A PROVA E SAIU ANTERIORMENTE
+
+    if (window.localStorage.getItem("nome") === null) {
+      window.scrollTo(0, 0);
+      this.router.navigate(["/inicio"]);
+    }
   }
 
+  getSimuladoq1(numModelo: any) {
+    this.service.getSimuladoq1(numModelo).subscribe(dados => {
+      this.listagem = dados;
+    });
+  }
   getSimulado(id: any) {
     this.service.getSimulado(id).subscribe(dados => {
       this.listagem = dados;

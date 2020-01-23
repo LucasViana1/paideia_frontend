@@ -13,7 +13,7 @@
   </div>
 
   <!--normas e procedimentos simulado-->
-  <div v-if="!bloco">
+  <div *ngIf="inicio">
     <div class="text-center">
       <b>
         NORMAS E PROCEDIMENTOS:
@@ -103,18 +103,17 @@
       conosco: <em>contato@associacaopaideia.org.br</em>
     </p>
 
-    <!--LIBERAR ESSE TRECHO A TODOS NO DIA DO SIMULADO-->
-    <!--<b-button v-if="this.idUser == 3" variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>-->
     <div class="text-center">
-      <!-- @click.prevent="liberaPerguntas()" -->
-      <button class="btn btn-primary">Começar</button>
+      <button class="btn btn-primary" (click)="iniciarSimulado()">
+        Começar
+      </button>
     </div>
   </div>
-  {{ numModelo }}
+  <!-- {{ numModelo }}
   <br />
-  {{ listagem.dados[0] | json }}
+  {{ listagem.dados[0] | json }} -->
 
-  <div v-if="bloco">
+  <div *ngIf="!inicio">
     <div class="text-center">
       <div>Você iniciou o simulado as {{ this.iniTempo }}</div>
       <div class="mt-1">

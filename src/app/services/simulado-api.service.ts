@@ -17,6 +17,12 @@ export class SimuladoAPIService {
   getSimulado(id: any) {
     return this.http.get<any[]>(`${environment.urlBase}/simulado/${id}`);
   }
+  // chamado apenas na primeira chamada de alternativas, flegando um modelo de prova
+  getSimuladoq1(numModelo: any) {
+    return this.http.get<any[]>(
+      `${environment.urlBase}/simuladoq1/${numModelo}`
+    );
+  }
   getNumModelo() {
     return this.http.get<any[]>(`${environment.urlBase}/modelo`);
   }
