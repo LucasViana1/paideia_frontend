@@ -1,3 +1,4 @@
+import { GabaritoSimplesComponent } from "./pages/subscriber/Simulado/gabarito-simples/gabarito-simples.component";
 import { SimuladoCadastroComponent } from "./pages/admin/simulado-cadastro/simulado-cadastro.component";
 import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioeconomico/socioeconomico.component";
 import { RecuperacaoComponent } from "./pages/public/Acesso/recuperacao/recuperacao.component";
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
   { path: "simulado", component: SimuladoComponent }, // simulado aluno
+  { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
   {
     path: "inscricao",
     component: InscricaoComponent,

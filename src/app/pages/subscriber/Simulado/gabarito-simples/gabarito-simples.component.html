@@ -1,1 +1,67 @@
-<p>gabarito-simples works!</p>
+<div>
+  <h1>TOTAL DE ACERTOS</h1>
+  {{ listagem | json }}
+  <table
+    class="text-center table table-responsive-sm table-sm table-bordered table-striped"
+  >
+    <thead>
+      <tr>
+        <th class="cabecalho">ÁREAS DO CONHECIMENTO</th>
+        <th class="cabecalho">ACERTOS</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Física</td>
+        <td>{{ this.mat }} de 4</td>
+      </tr>
+      <tr>
+        <td>Biologia</td>
+        <td>{{ this.qui }} de 4</td>
+      </tr>
+      <tr>
+        <td>Matemática</td>
+        <td>{{ this.fis }} de 4</td>
+      </tr>
+      <tr>
+        <td>História</td>
+        <td>{{ this.bio }} de 4</td>
+      </tr>
+      <tr>
+        <td>Química</td>
+        <td>{{ this.geo }} de 4</td>
+      </tr>
+      <tr>
+        <td>Geografia</td>
+        <td>{{ this.his }} de 4</td>
+      </tr>
+      <tr>
+        <td>Gramática</td>
+        <td>{{ this.gra }} de 2</td>
+      </tr>
+      <tr>
+        <td>Sociologia</td>
+        <td>{{ this.lit }} de 2</td>
+      </tr>
+      <tr>
+        <td>Filosofia</td>
+        <td>{{ this.ing }} de 2</td>
+      </tr>
+      <tr>
+        <td>Artes</td>
+        <td>{{ this.ing }} de 2</td>
+      </tr>
+      <tr>
+        <td>Inglês</td>
+        <td>{{ this.ing }} de 2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>TOTAL: {{ this.total }} de 30</div>
+  <br />
+  <div class="text-center">
+    <h4>EM BREVE SERÁ LIBERADO O GABARITO COMPLETO!</h4>
+  </div>
+</div>
