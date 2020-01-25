@@ -39,6 +39,7 @@ import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-n
 import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
 import { ConcluiInscricaoComponent } from './pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component';
 import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simulado-cadastro.component';
+import { GabaritoSimplesComponent } from './pages/subscriber/Simulado/gabarito-simples/gabarito-simples.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simul
     PageNotFoundComponent,
     ValidaComponent,
     ConcluiInscricaoComponent,
-    SimuladoCadastroComponent
+    SimuladoCadastroComponent,
+    GabaritoSimplesComponent
   ],
   imports: [
     BrowserModule,

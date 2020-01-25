@@ -134,7 +134,7 @@ export class SimuladoComponent implements OnInit {
     let horaIni = "00" + data.getHours();
     let minutoIni = "00" + data.getMinutes();
     let segundoIni = "00" + data.getSeconds();
-    let horaFim = "00" + (data.getHours() + 2);
+    let horaFim = "00" + (data.getHours() + 4);
     let minutoFim = "00" + data.getMinutes();
     let segundoFim = "00" + data.getSeconds();
     this.iniTempo = `${horaIni.slice(-2)}:${minutoIni.slice(
