@@ -53,10 +53,6 @@ export class SimuladoComponent implements OnInit {
     if (feedbackError !== "") {
       alert(feedbackError);
     } else {
-      // console.log(118);
-      // console.log(this.listagem.dados[0].modelo);
-      // console.log(this.listagem.dados[0].pergunta);
-      // console.log(form.selecionado);
       this.service.postSimulado({
         idUser: this.idUser,
         modelo: this.listagem.dados[0].modelo,
@@ -64,7 +60,12 @@ export class SimuladoComponent implements OnInit {
         selecionado: form.selecionado
       });
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
-      // this.getSimulado(this.idUser);
+
+      // quando for respondida a ultima pergunta, COLOCAR Nº DA ULTIMA PERGUNTA
+      if (this.listagem.dados[0].pergunta == 30) {
+        // if(this.listagem.dados[0].pergunta == 50){
+        this.router.navigate(["/gabarito-simples"]);
+      }
       window.location.reload();
       window.scrollTo(0, 0);
     }
