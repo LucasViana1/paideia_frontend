@@ -28,6 +28,7 @@ export class SimuladoComponent implements OnInit {
   });
 
   iniciarSimulado() {
+    window.localStorage.setItem("simulado", "1");
     this.getSimuladoq1(this.numModelo); // seta modelo da prova
     window.scrollTo(0, 0);
     this.inicio = false; // oculta normas no inicio e exibe tela de perguntas/alternativas
@@ -74,7 +75,11 @@ export class SimuladoComponent implements OnInit {
       window.scrollTo(0, 0);
       this.router.navigate(["/inicio"]);
     }
-    // this.inicio = true;
+    if (window.localStorage.getItem("simulado") != "1") {
+      this.inicio = true;
+    } else {
+      this.inicio = false;
+    }
 
     this.getNumModelo(); // apenas valido na primeira chamada, nas demais o nº do modelo fica desatualizada
     this.getSimulado(this.idUser);
@@ -92,11 +97,11 @@ export class SimuladoComponent implements OnInit {
       console.log("this.listagem");
       console.log(this.listagem.dados[0]);
       // LOGICA PARA CASO O ALUNO JA TENHA INICIADO A PROVA E SAIU ANTERIORMENTE
-      if (typeof this.listagem.dados[0] === undefined) {
-        this.inicio = false;
-      } else {
-        this.inicio = true;
-      }
+      // if (typeof this.listagem.dados[0] === undefined) {
+      //   this.inicio = false;
+      // } else {
+      //   this.inicio = true;
+      // }
     });
   }
   getNumModelo() {
@@ -126,10 +131,20 @@ export class SimuladoComponent implements OnInit {
   // pega data inicial e final do aluno
   getHoraInicioFim() {
     let data = new Date();
-    this.iniTempo =
-      data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
-    this.fimTempo =
-      data.getHours() + 2 + ":" + data.getMinutes() + ":" + data.getSeconds();
+    let horaIni = "00" + data.getHours();
+    let minutoIni = "00" + data.getMinutes();
+    let segundoIni = "00" + data.getSeconds();
+    let horaFim = "00" + (data.getHours() + 2);
+    let minutoFim = "00" + data.getMinutes();
+    let segundoFim = "00" + data.getSeconds();
+    this.iniTempo = `${horaIni.slice(-2)}:${minutoIni.slice(
+      -2
+    )}:${segundoIni.slice(-2)}`;
+
+    this.fimTempo = `${horaFim.slice(-2)}:${minutoFim.slice(
+      -2
+    )}:${segundoFim.slice(-2)}`;
+
     console.log(this.iniTempo);
     console.log(this.fimTempo);
   }

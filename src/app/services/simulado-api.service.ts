@@ -60,10 +60,16 @@ export class SimuladoAPIService {
       .subscribe(
         res => {
           console.log(res);
+          window.location.reload();
         },
         err => {
           console.log(err);
         }
       );
+  }
+
+  // ================= GABARITOS ===================//
+  getGabaritoSimples(id: any) {
+    return this.http.get<any[]>(`${environment.urlBase}/gabaritosimples/${id}`);
   }
 }

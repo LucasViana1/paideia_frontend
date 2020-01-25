@@ -45,18 +45,29 @@
         >
       </li>
       <!-- ATIVAR NAS INSCRIÇÕES -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLink="/cadastro" routerLinkActive="active"
           >Cadastre-se</a
         >
-      </li>
-      <li class="nav-item" *ngIf="nivel !== null">
-        <a class="nav-link" routerLink="/inscricao/termos" routerLinkActive="active"
+      </li> -->
+      <!-- <li class="nav-item" *ngIf="nivel !== null">
+        <a
+          class="nav-link"
+          routerLink="/inscricao/termos"
+          routerLinkActive="active"
           >Inscrições 1º semestre 2020</a
         >
-      </li>
+      </li> -->
+      <!-- <li class="nav-item" *ngIf="nivel !== null">
+        <a class="nav-link" routerLink="/simulado" routerLinkActive="active"
+          >Simulado</a
+        >
+      </li> -->
       <li class="nav-item" *ngIf="adm === 1">
-        <a class="nav-link" routerLink="/adm/inscritos" routerLinkActive="active"
+        <a
+          class="nav-link"
+          routerLink="/adm/inscritos"
+          routerLinkActive="active"
           >Administrador</a
         >
         <!-- apenas adm -->
@@ -77,7 +88,7 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Olá, {{nome}}
+          Olá, {{ nome }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <button class="dropdown-item" (click)="logout()">Sair</button>

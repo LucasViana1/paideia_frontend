@@ -19,6 +19,7 @@ export class CabecalhoComponent implements OnInit {
     window.localStorage.removeItem("nivel");
     window.localStorage.removeItem("id");
     window.localStorage.removeItem("email");
+    window.localStorage.removeItem("simulado");
     this.router.navigate(["/inicio"]);
     location.reload();
     // window.scrollTo(0, 0);

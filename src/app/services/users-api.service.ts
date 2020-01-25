@@ -2,12 +2,17 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { environment } from "../../environments/environment"; // dev
+import { SimuladoAPIService } from "../services/simulado-api.service";
 
 @Injectable({
   providedIn: "root"
 })
 export class UsersAPIService {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private simuladoService: SimuladoAPIService
+  ) {}
 
   cadastraUser(postData: any) {
     this.http
@@ -73,6 +78,13 @@ export class UsersAPIService {
             window.localStorage.setItem("nome", res[0].nome);
             window.localStorage.setItem("nivel", res[0].adm);
             window.localStorage.setItem("email", res[0].email);
+            // this.simuladoService
+            //   .getGabaritoSimples(res[0].id)
+            //   .subscribe(resp => {
+            //     let retorno = resp;
+            //     console.log("resp");
+            //     console.log(retorno);
+            //   });
             location.reload();
             // window.scrollTo(0, 0);
           }
