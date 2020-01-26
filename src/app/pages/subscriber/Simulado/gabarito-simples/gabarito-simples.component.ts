@@ -26,6 +26,10 @@ export class GabaritoSimplesComponent implements OnInit {
   constructor(private service: SimuladoAPIService, private router: Router) {}
 
   ngOnInit() {
+    if (window.localStorage.getItem("nome") === null) {
+      window.scrollTo(0, 0);
+      this.router.navigate(["/inicio"]);
+    }
     this.getGabaritoSimples(this.idUser);
   }
 

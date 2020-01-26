@@ -39,7 +39,7 @@ export class SimuladoCadastroComponent implements OnInit {
     resp_b: [""],
     resp_c: [""],
     resp_d: [""],
-    resp_e: [""],
+    resp_e: ["Nenhuma das alternativas"],
     correta: [""]
   });
 
@@ -75,9 +75,20 @@ export class SimuladoCadastroComponent implements OnInit {
       alert(feedbackError);
     } else {
       // ENVIAR A API NOVA PERGUNTA DO SIMULADO
-      // this.service.inserePessoal(form);
-      // this.router.navigate(["/inscricao/arquivos"]);
-      console.log(form);
+      this.service.postCadastraSimulado({
+        pergunta: this.listagem.dados[0].qtdPerguntas + 1,
+        materia: form.materia,
+        enunciado: form.enunciado,
+        resp_a: form.resp_a,
+        resp_b: form.resp_b,
+        resp_c: form.resp_c,
+        resp_d: form.resp_d,
+        resp_e: form.resp_e,
+        correta: form.correta,
+        img: form.linkImg
+      });
+      window.scrollTo(0, 0);
+      window.location.reload();
     }
   }
 

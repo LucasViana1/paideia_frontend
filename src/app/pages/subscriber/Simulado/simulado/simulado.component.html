@@ -126,48 +126,38 @@
     <br />
     <form [formGroup]="formSimulado" (ngSubmit)="onSubmit()">
       <table class="table table-bordered table-hover bordas container-fluid">
-        <!-- <thead class=""> -->
-        <tr class="row mx-1">
-          <th class="col-2 bordas text-center questao">
-            <u
-              ><div class="ques">Questão</div>
-              {{ listagem.dados[0].pergunta }}</u
+        <thead class="">
+          <tr class="row mx-1">
+            <th
+              class="col-2 bordas text-center questao flex-center"
+              style="margin-top: 3px; border: 1px solid gray;"
             >
-          </th>
-          <td class="col-10 bordas">
-            <!-- <b-card no-body class="">
-              <b-tabs>
-                <b-tab no-body :title="listagem.dados[0].materia">
-                  <div class="p-2">
-                    <div v-html="listagem.dados[0].enunciado"></div>
-                    <b-img :src="listagem.dados[0].img" fluid></b-img>
-                  </div>
-                </b-tab>
-              </b-tabs>
-            </b-card> -->
-
-            <div>
-              <h4>{{ listagem.dados[0].materia }}</h4>
-              <div class="p-2">
-                <div [innerHTML]="listagem.dados[0].enunciado"></div>
-                <img src="{{ listagem.dados[0].img }}" class="img-fluid" />
+              <u
+                ><div class="ques">Questão</div>
+                {{ listagem.dados[0].pergunta }}</u
+              >
+            </th>
+            <td
+              class="col-10 bordas flex-center-align"
+              style="margin-top: 3px;"
+            >
+              <div>
+                <h4>{{ listagem.dados[0].materia }}</h4>
+                <div class="p-2">
+                  <div [innerHTML]="listagem.dados[0].enunciado"></div>
+                  <img src="{{ listagem.dados[0].img }}" class="img-fluid" />
+                </div>
               </div>
-            </div>
-          </td>
-        </tr>
-        <!-- </thead> -->
+            </td>
+          </tr>
+        </thead>
         <tbody>
           <tr class="row mx-1">
             <td class="col-2 align-middle text-center m-auto tamanho_quadro">
               <div class="row">
                 <div class="float-left col-6 alternativa">a)</div>
-                <!-- <b-form-radio
-                class="col-2 radio"
-                :disabled="!botConfirmaAvanca"
-                v-model="dados.correta"
-                value="a"
-              ></b-form-radio> -->
-                <div class="form-check">
+
+                <div class="form-check ">
                   <input
                     class="form-check-input"
                     type="radio"
@@ -179,7 +169,7 @@
                 </div>
               </div>
             </td>
-            <td class="col-10">
+            <td class="col-10 flex-center-align">
               <div class="sem_borda">
                 <div [innerHTML]="listagem.dados[0].resp_a"></div>
               </div>
@@ -211,7 +201,7 @@
                 </div>
               </div>
             </td>
-            <td class="col-10">
+            <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
                 <div [innerHTML]="listagem.dados[0].resp_b"></div>
               </div>
@@ -239,7 +229,7 @@
                 </div>
               </div>
             </td>
-            <td class="col-10">
+            <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
                 <div [innerHTML]="listagem.dados[0].resp_c"></div>
               </div>
@@ -267,13 +257,13 @@
                 </div>
               </div>
             </td>
-            <td class="col-10">
+            <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
                 <div [innerHTML]="listagem.dados[0].resp_d"></div>
               </div>
             </td>
           </tr>
-          <tr class="row mx-1">
+          <tr class="row mx-1" style="margin-bottom: 3px;">
             <td class="col-2 align-middle text-center m-auto tamanho_quadro">
               <div class="row">
                 <div class="float-left col-6 alternativa">e)</div>
@@ -295,7 +285,7 @@
                 </div>
               </div>
             </td>
-            <td class="col-10">
+            <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
                 <div [innerHTML]="listagem.dados[0].resp_e"></div>
               </div>

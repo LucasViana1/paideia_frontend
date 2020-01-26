@@ -47,6 +47,31 @@ export class SimuladoAPIService {
         }
       );
   }
+  // cadastro de simulado pelo adm
+  postCadastraSimulado(postData: any) {
+    this.http
+      .post(`${environment.urlBase}/cadastraSimulado`, {
+        pergunta: postData.pergunta,
+        materia: postData.materia,
+        enunciado: postData.enunciado,
+        resp_a: postData.resp_a,
+        resp_b: postData.resp_b,
+        resp_c: postData.resp_c,
+        resp_d: postData.resp_d,
+        resp_e: postData.resp_e,
+        correta: postData.correta,
+        img: postData.img
+      })
+      .subscribe(
+        res => {
+          console.log(res);
+          window.location.reload();
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  }
   // salva hora de inicio e fim previsto do simulado
   postHoraInicioFim(postData: any) {
     console.log("postData");

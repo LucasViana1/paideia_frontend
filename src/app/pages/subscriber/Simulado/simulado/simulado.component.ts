@@ -28,7 +28,7 @@ export class SimuladoComponent implements OnInit {
   });
 
   iniciarSimulado() {
-    window.localStorage.setItem("simulado", "1");
+    // window.localStorage.setItem("simulado", "1");
     this.getSimuladoq1(this.numModelo); // seta modelo da prova
     window.scrollTo(0, 0);
     this.inicio = false; // oculta normas no inicio e exibe tela de perguntas/alternativas
@@ -42,8 +42,7 @@ export class SimuladoComponent implements OnInit {
   }
 
   onSubmit() {
-    // LOGICA PARA MARCAR TEMPO DE INICIO/FIM DA PROVA
-
+    window.localStorage.setItem("simulado", "1");
     let form = this.formSimulado.value;
     let feedbackError = "";
 
@@ -62,13 +61,29 @@ export class SimuladoComponent implements OnInit {
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
 
       // quando for respondida a ultima pergunta, COLOCAR Nº DA ULTIMA PERGUNTA
-      if (this.listagem.dados[0].pergunta == 30) {
+      if (this.listagem.dados[0].pergunta == 50) {
         // if(this.listagem.dados[0].pergunta == 50){
         this.router.navigate(["/gabarito-simples"]);
+      } else {
+        window.location.reload();
+        window.scrollTo(0, 0);
       }
-      window.location.reload();
-      window.scrollTo(0, 0);
     }
+  }
+
+  getGabaritoSimples(id: any) {
+    this.service.getGabaritoSimples(id).subscribe(resp => {
+      this.listagem = resp;
+      // console.log(this.listagem.dados[0]);
+      let cont = 0;
+      for (let i = 0; i < this.listagem.dados.length; i++) {
+        cont++;
+      }
+      // CONT DEVE SER IGUAL AO Nº DE PERGUNTAS TOTAIS
+      if (cont >= 50) {
+        this.router.navigate(["/gabarito-simples"]);
+      }
+    });
   }
 
   ngOnInit() {
@@ -76,6 +91,10 @@ export class SimuladoComponent implements OnInit {
       window.scrollTo(0, 0);
       this.router.navigate(["/inicio"]);
     }
+
+    // caso o aluno ja tenha respondido todas as questões
+    this.getGabaritoSimples(this.idUser);
+
     if (window.localStorage.getItem("simulado") != "1") {
       this.inicio = true;
     } else {
@@ -108,6 +127,8 @@ export class SimuladoComponent implements OnInit {
   getNumModelo() {
     this.service.getNumModelo().subscribe(dados => {
       this.numModelo = dados;
+      console.log("this.numModelo");
+      console.log(this.numModelo);
     });
   }
   getHora(id: any) {
@@ -135,7 +156,7 @@ export class SimuladoComponent implements OnInit {
     let horaIni = "00" + data.getHours();
     let minutoIni = "00" + data.getMinutes();
     let segundoIni = "00" + data.getSeconds();
-    let horaFim = "00" + (data.getHours() + 4);
+    let horaFim = "00" + this.verificaHoraFim(data.getHours());
     let minutoFim = "00" + data.getMinutes();
     let segundoFim = "00" + data.getSeconds();
     this.iniTempo = `${horaIni.slice(-2)}:${minutoIni.slice(
@@ -145,9 +166,14 @@ export class SimuladoComponent implements OnInit {
     this.fimTempo = `${horaFim.slice(-2)}:${minutoFim.slice(
       -2
     )}:${segundoFim.slice(-2)}`;
+  }
 
-    console.log(this.iniTempo);
-    console.log(this.fimTempo);
+  verificaHoraFim(horaFim: any) {
+    let horaFimFinal = "00";
+    if (horaFim + 4 < 24) {
+      horaFimFinal = horaFim + 4;
+    }
+    return horaFimFinal;
   }
 }
 /*
