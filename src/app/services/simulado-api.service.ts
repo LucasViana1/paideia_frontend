@@ -97,4 +97,8 @@ export class SimuladoAPIService {
   getGabaritoSimples(id: any) {
     return this.http.get<any[]>(`${environment.urlBase}/gabaritosimples/${id}`);
   }
+  // resultado completo apenas adm
+  getResultadoSimulado() {
+    return this.http.get<any[]>(`${environment.urlBase}/simuladoadmcompleto`);
+  }
 }

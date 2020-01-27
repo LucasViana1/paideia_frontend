@@ -24,6 +24,7 @@ import { PageNotFoundComponent } from "./pages/public/Erro/page-not-found/page-n
 import { ValidaComponent } from "./pages/public/Acesso/valida/valida.component";
 import { ConcluiInscricaoComponent } from "./pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component";
 import { SimuladoComponent } from "./pages/subscriber/Simulado/simulado/simulado.component";
+import { SimuladoResultadoCompletoComponent } from "./pages/admin/simulado-resultado-completo/simulado-resultado-completo.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -37,7 +38,7 @@ const routes: Routes = [
   { path: "perguntas", component: PerguntasComponent },
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
-  { path: "simulado", component: SimuladoComponent }, // simulado aluno
+  // { path: "simulado", component: SimuladoComponent }, // simulado aluno
   { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
   // {
   //   path: "inscricao",
@@ -57,7 +58,11 @@ const routes: Routes = [
       { path: "inscritos", component: InscritosComponent },
       { path: "detalhes/:id", component: DetalhesComponent },
       { path: "completo/:id", component: CompletoComponent },
-      { path: "simulado-cadastro", component: SimuladoCadastroComponent }
+      { path: "simulado-cadastro", component: SimuladoCadastroComponent },
+      {
+        path: "simulado-resultado",
+        component: SimuladoResultadoCompletoComponent
+      }
     ]
   }, // rota com guardas
   { path: "**", component: PageNotFoundComponent } // depois criar rota para erro

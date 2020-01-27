@@ -40,6 +40,7 @@ import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
 import { ConcluiInscricaoComponent } from './pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component';
 import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simulado-cadastro.component';
 import { GabaritoSimplesComponent } from './pages/subscriber/Simulado/gabarito-simples/gabarito-simples.component';
+import { SimuladoResultadoCompletoComponent } from './pages/admin/simulado-resultado-completo/simulado-resultado-completo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +73,8 @@ import { GabaritoSimplesComponent } from './pages/subscriber/Simulado/gabarito-s
     ValidaComponent,
     ConcluiInscricaoComponent,
     SimuladoCadastroComponent,
-    GabaritoSimplesComponent
+    GabaritoSimplesComponent,
+    SimuladoResultadoCompletoComponent
   ],
   imports: [
     BrowserModule,

@@ -93,6 +93,9 @@ export class SimuladoCadastroComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (window.localStorage.getItem("nivel") !== "1") {
+      this.router.navigate(["/inicio"]);
+    }
     this.getCadastraSimulado();
   }
 
