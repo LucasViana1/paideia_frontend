@@ -2,24 +2,42 @@
   RESULTADO SIMULADO
 </h1>
 
-<table
-  class="text-center table table-responsive-sm table-sm table-bordered table-striped"
->
+<table class="text-center table table-sm table-bordered table-striped">
   <thead>
     <tr>
-      <th class="cabecalho">NOME COMPLETO</th>
-      <th class="cabecalho">MATÉRIA</th>
-      <th class="cabecalho">ACERTOS</th>
+      <!-- <th class="cabecalho">MATRÍCULA</th> -->
+      <th class="cabecalho">NOME</th>
+      <th class="cabecalho">FÍSICA</th>
+      <th class="cabecalho">BIOLOGIA</th>
+      <th class="cabecalho">MATEMÁTICA</th>
+      <th class="cabecalho">HISTÓRIA</th>
+      <th class="cabecalho">QUÍMICA</th>
+      <th class="cabecalho">GEOGRAFICA</th>
+      <th class="cabecalho">GRAMÁTICA</th>
+      <th class="cabecalho">SOCIOLOGIA</th>
+      <th class="cabecalho">FILOSOFIA</th>
+      <th class="cabecalho">ARTES</th>
+      <th class="cabecalho">INGLÊS</th>
+      <th class="cabecalho">TOTAL</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let item of listagem.dados">
-      <td>{{ item.nome }} {{ item.sobrenome }}</td>
-      <td>{{ item.materia }}</td>
-      <td>{{ item.acertou }}</td>
+    <tr *ngFor="let item of itens">
+      <!-- <td>{{ item.matricula }}</td> -->
+      <td>{{ item.nome }}</td>
+      <td>{{ item.qtdFisica }}/5</td>
+      <td>{{ item.qtdBiologia }}/5</td>
+      <td>{{ item.qtdMatematica }}/5</td>
+      <td>{{ item.qtdHistoria }}/5</td>
+      <td>{{ item.qtdQuimica }}/5</td>
+      <td>{{ item.qtdGeografia }}/5</td>
+      <td>{{ item.qtdGramatica }}/5</td>
+      <td>{{ item.qtdSociologia }}/2</td>
+      <td>{{ item.qtdFilosofia }}/2</td>
+      <td>{{ item.qtdArtes }}/2</td>
+      <td>{{ item.qtdIngles }}/9</td>
+      <td>{{ item.qtdTotal }}/50</td>
     </tr>
   </tbody>
 </table>
-
-{{ listagem | json }}
