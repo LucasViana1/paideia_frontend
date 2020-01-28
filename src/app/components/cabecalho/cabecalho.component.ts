@@ -9,6 +9,7 @@ export class CabecalhoComponent implements OnInit {
   adm: number;
   nome: string;
   nivel: string = window.localStorage.getItem("nivel");
+  inscrito_atual: any = window.localStorage.getItem("inscrito_atual");
 
   constructor(private router: Router) {
     // console.log(this.nome);
@@ -20,6 +21,7 @@ export class CabecalhoComponent implements OnInit {
     window.localStorage.removeItem("id");
     window.localStorage.removeItem("email");
     window.localStorage.removeItem("simulado");
+    window.localStorage.removeItem("inscrito_atual");
     this.router.navigate(["/inicio"]);
     location.reload();
     // window.scrollTo(0, 0);

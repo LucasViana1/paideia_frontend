@@ -78,6 +78,10 @@ export class UsersAPIService {
             window.localStorage.setItem("nome", res[0].nome);
             window.localStorage.setItem("nivel", res[0].adm);
             window.localStorage.setItem("email", res[0].email);
+            window.localStorage.setItem(
+              "inscrito_atual",
+              res[0].inscrito_atual
+            );
             // this.simuladoService
             //   .getGabaritoSimples(res[0].id)
             //   .subscribe(resp => {
