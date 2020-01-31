@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: "perguntas", component: PerguntasComponent },
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
-  // { path: "simulado", component: SimuladoComponent }, // simulado aluno
+  { path: "simulado", component: SimuladoComponent }, // simulado aluno
   { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
   // {
   //   path: "inscricao",
