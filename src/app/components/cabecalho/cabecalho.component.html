@@ -19,11 +19,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <!-- <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >Home <span class="sr-only">(Página atual)</span></a
-        >
-      </li> -->
       <li class="nav-item">
         <a class="nav-link" routerLink="/sobre" routerLinkActive="active"
           >Sobre</a
@@ -45,19 +40,19 @@
         >
       </li>
       <!-- ATIVAR NAS INSCRIÇÕES -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" routerLink="/cadastro" routerLinkActive="active"
           >Cadastre-se</a
         >
-      </li> -->
-      <!-- <li class="nav-item" *ngIf="nivel !== null">
+      </li>
+      <li class="nav-item" *ngIf="nivel !== null">
         <a
           class="nav-link"
           routerLink="/inscricao/termos"
           routerLinkActive="active"
           >Inscrições 1º semestre 2020</a
         >
-      </li> -->
+      </li>
       <li class="nav-item" *ngIf="nivel !== null && inscrito_atual == 1">
         <a class="nav-link" routerLink="/simulado" routerLinkActive="active"
           >Simulado</a
