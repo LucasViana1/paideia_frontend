@@ -104,6 +104,9 @@ export class SimuladoComponent implements OnInit {
     this.getNumModelo(); // apenas valido na primeira chamada, nas demais o nº do modelo fica desatualizada
     this.getSimulado(this.idUser);
     this.getHora(this.idUser);
+    // while (this.listagem === undefined) {
+    //   this.getSimulado(this.idUser);
+    // }
   }
 
   getSimuladoq1(numModelo: any) {
@@ -111,18 +114,18 @@ export class SimuladoComponent implements OnInit {
       this.listagem = dados;
     });
   }
-  getSimulado(id: any) {
-    this.service.getSimulado(id).subscribe(dados => {
-      this.listagem = dados;
-      console.log("this.listagem");
-      console.log(this.listagem.dados[0]);
-      // LOGICA PARA CASO O ALUNO JA TENHA INICIADO A PROVA E SAIU ANTERIORMENTE
-      // if (typeof this.listagem.dados[0] === undefined) {
-      //   this.inicio = false;
-      // } else {
-      //   this.inicio = true;
-      // }
-    });
+  async getSimulado(id: any) {
+    console.log("teste promisses");
+    console.log(this.service.getSimulado(id).toPromise());
+    this.listagem = await this.service.getSimulado(id).toPromise();
+    console.log("teste promisses listagem");
+    console.log(this.listagem);
+
+    // this.service.getSimulado(id).subscribe(dados => {
+    //   this.listagem = dados;
+    //   console.log("this.listagem");
+    //   console.log(this.listagem.dados[0]);
+    // });
   }
   getNumModelo() {
     this.service.getNumModelo().subscribe(dados => {
