@@ -14,15 +14,16 @@ export class SimuladoCadastroComponent implements OnInit {
     "Selecione",
     "Física",
     "Biologia",
-    "Matemática",
     "História",
     "Química",
     "Geografia",
-    "Gramática",
-    "Sociologia",
-    "Filosofia",
-    "Artes",
-    "Inglês"
+    "Português",
+    "Matemática"
+    // "Gramática",
+    // "Sociologia",
+    // "Filosofia",
+    // "Artes",
+    // "Inglês"
   ];
 
   constructor(
@@ -39,7 +40,7 @@ export class SimuladoCadastroComponent implements OnInit {
     resp_b: [""],
     resp_c: [""],
     resp_d: [""],
-    resp_e: ["Nenhuma das alternativas"],
+    resp_e: [""],
     correta: [""]
   });
 

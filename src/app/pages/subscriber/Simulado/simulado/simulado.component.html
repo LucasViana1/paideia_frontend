@@ -8,12 +8,14 @@
   <h1>Simulado</h1>
 
   <div show class="alert alert-warning mt-2 text-center" role="alert">
-    Simulado online estará disponivel até dia 30/01/2020 às 23:59
+    Simulado online estará disponivel até dia 16/02/2020 às 23:59
   </div>
   <div show class="alert alert-danger mt-2" role="alert">
     <p class="text-center">
-     <b> ATENÇÃO! Caso ocorra de não aparecer as alternativas das questões realize
-      o seguinte procedimento:</b>
+      <b>
+        ATENÇÃO! Caso ocorra de não aparecer as alternativas das questões
+        realize o seguinte procedimento:</b
+      >
     </p>
     <ol>
       <li>
@@ -106,12 +108,12 @@
             efetivamente respondidas
           </div>
         </li>
-        <li>
+        <!-- <li>
           <div style="font-weight: initial;">
             O gabarito estará disponível no site da Associação Paideia em
             03/02/2020.
           </div>
-        </li>
+        </li> -->
       </ol>
     </div>
     <p>
@@ -150,7 +152,7 @@
             >
               <u
                 ><div class="ques">Questão</div>
-                {{ listagem.dados[0].pergunta }}</u
+                {{ retorno.pergunta }}</u
               >
             </th>
             <td
@@ -158,10 +160,10 @@
               style="margin-top: 3px;"
             >
               <div>
-                <h4>{{ listagem.dados[0].materia }}</h4>
+                <h4>{{ retorno.materia }}</h4>
                 <div class="p-2">
-                  <div [innerHTML]="listagem.dados[0].enunciado"></div>
-                  <img src="{{ listagem.dados[0].img }}" class="img-fluid" />
+                  <div [innerHTML]="retorno.enunciado"></div>
+                  <img src="{{ retorno.img }}" class="img-fluid" />
                 </div>
               </div>
             </td>
@@ -187,7 +189,7 @@
             </td>
             <td class="col-10 flex-center-align">
               <div class="sem_borda">
-                <div [innerHTML]="listagem.dados[0].resp_a"></div>
+                <div [innerHTML]="retorno.resp_a"></div>
               </div>
               <!-- <b-card class="sem_borda" size="sm">
               <div v-html="listagem.dados[0].resp_a"></div>
@@ -219,7 +221,7 @@
             </td>
             <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
-                <div [innerHTML]="listagem.dados[0].resp_b"></div>
+                <div [innerHTML]="retorno.resp_b"></div>
               </div>
             </td>
           </tr>
@@ -247,7 +249,7 @@
             </td>
             <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
-                <div [innerHTML]="listagem.dados[0].resp_c"></div>
+                <div [innerHTML]="retorno.resp_c"></div>
               </div>
             </td>
           </tr>
@@ -275,7 +277,7 @@
             </td>
             <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
-                <div [innerHTML]="listagem.dados[0].resp_d"></div>
+                <div [innerHTML]="retorno.resp_d"></div>
               </div>
             </td>
           </tr>
@@ -303,7 +305,7 @@
             </td>
             <td class="col-10 flex-center-align">
               <div class="sem_borda" size="sm">
-                <div [innerHTML]="listagem.dados[0].resp_e"></div>
+                <div [innerHTML]="retorno.resp_e"></div>
               </div>
             </td>
           </tr>

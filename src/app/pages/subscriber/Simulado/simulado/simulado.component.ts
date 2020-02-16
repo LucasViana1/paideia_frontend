@@ -10,6 +10,7 @@ import { SimuladoAPIService } from "../../../../services/simulado-api.service";
 })
 export class SimuladoComponent implements OnInit {
   listagem: any;
+  retorno: any;
   idUser: number = Number(window.localStorage.getItem("id"));
   numModelo: any;
   inicio: boolean; // oculta/exibe tela de inicio de simulado
@@ -27,9 +28,10 @@ export class SimuladoComponent implements OnInit {
     selecionado: [""]
   });
 
-  iniciarSimulado() {
+  async iniciarSimulado() {
     // window.localStorage.setItem("simulado", "1");
-    this.getSimuladoq1(this.numModelo); // seta modelo da prova
+    // this.getSimuladoq1(this.numModelo); // seta modelo da prova
+    this.retorno = await this.getSimuladoq1(this.numModelo);
     window.scrollTo(0, 0);
     this.inicio = false; // oculta normas no inicio e exibe tela de perguntas/alternativas
     this.getHoraInicioFim();
@@ -42,7 +44,8 @@ export class SimuladoComponent implements OnInit {
   }
 
   onSubmit() {
-    window.localStorage.setItem("simulado", "1");
+    // SMP ALTERAR NUMERO ENTRE SIMULADOS
+    window.localStorage.setItem("simulado", "2");
     let form = this.formSimulado.value;
     let feedbackError = "";
 
@@ -54,14 +57,14 @@ export class SimuladoComponent implements OnInit {
     } else {
       this.service.postSimulado({
         idUser: this.idUser,
-        modelo: this.listagem.dados[0].modelo,
-        pergunta: this.listagem.dados[0].pergunta,
+        modelo: this.retorno.modelo,
+        pergunta: this.retorno.pergunta,
         selecionado: form.selecionado
       });
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
 
       // quando for respondida a ultima pergunta, COLOCAR Nº DA ULTIMA PERGUNTA
-      if (this.listagem.dados[0].pergunta == 50) {
+      if (this.listagem.dados[0].pergunta == 70) {
         // if(this.listagem.dados[0].pergunta == 50){
         this.router.navigate(["/gabarito-simples"]);
       } else {
@@ -80,13 +83,13 @@ export class SimuladoComponent implements OnInit {
         cont++;
       }
       // CONT DEVE SER IGUAL AO Nº DE PERGUNTAS TOTAIS
-      if (cont >= 50) {
+      if (cont >= 70) {
         this.router.navigate(["/gabarito-simples"]);
       }
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     if (window.localStorage.getItem("nome") === null) {
       window.scrollTo(0, 0);
       this.router.navigate(["/inicio"]);
@@ -95,24 +98,28 @@ export class SimuladoComponent implements OnInit {
     // caso o aluno ja tenha respondido todas as questões
     this.getGabaritoSimples(this.idUser);
 
-    if (window.localStorage.getItem("simulado") != "1") {
+    if (window.localStorage.getItem("simulado") != "2") {
       this.inicio = true;
     } else {
       this.inicio = false;
     }
 
     this.getNumModelo(); // apenas valido na primeira chamada, nas demais o nº do modelo fica desatualizada
-    this.getSimulado(this.idUser);
+    this.retorno = await this.getSimulado(this.idUser);
     this.getHora(this.idUser);
     // while (this.listagem === undefined) {
     //   this.getSimulado(this.idUser);
     // }
+    console.log("DADOS RETORNO TESTE");
+    console.log(this.retorno);
   }
 
-  getSimuladoq1(numModelo: any) {
-    this.service.getSimuladoq1(numModelo).subscribe(dados => {
-      this.listagem = dados;
-    });
+  async getSimuladoq1(numModelo: any) {
+    this.listagem = await this.service.getSimuladoq1(numModelo).toPromise();
+    return this.listagem.dados[0];
+    // this.service.getSimuladoq1(numModelo).subscribe(dados => {
+    //   this.listagem = dados;
+    // });
   }
   async getSimulado(id: any) {
     console.log("teste promisses");
@@ -120,6 +127,12 @@ export class SimuladoComponent implements OnInit {
     this.listagem = await this.service.getSimulado(id).toPromise();
     console.log("teste promisses listagem");
     console.log(this.listagem);
+    console.log("DADOS RETORNO");
+    console.log(this.listagem.dados[0]);
+    // this.retorno = await this.listagem.dados[0];
+    // console.log("this.retorno");
+    // console.log(this.retorno);
+    return this.listagem.dados[0];
 
     // this.service.getSimulado(id).subscribe(dados => {
     //   this.listagem = dados;
