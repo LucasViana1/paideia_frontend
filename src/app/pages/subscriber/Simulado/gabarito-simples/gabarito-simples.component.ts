@@ -57,20 +57,23 @@ export class GabaritoSimplesComponent implements OnInit {
           case "Geografia":
             if (this.listagem.dados[i].acertou === "s") this.qtdGeografia++;
             break;
-          case "Gramática":
+          case "Português":
             if (this.listagem.dados[i].acertou === "s") this.qtdGramatica++;
             break;
-          case "Sociologia":
-            if (this.listagem.dados[i].acertou === "s") this.qtdSociologia++;
-            break;
-          case "Filosofia":
-            if (this.listagem.dados[i].acertou === "s") this.qtdFilosofia++;
-            break;
-          case "Artes":
-            if (this.listagem.dados[i].acertou === "s") this.qtdArtes++;
-            break;
-          case "Inglês":
-            if (this.listagem.dados[i].acertou === "s") this.qtdIngles++;
+            // case "Gramática":
+            //   if (this.listagem.dados[i].acertou === "s") this.qtdGramatica++;
+            //   break;
+            // case "Sociologia":
+            //   if (this.listagem.dados[i].acertou === "s") this.qtdSociologia++;
+            //   break;
+            // case "Filosofia":
+            //   if (this.listagem.dados[i].acertou === "s") this.qtdFilosofia++;
+            //   break;
+            // case "Artes":
+            //   if (this.listagem.dados[i].acertou === "s") this.qtdArtes++;
+            //   break;
+            // case "Inglês":
+            //   if (this.listagem.dados[i].acertou === "s") this.qtdIngles++;
             break;
           default:
             console.log("Falha ao identificar a matéria");
