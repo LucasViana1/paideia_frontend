@@ -72,25 +72,25 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
           case "Geografia":
             if (this.lista.dados[i].acertou === "s") this.qtdGeografia++;
             break;
-          case "Gramática":
+          case "Português":
             if (this.lista.dados[i].acertou === "s") this.qtdGramatica++;
             break;
-          case "Sociologia":
-            if (this.lista.dados[i].acertou === "s") this.qtdSociologia++;
-            break;
-          case "Filosofia":
-            if (this.lista.dados[i].acertou === "s") this.qtdFilosofia++;
-            break;
-          case "Artes":
-            if (this.lista.dados[i].acertou === "s") this.qtdArtes++;
-            break;
-          case "Inglês":
-            if (this.lista.dados[i].acertou === "s") {
-              this.qtdIngles++;
+          // case "Sociologia":
+          //   if (this.lista.dados[i].acertou === "s") this.qtdSociologia++;
+          //   break;
+          // case "Filosofia":
+          //   if (this.lista.dados[i].acertou === "s") this.qtdFilosofia++;
+          //   break;
+          // case "Artes":
+          //   if (this.lista.dados[i].acertou === "s") this.qtdArtes++;
+          //   break;
+          // case "Inglês":
+          //   if (this.lista.dados[i].acertou === "s") {
+          //     this.qtdIngles++;
               // console.log("this.qtdIngles");
               // console.log(this.qtdIngles);
             }
-            break;
+            // break;
           default:
             console.log("Falha ao identificar a matéria");
             break;

@@ -13,11 +13,12 @@
       <th class="cabecalho">HISTÓRIA</th>
       <th class="cabecalho">QUÍMICA</th>
       <th class="cabecalho">GEOGRAFICA</th>
-      <th class="cabecalho">GRAMÁTICA</th>
+      <th class="cabecalho">PORTUGUÊS</th>
+      <!-- <th class="cabecalho">GRAMÁTICA</th>
       <th class="cabecalho">SOCIOLOGIA</th>
       <th class="cabecalho">FILOSOFIA</th>
       <th class="cabecalho">ARTES</th>
-      <th class="cabecalho">INGLÊS</th>
+      <th class="cabecalho">INGLÊS</th> -->
       <th class="cabecalho">TOTAL</th>
     </tr>
   </thead>
@@ -26,18 +27,18 @@
     <tr *ngFor="let item of itens">
       <!-- <td>{{ item.matricula }}</td> -->
       <td>{{ item.nome }}</td>
-      <td>{{ item.qtdFisica }}/5</td>
-      <td>{{ item.qtdBiologia }}/5</td>
-      <td>{{ item.qtdMatematica }}/5</td>
-      <td>{{ item.qtdHistoria }}/5</td>
-      <td>{{ item.qtdQuimica }}/5</td>
-      <td>{{ item.qtdGeografia }}/5</td>
-      <td>{{ item.qtdGramatica }}/5</td>
-      <td>{{ item.qtdSociologia }}/2</td>
+      <td>{{ item.qtdFisica }}/10</td>
+      <td>{{ item.qtdBiologia }}/10</td>
+      <td>{{ item.qtdMatematica }}/10</td>
+      <td>{{ item.qtdHistoria }}/10</td>
+      <td>{{ item.qtdQuimica }}/10</td>
+      <td>{{ item.qtdGeografia }}/10</td>
+      <td>{{ item.qtdGramatica }}/10</td>
+      <!-- <td>{{ item.qtdSociologia }}/2</td>
       <td>{{ item.qtdFilosofia }}/2</td>
       <td>{{ item.qtdArtes }}/2</td>
-      <td>{{ item.qtdIngles }}/9</td>
-      <td>{{ item.qtdTotal }}/50</td>
+      <td>{{ item.qtdIngles }}/9</td> -->
+      <td>{{ item.qtdTotal }}/70</td>
     </tr>
   </tbody>
 </table>
