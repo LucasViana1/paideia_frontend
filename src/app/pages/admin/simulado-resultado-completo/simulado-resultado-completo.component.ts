@@ -18,10 +18,10 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
   qtdQuimica: number = 0;
   qtdGeografia: number = 0;
   qtdGramatica: number = 0;
-  qtdSociologia: number = 0;
-  qtdFilosofia: number = 0;
-  qtdArtes: number = 0;
-  qtdIngles: number = 0;
+  // qtdSociologia: number = 0;
+  // qtdFilosofia: number = 0;
+  // qtdArtes: number = 0;
+  // qtdIngles: number = 0;
   qtdTotal: number;
   constructor(private service: SimuladoAPIService, private router: Router) {}
 
@@ -87,10 +87,10 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
           // case "Inglês":
           //   if (this.lista.dados[i].acertou === "s") {
           //     this.qtdIngles++;
-              // console.log("this.qtdIngles");
-              // console.log(this.qtdIngles);
-            }
-            // break;
+          //     // console.log("this.qtdIngles");
+          //     // console.log(this.qtdIngles);
+          //   }
+          //   break;
           default:
             console.log("Falha ao identificar a matéria");
             break;
