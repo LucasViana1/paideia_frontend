@@ -107,26 +107,26 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
         this.qtdQuimica +
         this.qtdGeografia +
         this.qtdGramatica +
-        this.qtdSociologia +
-        this.qtdFilosofia +
-        this.qtdArtes +
-        this.qtdIngles;
-      this.itens.push({
-        nome: `${nome} ${sobrenome}`,
-        matricula: matricula,
-        qtdFisica: this.qtdFisica,
-        qtdBiologia: this.qtdBiologia,
-        qtdMatematica: this.qtdMatematica,
-        qtdHistoria: this.qtdHistoria,
-        qtdQuimica: this.qtdQuimica,
-        qtdGeografia: this.qtdGeografia,
-        qtdGramatica: this.qtdGramatica,
-        qtdSociologia: this.qtdSociologia,
-        qtdFilosofia: this.qtdFilosofia,
-        qtdArtes: this.qtdArtes,
-        qtdIngles: this.qtdIngles,
-        qtdTotal: this.qtdTotal
-      });
+        // this.qtdSociologia +
+        // this.qtdFilosofia +
+        // this.qtdArtes +
+        // this.qtdIngles;
+        this.itens.push({
+          nome: `${nome} ${sobrenome}`,
+          matricula: matricula,
+          qtdFisica: this.qtdFisica,
+          qtdBiologia: this.qtdBiologia,
+          qtdMatematica: this.qtdMatematica,
+          qtdHistoria: this.qtdHistoria,
+          qtdQuimica: this.qtdQuimica,
+          qtdGeografia: this.qtdGeografia,
+          qtdGramatica: this.qtdGramatica,
+          // qtdSociologia: this.qtdSociologia,
+          // qtdFilosofia: this.qtdFilosofia,
+          // qtdArtes: this.qtdArtes,
+          // qtdIngles: this.qtdIngles,
+          qtdTotal: this.qtdTotal
+        });
       this.qtdFisica = 0;
       this.qtdBiologia = 0;
       this.qtdMatematica = 0;
@@ -134,10 +134,10 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
       this.qtdQuimica = 0;
       this.qtdGeografia = 0;
       this.qtdGramatica = 0;
-      this.qtdSociologia = 0;
-      this.qtdFilosofia = 0;
-      this.qtdArtes = 0;
-      this.qtdIngles = 0;
+      // this.qtdSociologia = 0;
+      // this.qtdFilosofia = 0;
+      // this.qtdArtes = 0;
+      // this.qtdIngles = 0;
       this.qtdTotal = 0;
     });
   }
