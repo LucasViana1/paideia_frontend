@@ -106,27 +106,29 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
         this.qtdHistoria +
         this.qtdQuimica +
         this.qtdGeografia +
-        this.qtdGramatica +
-        // this.qtdSociologia +
-        // this.qtdFilosofia +
-        // this.qtdArtes +
-        // this.qtdIngles;
-        this.itens.push({
-          nome: `${nome} ${sobrenome}`,
-          matricula: matricula,
-          qtdFisica: this.qtdFisica,
-          qtdBiologia: this.qtdBiologia,
-          qtdMatematica: this.qtdMatematica,
-          qtdHistoria: this.qtdHistoria,
-          qtdQuimica: this.qtdQuimica,
-          qtdGeografia: this.qtdGeografia,
-          qtdGramatica: this.qtdGramatica,
-          // qtdSociologia: this.qtdSociologia,
-          // qtdFilosofia: this.qtdFilosofia,
-          // qtdArtes: this.qtdArtes,
-          // qtdIngles: this.qtdIngles,
-          qtdTotal: this.qtdTotal
-        });
+        this.qtdGramatica;
+      // this.qtdSociologia +
+      // this.qtdFilosofia +
+      // this.qtdArtes +
+      // this.qtdIngles;
+      this.itens.push({
+        nome: `${nome} ${sobrenome}`,
+        matricula: matricula,
+        qtdFisica: this.qtdFisica,
+        qtdBiologia: this.qtdBiologia,
+        qtdMatematica: this.qtdMatematica,
+        qtdHistoria: this.qtdHistoria,
+        qtdQuimica: this.qtdQuimica,
+        qtdGeografia: this.qtdGeografia,
+        qtdGramatica: this.qtdGramatica,
+        // qtdSociologia: this.qtdSociologia,
+        // qtdFilosofia: this.qtdFilosofia,
+        // qtdArtes: this.qtdArtes,
+        // qtdIngles: this.qtdIngles,
+        qtdTotal: this.qtdTotal
+      });
+      console.log("this.itens");
+      console.log(this.itens);
       this.qtdFisica = 0;
       this.qtdBiologia = 0;
       this.qtdMatematica = 0;
