@@ -41,6 +41,7 @@ import { ConcluiInscricaoComponent } from './pages/subscriber/Inscricao/conclui-
 import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simulado-cadastro.component';
 import { GabaritoSimplesComponent } from './pages/subscriber/Simulado/gabarito-simples/gabarito-simples.component';
 import { SimuladoResultadoCompletoComponent } from './pages/admin/simulado-resultado-completo/simulado-resultado-completo.component';
+import { SimuladoDownloadModelosComponent } from './pages/admin/simulado-download-modelos/simulado-download-modelos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,8 @@ import { SimuladoResultadoCompletoComponent } from './pages/admin/simulado-resul
     ConcluiInscricaoComponent,
     SimuladoCadastroComponent,
     GabaritoSimplesComponent,
-    SimuladoResultadoCompletoComponent
+    SimuladoResultadoCompletoComponent,
+    SimuladoDownloadModelosComponent
   ],
   imports: [
     BrowserModule,

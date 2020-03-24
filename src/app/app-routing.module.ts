@@ -25,6 +25,7 @@ import { ValidaComponent } from "./pages/public/Acesso/valida/valida.component";
 import { ConcluiInscricaoComponent } from "./pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component";
 import { SimuladoComponent } from "./pages/subscriber/Simulado/simulado/simulado.component";
 import { SimuladoResultadoCompletoComponent } from "./pages/admin/simulado-resultado-completo/simulado-resultado-completo.component";
+import { SimuladoDownloadModelosComponent } from './pages/admin/simulado-download-modelos/simulado-download-modelos.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -63,6 +64,10 @@ const routes: Routes = [
       {
         path: "simulado-resultado",
         component: SimuladoResultadoCompletoComponent
+      },
+      {
+        path: "simulado-download",
+        component: SimuladoDownloadModelosComponent
       }
     ]
   }, // rota com guardas
