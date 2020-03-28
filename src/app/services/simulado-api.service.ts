@@ -101,4 +101,14 @@ export class SimuladoAPIService {
   getResultadoSimulado() {
     return this.http.get<any[]>(`${environment.urlBase}/simuladoadmcompleto`);
   }
+  // gabarito de todos os modelos completo (usado para download)
+  getGabaritoModelos() {
+    return this.http.get<any[]>(`${environment.urlBase}/gabaritomodelos`);
+  }
+  // todos os simulados do aluno
+  getResultadoSimuladoAluno(id: any) {
+    return this.http.get<any[]>(
+      `${environment.urlBase}/resultadosimulados/${id}`
+    );
+  }
 }

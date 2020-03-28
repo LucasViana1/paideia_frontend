@@ -1,1 +1,53 @@
-<p>simulado-download-modelos works!</p>
+<section>
+  <div class="noprint text-center">
+    <h2>Download Gabaritos</h2>
+  </div>
+
+  <div class="noprint text-center">
+    <button (click)="selecionaModelo(1)" class="ml-4 btn btn-outline-primary">
+      Modelo 1
+    </button>
+    <button (click)="selecionaModelo(2)" class="ml-4 btn btn-outline-primary">
+      Modelo 2
+    </button>
+    <button (click)="selecionaModelo(3)" class="ml-4 btn btn-outline-primary">
+      Modelo 3
+    </button>
+    <button (click)="selecionaModelo(4)" class="ml-4 btn btn-outline-primary">
+      Modelo 4
+    </button>
+  </div>
+
+  <div class="mt-3 mb-5 text-center">
+    <h4>Modelo {{ modeloSelecionado }}</h4>
+  </div>
+
+  <div>
+    <div *ngFor="let item of gabaritoAtual">
+      <div
+        class="mb-3 h4"
+        [innerHTML]="item.pergunta + ' - ' + item.materia"
+      ></div>
+      <div class="ml-4" [innerHTML]="item.enunciado"></div>
+      <img src="{{ item.img }}" class="ml-4 img-fluid" />
+
+      <div class="ml-4 mt-2">
+        <div [innerHTML]="'a) ' + item.resp_a"></div>
+        <div [innerHTML]="'b) ' + item.resp_b"></div>
+        <div [innerHTML]="'c) ' + item.resp_c"></div>
+        <div [innerHTML]="'d) ' + item.resp_d"></div>
+        <div [innerHTML]="'e) ' + item.resp_e"></div>
+      </div>
+
+      <div class="mt-3 mb-3">
+        <i>
+          <u>
+            A alternativa correta é a letra <b class="h5">{{ item.correta }}</b>
+          </u>
+        </i>
+      </div>
+
+      <hr />
+    </div>
+  </div>
+</section>

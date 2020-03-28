@@ -64,7 +64,7 @@ export class SimuladoComponent implements OnInit {
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
 
       // quando for respondida a ultima pergunta, COLOCAR Nº DA ULTIMA PERGUNTA
-      if (this.listagem.dados[0].pergunta == 70) {
+      if (this.listagem.dados[0].pergunta == 65) {
         // if(this.listagem.dados[0].pergunta == 50){
         this.router.navigate(["/gabarito-simples"]);
       } else {
@@ -83,7 +83,7 @@ export class SimuladoComponent implements OnInit {
         cont++;
       }
       // CONT DEVE SER IGUAL AO Nº DE PERGUNTAS TOTAIS
-      if (cont >= 70) {
+      if (cont >= 65) {
         this.router.navigate(["/gabarito-simples"]);
       }
     });

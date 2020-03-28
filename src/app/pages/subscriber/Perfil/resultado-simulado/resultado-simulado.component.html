@@ -1,0 +1,55 @@
+<section>
+  <div class="text-center">
+    <h1>RESULTADO SIMULADOS</h1>
+  </div>
+
+  <!-- FUTURAMENTE SERÁ UM LOOP, PARA N SIMULADOS -->
+  <div>
+    <h3>Simulado 1</h3>
+  </div>
+
+  <table
+    class="text-center table table-responsive-sm table-sm table-bordered table-striped mt-2"
+  >
+    <thead>
+      <tr>
+        <th class="cabecalho">PERGUNTA</th>
+        <th class="cabecalho">SELECIONOU</th>
+        <th class="cabecalho">ACERTOU?</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of listagem.dados">
+        <td>{{ item.pergunta }}</td>
+        <td>
+          <b>
+            {{ item.selecionado }}
+          </b>
+        </td>
+        <td>
+          <!-- {{ item.acertou }} -->
+          <div *ngIf="item.acertou === 's'" style="color: green;">
+            SIM
+          </div>
+          <div *ngIf="item.acertou === 'n'" style="color: red;">
+            NÃO
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="my-4">
+    <div style="font-weight: bold; font-size: 110%;">
+      Total: {{ qtdAcertos }}
+    </div>
+  </div>
+  <div>
+    <button
+      (click)="downloadPdf(listagem.dados[0].modelo)"
+      class="ml-4 btn btn-outline-danger"
+    >
+      BAIXAR SIMULADO
+    </button>
+  </div>
+</section>

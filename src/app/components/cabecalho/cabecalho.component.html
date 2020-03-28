@@ -58,6 +58,14 @@
           >Simulado</a
         >
       </li>
+      <li class="nav-item" *ngIf="nivel !== null && inscrito_atual == 1">
+        <a
+          class="nav-link"
+          routerLink="/resultado-simulados"
+          routerLinkActive="active"
+          >Perfil</a
+        >
+      </li>
       <li class="nav-item" *ngIf="adm === 1">
         <a
           class="nav-link"

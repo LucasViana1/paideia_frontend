@@ -25,7 +25,8 @@ import { ValidaComponent } from "./pages/public/Acesso/valida/valida.component";
 import { ConcluiInscricaoComponent } from "./pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component";
 import { SimuladoComponent } from "./pages/subscriber/Simulado/simulado/simulado.component";
 import { SimuladoResultadoCompletoComponent } from "./pages/admin/simulado-resultado-completo/simulado-resultado-completo.component";
-import { SimuladoDownloadModelosComponent } from './pages/admin/simulado-download-modelos/simulado-download-modelos.component';
+import { SimuladoDownloadModelosComponent } from "./pages/admin/simulado-download-modelos/simulado-download-modelos.component";
+import { ResultadoSimuladoComponent } from "./pages/subscriber/Perfil/resultado-simulado/resultado-simulado.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
@@ -39,8 +40,8 @@ const routes: Routes = [
   { path: "perguntas", component: PerguntasComponent },
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
-  // { path: "simulado", component: SimuladoComponent }, // simulado aluno
-  { path: "simulado", component: GabaritoSimplesComponent }, // gabaritmo
+  { path: "simulado", component: SimuladoComponent }, // simulado aluno
+  // { path: "simulado", component: GabaritoSimplesComponent }, // gabaritmo
   { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
   // {
   //   path: "inscricao",
@@ -71,6 +72,7 @@ const routes: Routes = [
       }
     ]
   }, // rota com guardas
+  { path: "resultado-simulados", component: ResultadoSimuladoComponent }, // resultado todos simulados ao aluno
   { path: "**", component: PageNotFoundComponent } // depois criar rota para erro
 ];
 

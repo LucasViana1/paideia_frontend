@@ -35,13 +35,16 @@ import { RecuperacaoComponent } from "./pages/public/Acesso/recuperacao/recupera
 import { SocioeconomicoComponent } from "./pages/subscriber/Inscricao/socioeconomico/socioeconomico.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { PageNotFoundComponent } from './pages/public/Erro/page-not-found/page-not-found.component';
-import { ValidaComponent } from './pages/public/Acesso/valida/valida.component';
-import { ConcluiInscricaoComponent } from './pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component';
-import { SimuladoCadastroComponent } from './pages/admin/simulado-cadastro/simulado-cadastro.component';
-import { GabaritoSimplesComponent } from './pages/subscriber/Simulado/gabarito-simples/gabarito-simples.component';
-import { SimuladoResultadoCompletoComponent } from './pages/admin/simulado-resultado-completo/simulado-resultado-completo.component';
-import { SimuladoDownloadModelosComponent } from './pages/admin/simulado-download-modelos/simulado-download-modelos.component';
+import { PageNotFoundComponent } from "./pages/public/Erro/page-not-found/page-not-found.component";
+import { ValidaComponent } from "./pages/public/Acesso/valida/valida.component";
+import { ConcluiInscricaoComponent } from "./pages/subscriber/Inscricao/conclui-inscricao/conclui-inscricao.component";
+import { SimuladoCadastroComponent } from "./pages/admin/simulado-cadastro/simulado-cadastro.component";
+import { GabaritoSimplesComponent } from "./pages/subscriber/Simulado/gabarito-simples/gabarito-simples.component";
+import { SimuladoResultadoCompletoComponent } from "./pages/admin/simulado-resultado-completo/simulado-resultado-completo.component";
+import { SimuladoDownloadModelosComponent } from "./pages/admin/simulado-download-modelos/simulado-download-modelos.component";
+import { ResultadoSimuladoComponent } from "./pages/subscriber/Perfil/resultado-simulado/resultado-simulado.component";
+
+import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,9 +79,11 @@ import { SimuladoDownloadModelosComponent } from './pages/admin/simulado-downloa
     SimuladoCadastroComponent,
     GabaritoSimplesComponent,
     SimuladoResultadoCompletoComponent,
-    SimuladoDownloadModelosComponent
+    SimuladoDownloadModelosComponent,
+    ResultadoSimuladoComponent
   ],
   imports: [
+    CKEditorModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
