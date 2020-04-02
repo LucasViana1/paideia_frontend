@@ -43,17 +43,17 @@ const routes: Routes = [
   // { path: "simulado", component: SimuladoComponent }, // simulado aluno
   { path: "simulado", component: GabaritoSimplesComponent }, // gabaritmo
   { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
-  {
-    path: "inscricao",
-    component: InscricaoComponent,
-    children: [
-      { path: "termos", component: TermosComponent },
-      { path: "pessoal", component: PessoalComponent },
-      { path: "arquivos", component: ArquivosComponent },
-      { path: "socioeconomico", component: SocioeconomicoComponent },
-      { path: "conclui", component: ConcluiInscricaoComponent }
-    ]
-  }, // rota publica temporariamente
+  // {
+  //   path: "inscricao",
+  //   component: InscricaoComponent,
+  //   children: [
+  //     { path: "termos", component: TermosComponent },
+  //     { path: "pessoal", component: PessoalComponent },
+  //     { path: "arquivos", component: ArquivosComponent },
+  //     { path: "socioeconomico", component: SocioeconomicoComponent },
+  //     { path: "conclui", component: ConcluiInscricaoComponent }
+  //   ]
+  // }, // rota publica temporariamente
   {
     path: "adm",
     component: AdmComponent,
