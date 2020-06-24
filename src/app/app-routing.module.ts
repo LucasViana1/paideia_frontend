@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: "acesso", component: LoginComponent },
   { path: "recuperacao", component: RecuperacaoComponent },
   { path: "valida", component: ValidaComponent }, // rota com guards
-  // { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
+  { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
   { path: "contato", component: ContatoComponent },
   { path: "inicio", component: InicioComponent },
   { path: "noticias", component: NoticiasComponent },
@@ -41,19 +41,19 @@ const routes: Routes = [
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
   // { path: "simulado", component: SimuladoComponent }, // simulado aluno
-  { path: "simulado", component: GabaritoSimplesComponent }, // gabaritmo
+  // { path: "simulado", component: GabaritoSimplesComponent }, // gabarito
   { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
-  // {
-  //   path: "inscricao",
-  //   component: InscricaoComponent,
-  //   children: [
-  //     { path: "termos", component: TermosComponent },
-  //     { path: "pessoal", component: PessoalComponent },
-  //     { path: "arquivos", component: ArquivosComponent },
-  //     { path: "socioeconomico", component: SocioeconomicoComponent },
-  //     { path: "conclui", component: ConcluiInscricaoComponent }
-  //   ]
-  // }, // rota publica temporariamente
+  {
+    path: "inscricao",
+    component: InscricaoComponent,
+    children: [
+      { path: "termos", component: TermosComponent },
+      { path: "pessoal", component: PessoalComponent },
+      { path: "arquivos", component: ArquivosComponent },
+      { path: "socioeconomico", component: SocioeconomicoComponent },
+      { path: "conclui", component: ConcluiInscricaoComponent },
+    ],
+  }, // rota publica temporariamente
   {
     path: "adm",
     component: AdmComponent,
@@ -64,20 +64,20 @@ const routes: Routes = [
       { path: "simulado-cadastro", component: SimuladoCadastroComponent },
       {
         path: "simulado-resultado",
-        component: SimuladoResultadoCompletoComponent
+        component: SimuladoResultadoCompletoComponent,
       },
       {
         path: "simulado-download",
-        component: SimuladoDownloadModelosComponent
-      }
-    ]
+        component: SimuladoDownloadModelosComponent,
+      },
+    ],
   }, // rota com guardas
-  { path: "resultado-simulados", component: ResultadoSimuladoComponent }, // resultado todos simulados ao aluno
-  { path: "**", component: PageNotFoundComponent } // depois criar rota para erro
+  // { path: "resultado-simulados", component: ResultadoSimuladoComponent }, // resultado todos simulados ao aluno
+  { path: "**", component: PageNotFoundComponent }, // depois criar rota para erro
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
