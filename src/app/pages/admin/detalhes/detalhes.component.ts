@@ -6,13 +6,13 @@ import { ThrowStmt } from "@angular/compiler";
 import {
   DomSanitizer,
   SafeResourceUrl,
-  SafeUrl
+  SafeUrl,
 } from "@angular/platform-browser";
 
 @Component({
   selector: "app-detalhes",
   templateUrl: "./detalhes.component.html",
-  styleUrls: ["./detalhes.component.css"]
+  styleUrls: ["./detalhes.component.css"],
 })
 export class DetalhesComponent implements OnInit {
   listagem: any;
@@ -22,6 +22,7 @@ export class DetalhesComponent implements OnInit {
   enderecoView: boolean = false;
   historicoView: boolean = false;
   bolsaView: boolean = false;
+  ejaView: boolean = false;
 
   constructor(
     private service: AdmAPIService,
@@ -34,7 +35,7 @@ export class DetalhesComponent implements OnInit {
     if (window.localStorage.getItem("nivel") !== "1") {
       this.router.navigate(["/inicio"]);
     }
-    this.routeActivated.params.subscribe(parametros => {
+    this.routeActivated.params.subscribe((parametros) => {
       if (parametros["id"]) {
         this.detalhes(parametros["id"]);
       }
@@ -42,8 +43,10 @@ export class DetalhesComponent implements OnInit {
   }
 
   detalhes(id: any) {
-    this.service.detalhesInscritos(id).subscribe(dados => {
+    this.service.detalhesInscritos(id).subscribe((dados) => {
       this.listagem = dados;
+      console.log("dados ...");
+      console.log(dados);
     });
   }
 
@@ -74,6 +77,10 @@ export class DetalhesComponent implements OnInit {
         this.ocultaTodasImg();
         this.cidadaoView = true;
         break;
+      case "EJA":
+        this.ocultaTodasImg();
+        this.ejaView = true;
+        break;
     }
   }
 
@@ -84,6 +91,7 @@ export class DetalhesComponent implements OnInit {
     this.enderecoView = false;
     this.historicoView = false;
     this.bolsaView = false;
+    this.ejaView = false;
   }
 
   validationSanitizer(yourSrc: any) {
@@ -99,7 +107,8 @@ export class DetalhesComponent implements OnInit {
     for (let i = 0; i < this.listagem.dados.length; i++) {
       if (tipo === this.listagem.dados[i].tipo) {
         linkSource = this.listagem.dados[i].arquivo;
-        fileName = `${this.listagem.dados[i].tipo}.pdf`;
+        fileName =
+          tipo !== "EJA" ? `${this.listagem.dados[i].tipo}.pdf` : `termo.pdf`;
       }
     }
 

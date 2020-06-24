@@ -33,11 +33,21 @@
       </ul>
     </div>
 
-    <!--AJUSTAR MARGIN NESSE TRECHO-->
-    <!--<b-col sm="3" class="desktop-img-col" v-for="(foto,index) in listagem.dados" :key="index">
-          <b-img v-if="foto.tipo == 'FOTO'" :src="foto.arquivo" fluid class="desktop-img"></b-img>
-      </b-col>-->
     <div
+      class="col-sm-6"
+      style="display: flex; align-items: center; justify-content: center;"
+      *ngFor="let item of listagem.dados"
+    >
+      <img
+        *ngIf="item.tipo === 'FOTO'"
+        src="{{ item.arquivo }}"
+        alt="{{ item.tipo }}"
+        width="195"
+        style="margin-bottom: 16px;"
+      />
+    </div>
+
+    <!-- <div
       class="col-sm-6"
       style="display: flex; align-items: center; justify-content: center;"
     >
@@ -50,12 +60,12 @@
       >
         DADOS COMPLETOS
       </a>
-    </div>
+    </div> -->
   </div>
 
   <div
     class="text-center m-auto"
-    style="display: flex; align-items: center; justify-content: center; "
+    style="display: flex; align-items: center; justify-content: center;"
   >
     <div
       class="text-center col-sm-8"
@@ -79,6 +89,9 @@
       <button (click)="verImg('BOLSA')" class="ml-4 btn btn-outline-dark">
         Bolsa
       </button>
+      <button (click)="verImg('EJA')" class="ml-4 btn btn-outline-dark">
+        Termo
+      </button>
       <!-- <button (click)="showPdf()" class="ml-4 btn btn-outline-dark">
         TESTE
       </button>
@@ -100,7 +113,10 @@
                   height="650px"
                   class="img img-fluid"
                 />
-                <button (click)="showPdf('RG')" class="ml-4 btn btn-outline-danger">
+                <button
+                  (click)="showPdf('RG')"
+                  class="ml-4 btn btn-outline-danger"
+                >
                   BAIXAR PDF APENAS!
                 </button>
               </div>
@@ -115,7 +131,10 @@
                   height="650px"
                   class="img img-fluid"
                 />
-                <button (click)="showPdf('CPF')" class="ml-4 btn btn-outline-danger">
+                <button
+                  (click)="showPdf('CPF')"
+                  class="ml-4 btn btn-outline-danger"
+                >
                   BAIXAR PDF APENAS!
                 </button>
               </div>
@@ -131,7 +150,10 @@
                   height="650px"
                   class="img img-fluid"
                 />
-                <button (click)="showPdf('ENDERECO')" class="ml-4 btn btn-outline-danger">
+                <button
+                  (click)="showPdf('ENDERECO')"
+                  class="ml-4 btn btn-outline-danger"
+                >
                   BAIXAR PDF APENAS!
                 </button>
               </div>
@@ -146,7 +168,10 @@
                   height="650px"
                   class="img img-fluid"
                 />
-                <button (click)="showPdf('CIDADAO')" class="ml-4 btn btn-outline-danger">
+                <button
+                  (click)="showPdf('CIDADAO')"
+                  class="ml-4 btn btn-outline-danger"
+                >
                   BAIXAR PDF APENAS!
                 </button>
               </div>
@@ -161,7 +186,28 @@
                   height="650px"
                   class="img img-fluid"
                 />
-                <button (click)="showPdf('HISTORICO')" class="ml-4 btn btn-outline-danger">
+                <button
+                  (click)="showPdf('HISTORICO')"
+                  class="ml-4 btn btn-outline-danger"
+                >
+                  BAIXAR PDF APENAS!
+                </button>
+              </div>
+            </div>
+            <div *ngSwitchCase="'EJA'">
+              <div *ngIf="ejaView">
+                <img
+                  src="{{ item.arquivo }}"
+                  alt="Baixe o pdf do termo"
+                  title="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button
+                  (click)="showPdf('EJA')"
+                  class="ml-4 btn btn-outline-danger"
+                >
                   BAIXAR PDF APENAS!
                 </button>
               </div>
@@ -169,16 +215,19 @@
             <div *ngSwitchCase="'BOLSA'">
               <div *ngIf="bolsaView">
                 <img
-                src="{{ item.arquivo }}"
-                alt="{{ item.tipo }}"
-                title="{{ item.tipo }}"
-                width="500px"
-                height="650px"
-                class="img img-fluid"
-              />
-              <button (click)="showPdf('BOLSA')" class="ml-4 btn btn-outline-danger">
-                BAIXAR PDF APENAS!
-              </button>
+                  src="{{ item.arquivo }}"
+                  alt="{{ item.tipo }}"
+                  title="{{ item.tipo }}"
+                  width="500px"
+                  height="650px"
+                  class="img img-fluid"
+                />
+                <button
+                  (click)="showPdf('BOLSA')"
+                  class="ml-4 btn btn-outline-danger"
+                >
+                  BAIXAR PDF APENAS!
+                </button>
               </div>
             </div>
           </div>
