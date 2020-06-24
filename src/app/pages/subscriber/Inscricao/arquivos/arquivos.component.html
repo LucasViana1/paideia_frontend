@@ -26,6 +26,24 @@
       </div>
 
       <div class="col-sm-12 text-center">
+        <div show class="alert alert-warning" role="alert">
+          SOBRE O TERMO DE RESPONSABILIDADE: baixe o termo clicando
+          <a
+            style="font-weight: bold; color: blue;"
+            href="../../../../../assets/pdf/termo_responsabilidade.pdf"
+            target="_blank"
+            >AQUI</a
+          >, realize a assinatura manual e depois a digitalização do documento,
+          ou então realize a assinatura eletrônica do documento, e envie o
+          arquivo nessa etapa de inscrição.
+          <b>
+            É de extrema importância que as assinaturas e o documento estejam
+            legíveis!</b
+          >
+        </div>
+      </div>
+
+      <div class="col-sm-12 text-center">
         <div show class="alert alert-danger" role="alert">
           ATENÇÃO! Caso não conseguir enviar os arquivos tente comprimi-los
           através do site
@@ -36,7 +54,7 @@
           ><br />
           CASO O ERRO CONTINUE ENTRE EM CONTATO URGENTE
           contato@associacaopaideia.org.br
-          <br>
+          <br />
           <b>TAMANHO MÁXIMO POR ARQUIVO: 1024kb.</b>
         </div>
       </div>
@@ -56,10 +74,7 @@
             onchange="convertBase64('rgCandidato')"
             required
           />
-          <input
-            type="hidden"
-            id="rgCandidatoHidden"
-          />
+          <input type="hidden" id="rgCandidatoHidden" />
         </div>
       </div>
 
@@ -76,10 +91,7 @@
             onchange="convertBase64('cpfCandidato')"
             required
           />
-          <input
-            type="hidden"
-            id="cpfCandidatoHidden"
-          />
+          <input type="hidden" id="cpfCandidatoHidden" />
         </div>
       </div>
 
@@ -91,7 +103,8 @@
         <!-- <b-form-group label="Histórico Escolar (Ou Declaração de Matrícula):" class="labelCampo" label-for=""> -->
         <div class="form-group">
           <label class="labelCampo" for=""
-            >Histórico escolar, declaração de matrícula, comprovante de matrícula ou conclusão do ensino médio (escolher apenas um):</label
+            >Histórico escolar, declaração de matrícula, comprovante de
+            matrícula ou conclusão do ensino médio (escolher apenas um):</label
           >
           <!-- <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('historico', 3)" id="historico" required></b-form-file> -->
           <input
@@ -102,10 +115,7 @@
             onchange="convertBase64('historico')"
             required
           />
-          <input
-            type="hidden"
-            id="historicoHidden"
-          />
+          <input type="hidden" id="historicoHidden" />
         </div>
       </div>
 
@@ -122,10 +132,7 @@
             onchange="convertBase64('cidadao')"
             required
           />
-          <input
-            type="hidden"
-            id="cidadaoHidden"
-          />
+          <input type="hidden" id="cidadaoHidden" />
         </div>
       </div>
 
@@ -146,10 +153,7 @@
             onchange="convertBase64('endereco')"
             required
           />
-          <input
-            type="hidden"
-            id="enderecoHidden"
-          />
+          <input type="hidden" id="enderecoHidden" />
         </div>
       </div>
 
@@ -167,10 +171,7 @@
             id="bolsa"
             onchange="convertBase64('bolsa')"
           />
-          <input
-            type="hidden"
-            id="bolsaHidden"
-          />
+          <input type="hidden" id="bolsaHidden" />
         </div>
       </div>
 
@@ -192,6 +193,47 @@
         <div class="separa"></div>
       </div>
 
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="labelCampo" for=""
+            >Foto (que possibilite fácil identificação do aluno):</label
+          >
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="foto"
+            onchange="convertBase64('foto')"
+          />
+          <input type="hidden" id="fotoHidden" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label class="labelCampo" for=""
+            >Termo de responsabilidade:
+            <a
+              style="font-weight: bold; color: blue;"
+              href="../../../../../assets/pdf/termo_responsabilidade.pdf"
+              target="_blank"
+              >BAIXAR TERMO!</a
+            >
+          </label>
+          <input
+            type="file"
+            class="mt-3 form-control-sm form-control-file"
+            style="color: black;"
+            id="eja"
+            onchange="convertBase64('eja')"
+          />
+          <input type="hidden" id="ejaHidden" />
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="separa"></div>
+      </div>
     </div>
     <br />
     <div class="text-center">
@@ -200,34 +242,32 @@
       </button>
     </div>
   </form>
-
 </div>
 
 <script>
-//  function convertBase64(element) {
-//    console.log('certo')
-//     // var filesSelected = document.getElementById(element).files;
-//     // if (filesSelected.length > 0) {
-//     //   var fileToLoad = filesSelected[0];
-//     //   var fileReader = new FileReader();
+  //  function convertBase64(element) {
+  //    console.log('certo')
+  //     // var filesSelected = document.getElementById(element).files;
+  //     // if (filesSelected.length > 0) {
+  //     //   var fileToLoad = filesSelected[0];
+  //     //   var fileReader = new FileReader();
 
-//     //   fileReader.onload = function(fileLoadedEvent) {
-//     //     var srcData = fileLoadedEvent.target.result; // <--- data: base64
+  //     //   fileReader.onload = function(fileLoadedEvent) {
+  //     //     var srcData = fileLoadedEvent.target.result; // <--- data: base64
 
-//     //     switch (element) {
-//     //       case 'rgCandidato':
-//     //         // window.localStorage.setItem("rgCandidato", srcData);
-//     //         this.rgBase64 = srcData;
-//     //         console.log(srcData);
-//     //         break;
+  //     //     switch (element) {
+  //     //       case 'rgCandidato':
+  //     //         // window.localStorage.setItem("rgCandidato", srcData);
+  //     //         this.rgBase64 = srcData;
+  //     //         console.log(srcData);
+  //     //         break;
 
-//     //       default:
-//     //         console.log('Falha ao converter arquivo!');
-//     //         break;
-//     //     }
-//     //   };
-//     //   fileReader.readAsDataURL(fileToLoad);
-//     // }
-//   }
-
+  //     //       default:
+  //     //         console.log('Falha ao converter arquivo!');
+  //     //         break;
+  //     //     }
+  //     //   };
+  //     //   fileReader.readAsDataURL(fileToLoad);
+  //     // }
+  //   }
 </script>
