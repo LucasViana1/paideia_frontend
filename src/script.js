@@ -5,6 +5,8 @@ var historicoBase64 = "";
 var cidadaoBase64 = "";
 var enderecoBase64 = "";
 var bolsaBase64 = "";
+var fotoBase64 = "";
+var ejaBase64 = "";
 
 // import {environment} from './environments/environment';
 
@@ -14,7 +16,7 @@ function convertBase64(element) {
     var fileToLoad = filesSelected[0];
     var fileReader = new FileReader();
 
-    fileReader.onload = function(fileLoadedEvent) {
+    fileReader.onload = function (fileLoadedEvent) {
       var srcData = fileLoadedEvent.target.result; // <--- data: base64
       switch (element) {
         case "rgCandidato":
@@ -40,6 +42,14 @@ function convertBase64(element) {
         case "bolsa":
           bolsaBase64 = srcData;
           document.getElementById("bolsaHidden").value = srcData;
+          break;
+        case "foto":
+          fotoBase64 = srcData;
+          document.getElementById("fotoHidden").value = srcData;
+          break;
+        case "eja":
+          ejaBase64 = srcData;
+          document.getElementById("ejaHidden").value = srcData;
           break;
 
         default:
@@ -72,14 +82,14 @@ function enviarArquivos() {
       cidadao: "",
       ensinoMedio: "",
       rgResponsavel: "",
-      cpfResponsavel: ""
-    })
+      cpfResponsavel: "",
+    }),
   })
-    .then(res => {
+    .then((res) => {
       // console.log("res");
       // console.log(res);
     })
-    .catch(err => {
+    .catch((err) => {
       // console.log("err");
       // console.log(err);
     });
