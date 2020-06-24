@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { environment } from "../../environments/environment"; // dev
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class SubscriptionAPIService {
   constructor(private http: HttpClient, private router: Router) {}
@@ -24,14 +24,14 @@ export class SubscriptionAPIService {
         cpf: postData.cpf,
         rg: postData.rg,
         cidadao: postData.cidadao,
-        curso_desejado: postData.curso_desejado
+        curso_desejado: postData.curso_desejado,
       })
       .subscribe(
-        res => {
+        (res) => {
           // console.log('pessoal res: ')
           // console.log(res)
         },
-        err => {
+        (err) => {
           // console.log('pessoal err: ')
           // console.log(err)
         }
@@ -46,21 +46,21 @@ export class SubscriptionAPIService {
         cpfCandidato: postData.cpfCandidato,
         historico: postData.historico,
         bolsa: postData.bolsa,
-        eja: "",
+        eja: postData.eja, // EJA == Termo Responsabilidade
         medico: "",
         endereco: postData.endereco,
-        foto: "",
+        foto: postData.foto,
         cidadao: postData.cidadao,
         ensinoMedio: "",
         rgResponsavel: "",
-        cpfResponsavel: ""
+        cpfResponsavel: "",
       })
       .subscribe(
-        res => {
+        (res) => {
           // console.log("arquivos res: ");
           // console.log(res);
         },
-        err => {
+        (err) => {
           // console.log("arquivos err: ");
           // console.log(err);
           // alert('Algum arquivo excedeu o limite de tamanho! Favor ajustar o tamanho do arquivo e enviar novamente.')
@@ -114,14 +114,14 @@ export class SubscriptionAPIService {
         mora_pessoas_perentesco_mae: postData.mora_pessoas_perentesco_mae,
         mora_pessoas_perentesco_esposo: postData.mora_pessoas_perentesco_esposo,
         mora_pessoas_perentesco_avo: postData.mora_pessoas_perentesco_avo,
-        mora_pessoas_perentesco_amigo: postData.mora_pessoas_perentesco_amigo
+        mora_pessoas_perentesco_amigo: postData.mora_pessoas_perentesco_amigo,
       })
       .subscribe(
-        res => {
+        (res) => {
           // console.log("socioeconomico res: ");
           // console.log(res);
         },
-        err => {
+        (err) => {
           // console.log("socioeconomico err: ");
           // console.log(err);
         }
