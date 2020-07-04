@@ -1,28 +1,23 @@
 <!-- <section > -->
-<section
-  oncontextmenu="return false"
-  ondragstart="return false"
-  onselectstart="return false"
->
+<section oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
   <!--impede copia dos textos-->
   <h1>Simulado</h1>
 
-  <div show class="alert alert-warning mt-2 text-center" role="alert">
+  <!-- <div show class="alert alert-warning mt-2 text-center" role="alert">
     Simulado online estará disponivel até dia 29/03/2020 às 23:59
-  </div>
+  </div> -->
   <div show class="alert alert-danger mt-2" role="alert">
     <p class="text-center">
       <b>
         ATENÇÃO! Caso ocorra de não aparecer as alternativas das questões
-        realize o seguinte procedimento:</b
-      >
+        realize o seguinte procedimento:</b>
     </p>
     <ol>
       <li>
         Atualize sua página, clicando CTRL + F5 (recarrega navegador limpando o
         cache).
       </li>
-      <li>Saia de sua conta, em seguida realize o login novamente.</li>
+      <li>Saia de sua conta, em seguida realize o login novamente. </li>
       <li>
         Verifique a versão de seu navegador, se necessário realize a atualização
         do navegador (apenas Chrome e FireFox devem ser usados).
@@ -62,8 +57,8 @@
         </li>
         <li>
           <div style="font-weight: initial;">
-            O simulado é parte de um <b><u>Processo de Autoavaliação</u></b
-            >. É vedada a utilização de livros, impressos, apontamentos,
+            O simulado é parte de um <b><u>Processo de Autoavaliação</u></b>. É vedada a utilização de livros,
+            impressos, apontamentos,
             aparelhos eletrônicos para consulta online ou quaisquer outros meios
             que possam ser usados como fonte de pesquisa para a realização do
             simulado.
@@ -73,7 +68,7 @@
           <div style="font-weight: initial;">
             O simulado terá a duração de <b>4 (quatro) horas. ATENÇÃO:</b> A
             realização do simulado não admite interrupção. Uma vez iniciado o
-            simulado é acionado, automaticamente, o cronometro que contabiliza o
+            simulado é acionado, automaticamente, o cronômetro que contabiliza o
             tempo de execução já pré-estabelecido. Ao final do tempo programado
             para a resolução do simulado ele será bloqueado e não haverá mais
             possibilidade de respondê-lo.
@@ -134,10 +129,8 @@
     <div class="text-center">
       <div>Você iniciou o simulado as {{ this.iniTempo }}</div>
       <div class="mt-1">
-        <u
-          ><b>ATENÇÃO!</b> O simulado deve ser concluído antes das
-          <b>{{ this.fimTempo }}</b></u
-        >
+        <u><b>ATENÇÃO!</b> O simulado deve ser concluído antes das
+          <b>{{ this.fimTempo }}</b></u>
       </div>
     </div>
     <br />
@@ -145,19 +138,13 @@
       <table class="table table-bordered table-hover bordas container-fluid">
         <thead class="">
           <tr class="row mx-1">
-            <th
-              class="col-2 bordas text-center questao flex-center"
-              style="margin-top: 3px; border: 1px solid gray;"
-            >
-              <u
-                ><div class="ques">Questão</div>
-                {{ retorno.pergunta }}</u
-              >
+            <th class="col-2 bordas text-center questao flex-center" style="margin-top: 3px; border: 1px solid gray;">
+              <u>
+                <div class="ques">Questão</div>
+                {{ retorno.pergunta }}
+              </u>
             </th>
-            <td
-              class="col-10 bordas flex-center-align"
-              style="margin-top: 3px;"
-            >
+            <td class="col-10 bordas flex-center-align" style="margin-top: 3px;">
               <div>
                 <h4>{{ retorno.materia }}</h4>
                 <div class="p-2">
@@ -175,14 +162,8 @@
                 <div class="float-left col-6 alternativa">a)</div>
 
                 <div class="form-check ">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    id="a"
-                    name="selecionado"
-                    value="a"
-                    formControlName="selecionado"
-                  />
+                  <input class="form-check-input" type="radio" id="a" name="selecionado" value="a"
+                    formControlName="selecionado" />
                 </div>
               </div>
             </td>
@@ -207,14 +188,8 @@
                 value="b"
               ></b-form-radio> -->
                 <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    id="b"
-                    name="selecionado"
-                    value="b"
-                    formControlName="selecionado"
-                  />
+                  <input class="form-check-input" type="radio" id="b" name="selecionado" value="b"
+                    formControlName="selecionado" />
                 </div>
               </div>
             </td>
@@ -235,14 +210,8 @@
                 value="c"
               ></b-form-radio> -->
                 <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    id="c"
-                    name="selecionado"
-                    value="c"
-                    formControlName="selecionado"
-                  />
+                  <input class="form-check-input" type="radio" id="c" name="selecionado" value="c"
+                    formControlName="selecionado" />
                 </div>
               </div>
             </td>
@@ -263,14 +232,8 @@
                 value="d"
               ></b-form-radio> -->
                 <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    id="d"
-                    name="selecionado"
-                    value="d"
-                    formControlName="selecionado"
-                  />
+                  <input class="form-check-input" type="radio" id="d" name="selecionado" value="d"
+                    formControlName="selecionado" />
                 </div>
               </div>
             </td>

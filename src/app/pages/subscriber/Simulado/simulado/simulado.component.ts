@@ -22,7 +22,7 @@ export class SimuladoComponent implements OnInit {
     public fb: FormBuilder,
     private service: SimuladoAPIService,
     private router: Router
-  ) {}
+  ) { }
 
   formSimulado = this.fb.group({
     selecionado: [""]
@@ -45,7 +45,7 @@ export class SimuladoComponent implements OnInit {
 
   onSubmit() {
     // SMP ALTERAR NUMERO ENTRE SIMULADOS
-    window.localStorage.setItem("simulado", "2");
+    window.localStorage.setItem("simulado", "3");
     let form = this.formSimulado.value;
     let feedbackError = "";
 
@@ -64,7 +64,7 @@ export class SimuladoComponent implements OnInit {
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
 
       // quando for respondida a ultima pergunta, COLOCAR Nº DA ULTIMA PERGUNTA
-      if (this.listagem.dados[0].pergunta == 65) {
+      if (this.listagem.dados[0].pergunta == 25) {
         // if(this.listagem.dados[0].pergunta == 50){
         this.router.navigate(["/gabarito-simples"]);
       } else {
@@ -83,7 +83,7 @@ export class SimuladoComponent implements OnInit {
         cont++;
       }
       // CONT DEVE SER IGUAL AO Nº DE PERGUNTAS TOTAIS
-      if (cont >= 65) {
+      if (cont >= 25) {
         this.router.navigate(["/gabarito-simples"]);
       }
     });
@@ -98,7 +98,7 @@ export class SimuladoComponent implements OnInit {
     // caso o aluno ja tenha respondido todas as questões
     this.getGabaritoSimples(this.idUser);
 
-    if (window.localStorage.getItem("simulado") != "2") {
+    if (window.localStorage.getItem("simulado") != "3") {
       this.inicio = true;
     } else {
       this.inicio = false;
@@ -110,8 +110,7 @@ export class SimuladoComponent implements OnInit {
     // while (this.listagem === undefined) {
     //   this.getSimulado(this.idUser);
     // }
-    console.log("DADOS RETORNO TESTE");
-    console.log(this.retorno);
+
   }
 
   async getSimuladoq1(numModelo: any) {
@@ -122,13 +121,10 @@ export class SimuladoComponent implements OnInit {
     // });
   }
   async getSimulado(id: any) {
-    console.log("teste promisses");
-    console.log(this.service.getSimulado(id).toPromise());
+    // console.log("teste promisses");
+    // console.log(this.service.getSimulado(id).toPromise());
     this.listagem = await this.service.getSimulado(id).toPromise();
-    console.log("teste promisses listagem");
-    console.log(this.listagem);
-    console.log("DADOS RETORNO");
-    console.log(this.listagem.dados[0]);
+
     // this.retorno = await this.listagem.dados[0];
     // console.log("this.retorno");
     // console.log(this.retorno);
@@ -143,8 +139,8 @@ export class SimuladoComponent implements OnInit {
   getNumModelo() {
     this.service.getNumModelo().subscribe(dados => {
       this.numModelo = dados;
-      console.log("this.numModelo");
-      console.log(this.numModelo);
+      // console.log("this.numModelo");
+      // console.log(this.numModelo);
     });
   }
   getHora(id: any) {
@@ -152,10 +148,7 @@ export class SimuladoComponent implements OnInit {
       this.tempo = data;
       this.iniTempo = this.tempo.dados[0].horaInicio;
       this.fimTempo = this.tempo.dados[0].horaFimMax;
-      console.log("this.tempo.dados[0].horaInicio");
-      console.log(this.iniTempo);
-      console.log("this.tempo.dados[0].horaFimMax");
-      console.log(this.fimTempo);
+
       // this.tempo = response.data;
       // this.iniTempo = this.tempo.dados[0].horaInicio;
       // this.fimTempo = this.tempo.dados[0].horaFimMax;

@@ -12,7 +12,7 @@ export class ResultadoSimuladoComponent implements OnInit {
   idUser: number = Number(window.localStorage.getItem("id"));
   qtdAcertos: number = 0;
 
-  constructor(private service: SimuladoAPIService, private router: Router) {}
+  constructor(private service: SimuladoAPIService, private router: Router) { }
 
   ngOnInit() {
     this.getSimuladoResultado(this.idUser);
@@ -53,8 +53,8 @@ export class ResultadoSimuladoComponent implements OnInit {
     //   }
     // }
 
-    console.log("linkSource");
-    console.log(linkSource);
+    // console.log("linkSource");
+    // console.log(linkSource);
 
     const downloadLink = document.createElement("a");
 
@@ -66,22 +66,17 @@ export class ResultadoSimuladoComponent implements OnInit {
   getSimuladoResultado(id: any) {
     this.service.getResultadoSimuladoAluno(id).subscribe(resp => {
       this.listagem = resp;
-      console.log("this.listagem.dados");
-      console.log(this.listagem.dados);
+
 
       let countAcertos = 0;
       for (let i = 0; i < this.listagem.dados.length; i++) {
-        console.log("this.listagem.dados[i].acertou");
-        console.log(this.listagem.dados[i].acertou);
+
         if (this.listagem.dados[i].acertou === "s") {
           countAcertos++;
         }
       }
       this.qtdAcertos = countAcertos;
-      console.log("this.countAcertos");
-      console.log(countAcertos);
-      console.log("this.qtdAcertos");
-      console.log(this.qtdAcertos);
+
     });
   }
 }

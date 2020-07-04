@@ -29,7 +29,7 @@ export class DetalhesComponent implements OnInit {
     private routeActivated: ActivatedRoute,
     private router: Router,
     private _sanitizationService: DomSanitizer
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (window.localStorage.getItem("nivel") !== "1") {
@@ -45,8 +45,8 @@ export class DetalhesComponent implements OnInit {
   detalhes(id: any) {
     this.service.detalhesInscritos(id).subscribe((dados) => {
       this.listagem = dados;
-      console.log("dados ...");
-      console.log(dados);
+      // console.log("dados ...");
+      // console.log(dados);
     });
   }
 

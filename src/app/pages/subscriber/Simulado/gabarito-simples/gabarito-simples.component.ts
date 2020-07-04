@@ -23,7 +23,7 @@ export class GabaritoSimplesComponent implements OnInit {
   qtdIngles: number = 0;
   qtdTotal: number;
 
-  constructor(private service: SimuladoAPIService, private router: Router) {}
+  constructor(private service: SimuladoAPIService, private router: Router) { }
 
   ngOnInit() {
     if (window.localStorage.getItem("nome") === null) {
@@ -36,7 +36,7 @@ export class GabaritoSimplesComponent implements OnInit {
   getGabaritoSimples(id: any) {
     this.service.getGabaritoSimples(id).subscribe(resp => {
       this.listagem = resp;
-      console.log(this.listagem.dados[0]);
+      // console.log(this.listagem.dados[0]);
       for (let i = 0; i < this.listagem.dados.length; i++) {
         switch (this.listagem.dados[i].materia) {
           case "Física":
@@ -60,21 +60,22 @@ export class GabaritoSimplesComponent implements OnInit {
           case "Português":
             if (this.listagem.dados[i].acertou === "s") this.qtdGramatica++;
             break;
-            // case "Gramática":
-            //   if (this.listagem.dados[i].acertou === "s") this.qtdGramatica++;
-            //   break;
-            // case "Sociologia":
-            //   if (this.listagem.dados[i].acertou === "s") this.qtdSociologia++;
-            //   break;
-            // case "Filosofia":
-            //   if (this.listagem.dados[i].acertou === "s") this.qtdFilosofia++;
-            //   break;
-            // case "Artes":
-            //   if (this.listagem.dados[i].acertou === "s") this.qtdArtes++;
-            //   break;
-            // case "Inglês":
-            //   if (this.listagem.dados[i].acertou === "s") this.qtdIngles++;
+          case "Sociologia":
+            if (this.listagem.dados[i].acertou === "s") this.qtdSociologia++;
             break;
+          case "Filosofia":
+            if (this.listagem.dados[i].acertou === "s") this.qtdFilosofia++;
+            break;
+          case "Arte":
+            if (this.listagem.dados[i].acertou === "s") this.qtdArtes++;
+            break;
+          case "Inglês":
+            if (this.listagem.dados[i].acertou === "s") this.qtdIngles++;
+            break;
+          // case "Gramática":
+          //   if (this.listagem.dados[i].acertou === "s") this.qtdGramatica++;
+          //   break;
+
           default:
             console.log("Falha ao identificar a matéria");
             break;

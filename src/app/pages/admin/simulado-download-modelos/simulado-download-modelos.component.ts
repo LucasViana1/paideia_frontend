@@ -13,11 +13,11 @@ export class SimuladoDownloadModelosComponent implements OnInit {
   modeloSelecionado: number = 1;
   gabaritoAtual: any[] = [];
 
-  constructor(private service: SimuladoAPIService, private router: Router) {}
+  constructor(private service: SimuladoAPIService, private router: Router) { }
 
   async ngOnInit() {
     this.retorno = await this.getGabaritoModelos();
-    console.log(this.retorno);
+    // console.log(this.retorno);
   }
 
   async getGabaritoModelos() {
@@ -38,7 +38,7 @@ export class SimuladoDownloadModelosComponent implements OnInit {
         this.gabaritoAtual.push(this.retorno[i]);
       }
     }
-    console.log("this.gabaritoAtual");
-    console.log(this.gabaritoAtual);
+    // console.log("this.gabaritoAtual");
+    // console.log(this.gabaritoAtual);
   }
 }

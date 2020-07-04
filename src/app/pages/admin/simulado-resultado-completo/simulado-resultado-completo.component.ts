@@ -23,7 +23,7 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
   // qtdArtes: number = 0;
   // qtdIngles: number = 0;
   qtdTotal: number;
-  constructor(private service: SimuladoAPIService, private router: Router) {}
+  constructor(private service: SimuladoAPIService, private router: Router) { }
 
   ngOnInit() {
     if (window.localStorage.getItem("nivel") !== "1") {
@@ -96,7 +96,7 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
             break;
         }
       }
-      console.log("barr teste");
+      // console.log("barr teste");
       // console.log("this.qtdBiologia");
       // console.log(this.qtdBiologia);
       this.qtdTotal =
@@ -127,8 +127,8 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
         // qtdIngles: this.qtdIngles,
         qtdTotal: this.qtdTotal
       });
-      console.log("this.itens");
-      console.log(this.itens);
+      // console.log("this.itens");
+      // console.log(this.itens);
       this.qtdFisica = 0;
       this.qtdBiologia = 0;
       this.qtdMatematica = 0;

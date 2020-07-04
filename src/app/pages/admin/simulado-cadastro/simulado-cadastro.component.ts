@@ -21,19 +21,19 @@ export class SimuladoCadastroComponent implements OnInit {
     "Química",
     "Geografia",
     "Português",
-    "Matemática"
+    "Matemática",
+    "Arte",
+    "Sociologia",
+    "Filosofia",
+    "Inglês"
     // "Gramática",
-    // "Sociologia",
-    // "Filosofia",
-    // "Artes",
-    // "Inglês"
   ];
 
   constructor(
     public fb: FormBuilder,
     private service: SimuladoAPIService,
     private router: Router
-  ) {}
+  ) { }
 
   formSimuladoCadastro = this.fb.group({
     linkImg: [""],
