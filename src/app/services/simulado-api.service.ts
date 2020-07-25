@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { environment } from "../../environments/environment"; // dev
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class SimuladoAPIService {
   constructor(private http: HttpClient, private router: Router) {}
@@ -36,16 +36,18 @@ export class SimuladoAPIService {
         idUser: postData.idUser,
         modelo: postData.modelo,
         pergunta: postData.pergunta,
-        selecionado: postData.selecionado
+        selecionado: postData.selecionado,
       })
       .subscribe(
-        res => {
+        (res) => {
           console.log(res);
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );
+    // gambi pois reload é mais rapido q chamada a api
+    alert("Resposta salva com sucesso!");
   }
   // cadastro de simulado pelo adm
   postCadastraSimulado(postData: any) {
@@ -60,14 +62,14 @@ export class SimuladoAPIService {
         resp_d: postData.resp_d,
         resp_e: postData.resp_e,
         correta: postData.correta,
-        img: postData.img
+        img: postData.img,
       })
       .subscribe(
-        res => {
+        (res) => {
           console.log(res);
           window.location.reload();
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );
@@ -80,14 +82,14 @@ export class SimuladoAPIService {
       .post(`${environment.urlBase}/alunosimulado`, {
         idUser: postData.idUser,
         horaInicio: postData.horaInicio,
-        horaFimMax: postData.horaFimMax
+        horaFimMax: postData.horaFimMax,
       })
       .subscribe(
-        res => {
+        (res) => {
           console.log(res);
           window.location.reload();
         },
-        err => {
+        (err) => {
           console.log(err);
         }
       );

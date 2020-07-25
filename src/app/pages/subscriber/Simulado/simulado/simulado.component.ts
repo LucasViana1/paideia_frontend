@@ -6,7 +6,7 @@ import { SimuladoAPIService } from "../../../../services/simulado-api.service";
 @Component({
   selector: "app-simulado",
   templateUrl: "./simulado.component.html",
-  styleUrls: ["./simulado.component.css"]
+  styleUrls: ["./simulado.component.css"],
 })
 export class SimuladoComponent implements OnInit {
   listagem: any;
@@ -22,10 +22,10 @@ export class SimuladoComponent implements OnInit {
     public fb: FormBuilder,
     private service: SimuladoAPIService,
     private router: Router
-  ) { }
+  ) {}
 
   formSimulado = this.fb.group({
-    selecionado: [""]
+    selecionado: [""],
   });
 
   async iniciarSimulado() {
@@ -39,13 +39,13 @@ export class SimuladoComponent implements OnInit {
     this.service.postHoraInicioFim({
       idUser: this.idUser,
       horaInicio: this.iniTempo,
-      horaFimMax: this.fimTempo
+      horaFimMax: this.fimTempo,
     });
   }
 
   onSubmit() {
     // SMP ALTERAR NUMERO ENTRE SIMULADOS
-    window.localStorage.setItem("simulado", "3");
+    window.localStorage.setItem("simulado", "4");
     let form = this.formSimulado.value;
     let feedbackError = "";
 
@@ -55,11 +55,13 @@ export class SimuladoComponent implements OnInit {
     if (feedbackError !== "") {
       alert(feedbackError);
     } else {
+      console.log(this);
+      console.log(form);
       this.service.postSimulado({
         idUser: this.idUser,
         modelo: this.retorno.modelo,
         pergunta: this.retorno.pergunta,
-        selecionado: form.selecionado
+        selecionado: form.selecionado,
       });
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
 
@@ -75,7 +77,7 @@ export class SimuladoComponent implements OnInit {
   }
 
   getGabaritoSimples(id: any) {
-    this.service.getGabaritoSimples(id).subscribe(resp => {
+    this.service.getGabaritoSimples(id).subscribe((resp) => {
       this.listagem = resp;
       // console.log(this.listagem.dados[0]);
       let cont = 0;
@@ -98,7 +100,7 @@ export class SimuladoComponent implements OnInit {
     // caso o aluno ja tenha respondido todas as questões
     this.getGabaritoSimples(this.idUser);
 
-    if (window.localStorage.getItem("simulado") != "3") {
+    if (window.localStorage.getItem("simulado") != "4") {
       this.inicio = true;
     } else {
       this.inicio = false;
@@ -110,7 +112,6 @@ export class SimuladoComponent implements OnInit {
     // while (this.listagem === undefined) {
     //   this.getSimulado(this.idUser);
     // }
-
   }
 
   async getSimuladoq1(numModelo: any) {
@@ -137,14 +138,14 @@ export class SimuladoComponent implements OnInit {
     // });
   }
   getNumModelo() {
-    this.service.getNumModelo().subscribe(dados => {
+    this.service.getNumModelo().subscribe((dados) => {
       this.numModelo = dados;
       // console.log("this.numModelo");
       // console.log(this.numModelo);
     });
   }
   getHora(id: any) {
-    this.service.getHoraInicioFim(id).subscribe(data => {
+    this.service.getHoraInicioFim(id).subscribe((data) => {
       this.tempo = data;
       this.iniTempo = this.tempo.dados[0].horaInicio;
       this.fimTempo = this.tempo.dados[0].horaFimMax;

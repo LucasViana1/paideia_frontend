@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-simulado-resultado-completo",
   templateUrl: "./simulado-resultado-completo.component.html",
-  styleUrls: ["./simulado-resultado-completo.component.css"]
+  styleUrls: ["./simulado-resultado-completo.component.css"],
 })
 export class SimuladoResultadoCompletoComponent implements OnInit {
   listagem: any;
@@ -18,12 +18,12 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
   qtdQuimica: number = 0;
   qtdGeografia: number = 0;
   qtdGramatica: number = 0;
-  // qtdSociologia: number = 0;
-  // qtdFilosofia: number = 0;
-  // qtdArtes: number = 0;
-  // qtdIngles: number = 0;
+  qtdSociologia: number = 0;
+  qtdFilosofia: number = 0;
+  qtdArtes: number = 0;
+  qtdIngles: number = 0;
   qtdTotal: number;
-  constructor(private service: SimuladoAPIService, private router: Router) { }
+  constructor(private service: SimuladoAPIService, private router: Router) {}
 
   ngOnInit() {
     if (window.localStorage.getItem("nivel") !== "1") {
@@ -33,7 +33,7 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
   }
 
   getResultadoSimuladoCompleto() {
-    this.service.getResultadoSimulado().subscribe(dados => {
+    this.service.getResultadoSimulado().subscribe((dados) => {
       this.listagem = dados;
       this.calculoAcertos();
     });
@@ -49,7 +49,7 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
     }
   }
   getGabaritoSimples(id: any, matricula: any, nome: any, sobrenome: any) {
-    this.service.getGabaritoSimples(id).subscribe(resp => {
+    this.service.getGabaritoSimples(id).subscribe((resp) => {
       this.lista = resp;
       // console.log(this.lista.dados[0]);
       for (let i = 0; i < this.lista.dados.length; i++) {
@@ -75,22 +75,22 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
           case "Português":
             if (this.lista.dados[i].acertou === "s") this.qtdGramatica++;
             break;
-          // case "Sociologia":
-          //   if (this.lista.dados[i].acertou === "s") this.qtdSociologia++;
-          //   break;
-          // case "Filosofia":
-          //   if (this.lista.dados[i].acertou === "s") this.qtdFilosofia++;
-          //   break;
-          // case "Artes":
-          //   if (this.lista.dados[i].acertou === "s") this.qtdArtes++;
-          //   break;
-          // case "Inglês":
-          //   if (this.lista.dados[i].acertou === "s") {
-          //     this.qtdIngles++;
-          //     // console.log("this.qtdIngles");
-          //     // console.log(this.qtdIngles);
-          //   }
-          //   break;
+          case "Sociologia":
+            if (this.lista.dados[i].acertou === "s") this.qtdSociologia++;
+            break;
+          case "Filosofia":
+            if (this.lista.dados[i].acertou === "s") this.qtdFilosofia++;
+            break;
+          case "Arte":
+            if (this.lista.dados[i].acertou === "s") this.qtdArtes++;
+            break;
+          case "Inglês":
+            if (this.lista.dados[i].acertou === "s") {
+              this.qtdIngles++;
+              // console.log("this.qtdIngles");
+              // console.log(this.qtdIngles);
+            }
+            break;
           default:
             console.log("Falha ao identificar a matéria");
             break;
@@ -106,11 +106,12 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
         this.qtdHistoria +
         this.qtdQuimica +
         this.qtdGeografia +
-        this.qtdGramatica;
-      // this.qtdSociologia +
-      // this.qtdFilosofia +
-      // this.qtdArtes +
-      // this.qtdIngles;
+        this.qtdGramatica +
+        this.qtdSociologia +
+        this.qtdFilosofia +
+        this.qtdArtes +
+        this.qtdIngles;
+
       this.itens.push({
         nome: `${nome} ${sobrenome}`,
         matricula: matricula,
@@ -121,11 +122,11 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
         qtdQuimica: this.qtdQuimica,
         qtdGeografia: this.qtdGeografia,
         qtdGramatica: this.qtdGramatica,
-        // qtdSociologia: this.qtdSociologia,
-        // qtdFilosofia: this.qtdFilosofia,
-        // qtdArtes: this.qtdArtes,
-        // qtdIngles: this.qtdIngles,
-        qtdTotal: this.qtdTotal
+        qtdSociologia: this.qtdSociologia,
+        qtdFilosofia: this.qtdFilosofia,
+        qtdArtes: this.qtdArtes,
+        qtdIngles: this.qtdIngles,
+        qtdTotal: this.qtdTotal,
       });
       // console.log("this.itens");
       // console.log(this.itens);
@@ -136,10 +137,10 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
       this.qtdQuimica = 0;
       this.qtdGeografia = 0;
       this.qtdGramatica = 0;
-      // this.qtdSociologia = 0;
-      // this.qtdFilosofia = 0;
-      // this.qtdArtes = 0;
-      // this.qtdIngles = 0;
+      this.qtdSociologia = 0;
+      this.qtdFilosofia = 0;
+      this.qtdArtes = 0;
+      this.qtdIngles = 0;
       this.qtdTotal = 0;
     });
   }
