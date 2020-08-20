@@ -33,27 +33,27 @@ const routes: Routes = [
   { path: "acesso", component: LoginComponent },
   { path: "recuperacao", component: RecuperacaoComponent },
   { path: "valida", component: ValidaComponent }, // rota com guards
-  // { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
+  { path: "cadastro", component: CadastroComponent }, // rota publica temporariamente
   { path: "contato", component: ContatoComponent },
   { path: "inicio", component: InicioComponent },
   { path: "noticias", component: NoticiasComponent },
   { path: "perguntas", component: PerguntasComponent },
   { path: "sobre", component: SobreComponent },
   { path: "depoimentos", component: DepoimentosTodosComponent },
-  // { path: "simulado", component: SimuladoComponent }, // simulado aluno
+  { path: "simulado", component: SimuladoComponent }, // simulado aluno
   // { path: "simulado", component: GabaritoSimplesComponent }, // gabarito
-  // { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
-  // {
-  //   path: "inscricao",
-  //   component: InscricaoComponent,
-  //   children: [
-  //     { path: "termos", component: TermosComponent },
-  //     { path: "pessoal", component: PessoalComponent },
-  //     { path: "arquivos", component: ArquivosComponent },
-  //     { path: "socioeconomico", component: SocioeconomicoComponent },
-  //     { path: "conclui", component: ConcluiInscricaoComponent },
-  //   ],
-  // }, // rota publica temporariamente
+  { path: "gabarito-simples", component: GabaritoSimplesComponent }, // gabarito simples aluno
+  {
+    path: "inscricao",
+    component: InscricaoComponent,
+    children: [
+      { path: "termos", component: TermosComponent },
+      { path: "pessoal", component: PessoalComponent },
+      { path: "arquivos", component: ArquivosComponent },
+      { path: "socioeconomico", component: SocioeconomicoComponent },
+      { path: "conclui", component: ConcluiInscricaoComponent },
+    ],
+  }, // rota publica temporariamente
   {
     path: "adm",
     component: AdmComponent,
