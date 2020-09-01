@@ -51,7 +51,11 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
   getGabaritoSimples(id: any, matricula: any, nome: any, sobrenome: any) {
     this.service.getGabaritoSimples(id).subscribe((resp) => {
       this.lista = resp;
-      // console.log(this.lista.dados[0]);
+
+      // SELECIONANDO ALGUNS ALUNOS APENAS
+      // if (id !== 162 && id !== 447 && id !== 41) {
+      //   return;
+      // }
       for (let i = 0; i < this.lista.dados.length; i++) {
         switch (this.lista.dados[i].materia) {
           case "Física":
