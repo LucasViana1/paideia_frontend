@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-simulado-cadastro",
   templateUrl: "./simulado-cadastro.component.html",
-  styleUrls: ["./simulado-cadastro.component.css"]
+  styleUrls: ["./simulado-cadastro.component.css"],
 })
 export class SimuladoCadastroComponent implements OnInit {
   // public Editor = ClassicEditor;
@@ -22,10 +22,10 @@ export class SimuladoCadastroComponent implements OnInit {
     "Geografia",
     "Português",
     "Matemática",
-    "Arte",
-    "Sociologia",
-    "Filosofia",
-    "Inglês"
+    "Inglês",
+    // "Arte",
+    // "Sociologia",
+    // "Filosofia",
     // "Gramática",
   ];
 
@@ -33,7 +33,7 @@ export class SimuladoCadastroComponent implements OnInit {
     public fb: FormBuilder,
     private service: SimuladoAPIService,
     private router: Router
-  ) { }
+  ) {}
 
   formSimuladoCadastro = this.fb.group({
     linkImg: [""],
@@ -44,7 +44,7 @@ export class SimuladoCadastroComponent implements OnInit {
     resp_c: [""],
     resp_d: [""],
     // resp_e: [""],
-    correta: [""]
+    correta: [""],
   });
 
   onSubmit() {
@@ -79,6 +79,7 @@ export class SimuladoCadastroComponent implements OnInit {
       alert(feedbackError);
     } else {
       // ENVIAR A API NOVA PERGUNTA DO SIMULADO
+
       this.service.postCadastraSimulado({
         pergunta: this.listagem.dados[0].qtdPerguntas + 1,
         materia: form.materia,
@@ -89,7 +90,7 @@ export class SimuladoCadastroComponent implements OnInit {
         resp_d: form.resp_d,
         resp_e: form.resp_e,
         correta: form.correta,
-        img: form.linkImg
+        img: form.linkImg,
       });
       window.scrollTo(0, 0);
       window.location.reload();
@@ -104,7 +105,7 @@ export class SimuladoCadastroComponent implements OnInit {
   }
 
   getCadastraSimulado() {
-    this.service.getCadastraSimulado().subscribe(dados => {
+    this.service.getCadastraSimulado().subscribe((dados) => {
       this.listagem = dados;
     });
   }
