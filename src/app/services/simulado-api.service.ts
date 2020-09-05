@@ -76,8 +76,6 @@ export class SimuladoAPIService {
   }
   // salva hora de inicio e fim previsto do simulado
   postHoraInicioFim(postData: any) {
-    console.log("postData");
-    console.log(postData);
     this.http
       .post(`${environment.urlBase}/alunosimulado`, {
         idUser: postData.idUser,
