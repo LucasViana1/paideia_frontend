@@ -45,7 +45,7 @@ export class SimuladoComponent implements OnInit {
 
   onSubmit() {
     // SMP ALTERAR NUMERO ENTRE SIMULADOS
-    window.localStorage.setItem("simulado", "4");
+    window.localStorage.setItem("simulado", "5");
     let form = this.formSimulado.value;
     let feedbackError = "";
 
@@ -55,8 +55,6 @@ export class SimuladoComponent implements OnInit {
     if (feedbackError !== "") {
       alert(feedbackError);
     } else {
-      console.log(this);
-      console.log(form);
       this.service.postSimulado({
         idUser: this.idUser,
         modelo: this.retorno.modelo,
@@ -66,7 +64,7 @@ export class SimuladoComponent implements OnInit {
       // BUSCAR MELHOR SOLUÇÃO PARA ATUALIZAR AS PERGUNTAS
 
       // quando for respondida a ultima pergunta, COLOCAR Nº DA ULTIMA PERGUNTA
-      if (this.listagem.dados[0].pergunta == 25) {
+      if (this.listagem.dados[0].pergunta == 24) {
         // if(this.listagem.dados[0].pergunta == 50){
         this.router.navigate(["/gabarito-simples"]);
       } else {
@@ -85,7 +83,7 @@ export class SimuladoComponent implements OnInit {
         cont++;
       }
       // CONT DEVE SER IGUAL AO Nº DE PERGUNTAS TOTAIS
-      if (cont >= 25) {
+      if (cont >= 24) {
         this.router.navigate(["/gabarito-simples"]);
       }
     });
@@ -100,7 +98,7 @@ export class SimuladoComponent implements OnInit {
     // caso o aluno ja tenha respondido todas as questões
     this.getGabaritoSimples(this.idUser);
 
-    if (window.localStorage.getItem("simulado") != "4") {
+    if (window.localStorage.getItem("simulado") != "5") {
       this.inicio = true;
     } else {
       this.inicio = false;
@@ -180,8 +178,9 @@ export class SimuladoComponent implements OnInit {
 
   verificaHoraFim(horaFim: any) {
     let horaFimFinal = "00";
-    if (horaFim + 4 < 24) {
-      horaFimFinal = horaFim + 4;
+    // ADICIONANDO 2 HORAS, LOGO TOTAL DE 2 HORAS DE DURAÇÃO DE SIMULADO MAXIMO
+    if (horaFim + 2 < 24) {
+      horaFimFinal = horaFim + 2;
     }
     return horaFimFinal;
   }
