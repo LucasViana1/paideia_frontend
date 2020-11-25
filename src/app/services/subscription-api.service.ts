@@ -7,13 +7,11 @@ import { environment } from "../../environments/environment"; // dev
   providedIn: "root",
 })
 export class SubscriptionAPIService {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   inserePessoal(postData: any) {
     this.http
       .post(`${environment.urlBase}/insereDadosPessoais`, {
-        // idUser: window.localStorage.getItem('id'),
-        // codigo: postData.codigo,
         idUser: window.localStorage.getItem("id"),
         nome_completo: `${postData.nome} ${postData.sobrenome}`,
         data_nasc: postData.data,
@@ -28,12 +26,10 @@ export class SubscriptionAPIService {
       })
       .subscribe(
         (res) => {
-          // console.log('pessoal res: ')
-          // console.log(res)
+
         },
         (err) => {
-          // console.log('pessoal err: ')
-          // console.log(err)
+
         }
       );
   }
@@ -57,29 +53,15 @@ export class SubscriptionAPIService {
       })
       .subscribe(
         (res) => {
-          // console.log("arquivos res: ");
-          // console.log(res);
         },
         (err) => {
-          // console.log("arquivos err: ");
-          // console.log(err);
-          // alert('Algum arquivo excedeu o limite de tamanho! Favor ajustar o tamanho do arquivo e enviar novamente.')
-          // // LOGICA PARA IMPEDIR QUE O CANDIDATO AVANCE PARA A PROXIMA ETAPA
-          // this.router.navigate(['/inscricao/arquivos'])
         }
       );
-    // se o tamanho dos arquivos não excedeu
-    // if(!tamanhoExcedeu){
-    //   console.log('NAVIGATE: arquivos ok')
-    // }
+
   }
   insereSocioeconomico(postData: any) {
-    // console.log("socioeconomico postData");
-    // console.log(postData);
     this.http
       .post(`${environment.urlBase}/insereDadosSocioeconomicos`, {
-        // idUser: window.localStorage.getItem('id'),
-        // codigo: postData.codigo,
         idUser: window.localStorage.getItem("id"),
         sexo: postData.sexo,
         idade: postData.idade,
@@ -99,7 +81,7 @@ export class SubscriptionAPIService {
         trab_estudo: postData.trab_estudo,
         motivo_estudar: postData.motivo_estudar,
         transporte: postData.transporte,
-        // checkbox
+
         televisao_atividade: postData.televisao_atividade,
         musica_atividade: postData.musica_atividade,
         cinema_atividade: postData.cinema_atividade,
@@ -107,7 +89,7 @@ export class SubscriptionAPIService {
         internet_atividade: postData.internet_atividade,
         esporte_atividade: postData.esporte_atividade,
         nenhuma_atividade: postData.nenhuma_atividade,
-        // checkbox
+
         mora_pessoas_perentesco_sozinho:
           postData.mora_pessoas_perentesco_sozinho,
         mora_pessoas_perentesco_pai: postData.mora_pessoas_perentesco_pai,
@@ -118,12 +100,8 @@ export class SubscriptionAPIService {
       })
       .subscribe(
         (res) => {
-          // console.log("socioeconomico res: ");
-          // console.log(res);
         },
         (err) => {
-          // console.log("socioeconomico err: ");
-          // console.log(err);
         }
       );
   }

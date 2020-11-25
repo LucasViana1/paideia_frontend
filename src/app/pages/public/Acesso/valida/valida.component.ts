@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
-import {UsersAPIService} from '../../../../services/users-api.service';
-import {Router} from '@angular/router';
+import { UsersAPIService } from '../../../../services/users-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-valida',
@@ -19,19 +19,19 @@ export class ValidaComponent implements OnInit {
   onSubmit() {
     const form = this.formValida.value;
     let feedbackError = '';
-    //validação
-    if(form.codigo === ''){
+
+    if (form.codigo === '') {
       feedbackError += 'Campo código não foi preenchido!  \n';
     }
-    if(feedbackError !== ''){
+    if (feedbackError !== '') {
       alert(feedbackError);
-    } else{
+    } else {
       this.service.validaUser(form);
     }
   }
 
   ngOnInit() {
-    if(window.localStorage.getItem('nivel') !== null){
+    if (window.localStorage.getItem('nivel') !== null) {
       this.router.navigate(['/inicio']);
     }
   }

@@ -12,7 +12,7 @@ export class UsersAPIService {
     private http: HttpClient,
     private router: Router,
     private simuladoService: SimuladoAPIService
-  ) {}
+  ) { }
 
   cadastraUser(postData: any) {
     this.http
@@ -26,7 +26,6 @@ export class UsersAPIService {
         res => {
           console.log(res);
         },
-        // ajustar requisição para que não caia no erro
         err => {
           console.log(err.error.text);
           const resp = err.error.text;
@@ -39,16 +38,6 @@ export class UsersAPIService {
           window.scrollTo(0, 0);
         }
       );
-
-    // .toPromise()
-    // .then(data => {
-    //   console.log('retorno achado:')
-    //   // console.log(data);
-    //   // console.log(data.toString());
-    // }).catch(err =>{
-    //   console.log('erro achado:')
-    //   // console.log(err)
-    // })
   }
   loginUser(postData: any) {
     this.http
@@ -58,12 +47,7 @@ export class UsersAPIService {
       })
       .subscribe(
         res => {
-          // console.log('resposta ok:');
-          // console.log(res);
-          // console.log(res[0].ativo)
           if (res[0].ativo === 0) {
-            //validação de email
-            // console.log("valida email");
             window.localStorage.setItem("id", res[0].id);
             window.localStorage.setItem("nome", res[0].nome);
             this.router.navigate(["/valida"]);
@@ -73,7 +57,7 @@ export class UsersAPIService {
             // else if((res[0].ativo == 1 && res[0].inscrito_atual == 1) || res[0].adm == 1){
             //guardar na sessao nome e nivel de acesso
             this.router.navigate(["/inicio"]);
-            // console.log("acesso ok");
+
             window.localStorage.setItem("id", res[0].id);
             window.localStorage.setItem("nome", res[0].nome);
             window.localStorage.setItem("nivel", res[0].adm);
@@ -82,15 +66,7 @@ export class UsersAPIService {
               "inscrito_atual",
               res[0].inscrito_atual
             );
-            // this.simuladoService
-            //   .getGabaritoSimples(res[0].id)
-            //   .subscribe(resp => {
-            //     let retorno = resp;
-            //     console.log("resp");
-            //     console.log(retorno);
-            //   });
             location.reload();
-            // window.scrollTo(0, 0);
           }
         },
         err => {
@@ -99,25 +75,11 @@ export class UsersAPIService {
           if (resp === "E-mail ou senha inválidos!") {
             alert("E-mail ou senha inválidos!");
           } else {
-            // console.log("login ok");
-            // console.log(err);
-            // alert("Cadastro realizado com sucesso!")
-            // OK
+
           }
-          // this.router.navigate(['/acesso']);
-          // window.scrollTo(0, 0);
         }
       );
 
-    // .toPromise()
-    // .then(data => {
-    //   console.log('retorno achado:')
-    //   // console.log(data);
-    //   // console.log(data.toString());
-    // }).catch(err =>{
-    //   console.log('erro achado:')
-    //   // console.log(err)
-    // })
   }
   validaUser(postData: any) {
     // console.log("id do user: " + window.localStorage.getItem("id"));
@@ -140,8 +102,6 @@ export class UsersAPIService {
           location.reload();
         },
         err => {
-          // console.log("valida err: ");
-          // console.log(err);
           alert("Código incorreto!");
         }
       );
@@ -153,12 +113,8 @@ export class UsersAPIService {
       })
       .subscribe(
         res => {
-          // console.log("recupera res:");
-          // console.log(res);
         },
         err => {
-          // console.log("recupera err:");
-          // console.log(err);
         }
       );
   }

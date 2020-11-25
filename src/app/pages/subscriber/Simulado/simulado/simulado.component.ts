@@ -13,27 +13,25 @@ export class SimuladoComponent implements OnInit {
   retorno: any;
   idUser: number = Number(window.localStorage.getItem("id"));
   numModelo: any;
-  inicio: boolean; // oculta/exibe tela de inicio de simulado
+  inicio: boolean;
   iniTempo: string;
   fimTempo: string;
-  tempo: any; // resp da hora fim/inicio
+  tempo: any;
 
   constructor(
     public fb: FormBuilder,
     private service: SimuladoAPIService,
     private router: Router
-  ) {}
+  ) { }
 
   formSimulado = this.fb.group({
     selecionado: [""],
   });
 
   async iniciarSimulado() {
-    // window.localStorage.setItem("simulado", "1");
-    // this.getSimuladoq1(this.numModelo); // seta modelo da prova
     this.retorno = await this.getSimuladoq1(this.numModelo);
     window.scrollTo(0, 0);
-    this.inicio = false; // oculta normas no inicio e exibe tela de perguntas/alternativas
+    this.inicio = false;
     this.getHoraInicioFim();
 
     this.service.postHoraInicioFim({

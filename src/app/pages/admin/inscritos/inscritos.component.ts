@@ -9,10 +9,9 @@ import { Router } from "@angular/router";
 })
 export class InscritosComponent implements OnInit {
   nome: string;
-  // inscritos: Array<any>;
   inscritos: any;
 
-  constructor(private service: AdmAPIService, private router: Router) {}
+  constructor(private service: AdmAPIService, private router: Router) { }
 
   ngOnInit() {
     if (window.localStorage.getItem("nivel") !== "1") {
@@ -20,13 +19,9 @@ export class InscritosComponent implements OnInit {
     }
     this.listar();
     this.nome = window.localStorage.getItem("nome");
-    // var x = document.getElementById("body-table");
-    // console.log(x);
   }
 
   listar() {
-    // this.service.listaInscritos().subscribe(dados => this.inscritos = dados)
-    // this.service.listaInscritos().subscribe(dados => console.log(dados))
     this.service.listaInscritos().subscribe(dados => (this.inscritos = dados));
   }
 }
