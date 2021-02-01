@@ -1,6 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
-// import { FormBuilder } from '@angular/forms';
 import { Router } from "@angular/router";
 
 @Component({
@@ -50,23 +48,10 @@ export class TermosComponent implements OnInit {
   ];
   aceitar: boolean = false;
 
-  // // exemplos com FormGroup e FormControl
-  // profileForm = new FormGroup({
-  //   firstName: new FormControl(''),
-  //   lastName: new FormControl(''),
-  //   address: new FormGroup({
-  //     street: new FormControl(''),
-  //     city: new FormControl(''),
-  //     state: new FormControl(''),
-  //     zip: new FormControl('')
-  //   })
-  // });
-
   marked = false;
   theCheckbox = false;
 
-  constructor(private router: Router) {}
-  // constructor() { }
+  constructor(private router: Router) { }
 
   toggleVisibility(e) {
     this.marked = e.target.checked;
@@ -76,7 +61,7 @@ export class TermosComponent implements OnInit {
     this.router.navigate(["/inscricao/pessoal"]);
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
 
 // NORMAS NO PRESENCIAL:

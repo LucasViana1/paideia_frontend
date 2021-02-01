@@ -15,7 +15,7 @@ export class CompletoComponent implements OnInit {
     private service: AdmAPIService,
     private routeActivated: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (window.localStorage.getItem("nivel") !== "1") {
@@ -23,12 +23,7 @@ export class CompletoComponent implements OnInit {
     }
     this.routeActivated.params.subscribe(parametros => {
       if (parametros["id"]) {
-        // console.log("params");
-        // console.log(parametros["id"]);
         this.completo(parametros["id"]);
-        // this.listagem.dados[0].cidadao = this.onlyNumber(
-        //   this.listagem.dados[0].cidadao
-        // ); // deixar apenas numeros do cartao cidadao
       }
     });
   }

@@ -23,7 +23,7 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
   qtdArtes: number = 0;
   qtdIngles: number = 0;
   qtdTotal: number;
-  constructor(private service: SimuladoAPIService, private router: Router) {}
+  constructor(private service: SimuladoAPIService, private router: Router) { }
 
   ngOnInit() {
     if (window.localStorage.getItem("nivel") !== "1") {
@@ -52,10 +52,6 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
     this.service.getGabaritoSimples(id).subscribe((resp) => {
       this.lista = resp;
 
-      // SELECIONANDO ALGUNS ALUNOS APENAS
-      // if (id !== 162 && id !== 447 && id !== 41) {
-      //   return;
-      // }
       for (let i = 0; i < this.lista.dados.length; i++) {
         switch (this.lista.dados[i].materia) {
           case "Física":
@@ -91,8 +87,6 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
           case "Inglês":
             if (this.lista.dados[i].acertou === "s") {
               this.qtdIngles++;
-              // console.log("this.qtdIngles");
-              // console.log(this.qtdIngles);
             }
             break;
           default:
@@ -100,9 +94,6 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
             break;
         }
       }
-      // console.log("barr teste");
-      // console.log("this.qtdBiologia");
-      // console.log(this.qtdBiologia);
       this.qtdTotal =
         this.qtdFisica +
         this.qtdBiologia +
@@ -132,8 +123,6 @@ export class SimuladoResultadoCompletoComponent implements OnInit {
         qtdIngles: this.qtdIngles,
         qtdTotal: this.qtdTotal,
       });
-      // console.log("this.itens");
-      // console.log(this.itens);
       this.qtdFisica = 0;
       this.qtdBiologia = 0;
       this.qtdMatematica = 0;

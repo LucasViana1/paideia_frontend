@@ -17,7 +17,6 @@ export class SimuladoDownloadModelosComponent implements OnInit {
 
   async ngOnInit() {
     this.retorno = await this.getGabaritoModelos();
-    // console.log(this.retorno);
   }
 
   async getGabaritoModelos() {
@@ -38,7 +37,5 @@ export class SimuladoDownloadModelosComponent implements OnInit {
         this.gabaritoAtual.push(this.retorno[i]);
       }
     }
-    // console.log("this.gabaritoAtual");
-    // console.log(this.gabaritoAtual);
   }
 }

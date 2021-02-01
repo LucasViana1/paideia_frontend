@@ -4,22 +4,20 @@ import { environment } from "../../../../../environments/environment";
 import { SubscriptionAPIService } from "../../../../services/subscription-api.service";
 import { Router } from "@angular/router";
 
-// limite de caracteres: 1759374
 @Component({
   selector: "app-arquivos",
   templateUrl: "./arquivos.component.html",
   styleUrls: ["./arquivos.component.css"],
 })
-// FORÇAR PREENCHIMENTO DE CAMPOS OBRIGATORIOS
+
 export class ArquivosComponent implements OnInit {
-  // constructor() {}
   constructor(
     public fb: FormBuilder,
     private service: SubscriptionAPIService,
     private router: Router
-  ) {}
+  ) { }
   tamMaximo: number = 1759374;
-  // talvez remover
+
   formArquivos = this.fb.group({
     rgCandidato: [""],
   });
@@ -57,7 +55,6 @@ export class ArquivosComponent implements OnInit {
     )).value;
     this.eja = (<HTMLSelectElement>document.getElementById("ejaHidden")).value;
 
-    // validação
     let feedbackError = "";
     if (this.rgCandidato === "" || this.rgCandidato === null) {
       feedbackError += "Campo RG não foi preenchido! \n";
@@ -129,8 +126,7 @@ export class ArquivosComponent implements OnInit {
         this.router.navigate(["/inscricao/socioeconomico"]);
         window.scrollTo(0, 0);
       }
-      // alert('Arquivos enviados para análise. Caso algum exceda o tamanho limite, voce será redireciado novamente ao'+
-      //   'formulário de envio de arquivos.');
+
     }
   }
 
@@ -139,42 +135,4 @@ export class ArquivosComponent implements OnInit {
       this.router.navigate(["/inicio"]);
     }
   }
-
-  // showTermo(tipo: any) {
-
-  //   let linkSource = "";
-  //   let fileName = "";
-  //   for (let i = 0; i < this.listagem.dados.length; i++) {
-  //     if (tipo === this.listagem.dados[i].tipo) {
-  //       linkSource = this.listagem.dados[i].arquivo;
-  //       fileName = `${this.listagem.dados[i].tipo}.pdf`;
-  //     }
-  //   }
-
-  //   const downloadLink = document.createElement("a");
-
-  //   downloadLink.href = linkSource;
-  //   downloadLink.download = fileName;
-  //   downloadLink.click();
-  // }
 }
-
-// opção para conversao de base 64
-// base64textString = [];
-//   onUploadChange(evt: any) {
-//     const file = evt.target.files[0];
-//     if (file) {
-//       const reader = new FileReader();
-//       reader.onload = this.handleReaderLoaded.bind(this);
-//       reader.readAsBinaryString(file);
-//     }
-//   }
-//   handleReaderLoaded(e) {
-//     this.base64textString.push(
-//       "data:image/png;base64," + btoa(e.target.result)
-//     );
-//   }
-//   // ver base64, para testes
-//   base64() {
-//     console.log(this.base64textString);
-//   }

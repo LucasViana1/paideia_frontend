@@ -12,7 +12,6 @@ export class CabecalhoComponent implements OnInit {
   inscrito_atual: any = window.localStorage.getItem("inscrito_atual");
 
   constructor(private router: Router) {
-    // console.log(this.nome);
   }
 
   logout() {
@@ -24,7 +23,6 @@ export class CabecalhoComponent implements OnInit {
     window.localStorage.removeItem("inscrito_atual");
     this.router.navigate(["/inicio"]);
     location.reload();
-    // window.scrollTo(0, 0);
   }
 
   ngOnInit() {

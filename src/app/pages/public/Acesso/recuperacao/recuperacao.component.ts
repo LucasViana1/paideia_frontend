@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import {UsersAPIService} from '../../../../services/users-api.service';
+import { UsersAPIService } from '../../../../services/users-api.service';
 
 @Component({
   selector: "app-recuperacao",
@@ -8,9 +8,9 @@ import {UsersAPIService} from '../../../../services/users-api.service';
   styleUrls: ["./recuperacao.component.css"]
 })
 export class RecuperacaoComponent implements OnInit {
-  showMessage:boolean = false
+  showMessage: boolean = false
 
-  constructor(public fb: FormBuilder, private service: UsersAPIService) {}
+  constructor(public fb: FormBuilder, private service: UsersAPIService) { }
 
   formRecupera = this.fb.group({
     rec_email: [""]
@@ -19,17 +19,17 @@ export class RecuperacaoComponent implements OnInit {
   onSubmit() {
     let form = this.formRecupera.value;
     let feedbackError = '';
-    //validação
-    if(form.rec_email === ''){
+
+    if (form.rec_email === '') {
       feedbackError += 'Campo e-mail não foi preenchido!  \n';
     }
-    if(feedbackError !== ''){
+    if (feedbackError !== '') {
       alert(feedbackError);
-    } else{
+    } else {
       this.service.recuperaUser(form);
       this.showMessage = true
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

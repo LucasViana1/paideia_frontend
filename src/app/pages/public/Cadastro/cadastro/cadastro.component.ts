@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import {UsersAPIService} from '../../../../services/users-api.service';
+import { UsersAPIService } from '../../../../services/users-api.service';
 
 @Component({
   selector: "app-cadastro",
@@ -24,30 +24,30 @@ export class CadastroComponent implements OnInit {
   onSubmit() {
     const form = this.formCadastro.value;
     let feedbackError = '';
-    if(form.senha !== form.confirmaSenha){
+    if (form.senha !== form.confirmaSenha) {
       alert('A senha está divergente!');
     }
-    else{
-      // validação
-      if(form.nome === ''){
+    else {
+
+      if (form.nome === '') {
         feedbackError += 'Campo nome não foi preenchido! \n';
       }
-      if(form.sobrenome === ''){
+      if (form.sobrenome === '') {
         feedbackError += 'Campo Sobrenome não foi preenchido!  \n';
       }
-      if(form.email === ''){
+      if (form.email === '') {
         feedbackError += 'Campo e-mail não foi preenchido!  \n';
       }
-      if(form.senha === ''){
+      if (form.senha === '') {
         feedbackError += 'Campo senha não foi preenchido!  \n';
       }
-      if(feedbackError !== ''){
+      if (feedbackError !== '') {
         alert(feedbackError);
-      } else{
+      } else {
         this.service.cadastraUser(form);
       }
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
